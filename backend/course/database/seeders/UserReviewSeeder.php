@@ -2,13 +2,13 @@
 
 namespace Database\Seeders;
 
-use App\Models\Contact;
+use App\Models\UserReview;
 use Illuminate\Database\Seeder;
 
-class ContactSeeder extends Seeder
+class UserReviewSeeder extends Seeder
 {
     public function run(): void
     {
-        Contact::factory()->count(10)->create();
+        UserReview::factory()->count(15)->create();
     }
 }

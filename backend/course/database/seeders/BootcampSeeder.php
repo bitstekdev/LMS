@@ -2,13 +2,13 @@
 
 namespace Database\Seeders;
 
-use App\Models\Contact;
+use App\Models\Bootcamp;
 use Illuminate\Database\Seeder;
 
-class ContactSeeder extends Seeder
+class BootcampSeeder extends Seeder
 {
     public function run(): void
     {
-        Contact::factory()->count(10)->create();
+        Bootcamp::factory()->count(10)->create();
     }
 }

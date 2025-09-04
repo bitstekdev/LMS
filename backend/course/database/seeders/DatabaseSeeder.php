@@ -12,14 +12,31 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
         $this->call([
+            // Independent
             CurrencySeeder::class,
-            TutorSubjectSeeder::class,
-            UserSeeder::class,
-            TutorReviewSeeder::class,
-            PlayerSettingSeeder::class,
             LanguageSeeder::class,
             CountrySeeder::class,
+            PlayerSettingSeeder::class,
+            HomePageSettingSeeder::class,
+            BuilderPageSeeder::class,
+            CategorySeeder::class,
+            TutorSubjectSeeder::class,
+
+            // Dependent
+            UserSeeder::class,
             ContactSeeder::class,
+
+            // Needs more than one
+            NotificationSettingSeeder::class,
+            TutorReviewSeeder::class,
+            UserReviewSeeder::class,
+
+            // Bootcamp Hierarchy
+            BootcampCategorySeeder::class,
+            BootcampSeeder::class,
+            BootcampLiveClassSeeder::class,
+            BootcampModuleSeeder::class,
+            BootcampResourceSeeder::class,
         ]);
     }
 }
