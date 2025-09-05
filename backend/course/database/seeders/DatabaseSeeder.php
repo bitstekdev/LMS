@@ -20,7 +20,6 @@ class DatabaseSeeder extends Seeder
             HomePageSettingSeeder::class,
             BuilderPageSeeder::class,
             CategorySeeder::class,
-            TutorSubjectSeeder::class,
 
             // Dependent
             UserSeeder::class,
@@ -28,7 +27,6 @@ class DatabaseSeeder extends Seeder
 
             // Needs more than one
             NotificationSettingSeeder::class,
-            TutorReviewSeeder::class,
             UserReviewSeeder::class,
 
             // Bootcamp Hierarchy
@@ -37,6 +35,14 @@ class DatabaseSeeder extends Seeder
             BootcampLiveClassSeeder::class,
             BootcampModuleSeeder::class,
             BootcampResourceSeeder::class,
+
+            // Tutor Hierarchy
+            TutorCategorySeeder::class,
+            TutorSubjectSeeder::class,
+            TutorScheduleSeeder::class,
+            TutorBookingSeeder::class,
+            TutorCanTeachSeeder::class,
+            TutorReviewSeeder::class,
         ]);
     }
 }

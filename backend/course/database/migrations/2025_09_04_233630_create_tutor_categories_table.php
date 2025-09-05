@@ -11,12 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('tutor_reviews', function (Blueprint $table) {
+        Schema::create('tutor_categories', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('tutor_id')->constrained('users')->onDelete('cascade');
-            $table->foreignId('student_id')->constrained('users')->onDelete('cascade');
-            $table->tinyInteger('rating')->unsigned();
-            $table->text('review')->nullable();
+            $table->string('name')->nullable();
+            $table->string('slug')->nullable();
+            $table->integer('status')->nullable();
             $table->timestamps();
         });
     }
@@ -26,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('tutor_reviews');
+        Schema::dropIfExists('tutor_categories');
     }
 };

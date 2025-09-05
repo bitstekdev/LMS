@@ -11,11 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('tutor_subjects', function (Blueprint $table) {
+        Schema::create('tutor_reviews', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('slug')->unique();
-            $table->boolean('status')->default(true);
+            $table->foreignId('tutor_id')->nullable()->constrained('users')->nullOnDelete();
+            $table->foreignId('student_id')->nullable()->constrained('users')->nullOnDelete();
+            $table->integer('rating')->nullable();
+            $table->string('review')->nullable();
             $table->timestamps();
         });
     }
@@ -25,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('tutor_subjects');
+        Schema::dropIfExists('tutor_reviews');
     }
 };
