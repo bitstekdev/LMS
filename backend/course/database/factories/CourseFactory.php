@@ -19,9 +19,9 @@ class CourseFactory extends Factory
     {
         return [
             'user_id' => User::inRandomOrder()->first()->id ?? User::factory(),
-            'title' => $this->faker->sentence,
-            'slug' => $this->faker->slug,
-            'short_description' => $this->faker->paragraph,
+            'title' => fake()->sentence,
+            'slug' => fake()->slug,
+            'short_description' => fake()->paragraph,
             'course_type' => 'general',
             'status' => 'active',
             'level' => 'beginner',
@@ -29,7 +29,7 @@ class CourseFactory extends Factory
             'is_paid' => rand(0, 1),
             'price' => 99.99,
             'enable_drip_content' => false,
-            'meta_description' => $this->faker->sentence,
+            'meta_description' => fake()->sentence,
             'average_rating' => 0,
         ];
     }

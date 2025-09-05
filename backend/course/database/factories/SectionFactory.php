@@ -21,7 +21,7 @@ class SectionFactory extends Factory
         return [
             'user_id' => User::inRandomOrder()->first()->id ?? User::factory(),
             'course_id' => Course::inRandomOrder()->first()->id ?? Course::factory(),
-            'title' => $this->faker->sentence,
+            'title' => fake()->sentence,
             'sort' => rand(1, 10),
         ];
     }

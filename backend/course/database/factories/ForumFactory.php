@@ -21,8 +21,8 @@ class ForumFactory extends Factory
         return [
             'user_id' => User::inRandomOrder()->first()->id ?? User::factory(),
             'course_id' => Course::inRandomOrder()->first()->id ?? Course::factory(),
-            'title' => $this->faker->sentence,
-            'description' => $this->faker->paragraph,
+            'title' => fake()->sentence,
+            'description' => fake()->paragraph,
         ];
     }
 }

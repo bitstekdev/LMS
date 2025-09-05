@@ -21,7 +21,7 @@ class LessonFactory extends Factory
         return [
             'course_id' => Course::inRandomOrder()->first()->id ?? Course::factory(),
             'section_id' => Section::inRandomOrder()->first()->id ?? Section::factory(),
-            'title' => $this->faker->sentence,
+            'title' => fake()->sentence,
             'lesson_type' => 'video',
             'duration' => '5:00',
             'is_free' => 1,

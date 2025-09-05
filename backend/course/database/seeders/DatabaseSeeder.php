@@ -61,9 +61,16 @@ class DatabaseSeeder extends Seeder
             LessonSeeder::class,
             ForumSeeder::class,
             MessageSeeder::class,
+            WatchHistorySeeder::class,
+            CertificateSeeder::class,
+            AddToCartSeeder::class,
+            CartItemSeeder::class,
+            WishlistSeeder::class,
+            EnrollmentSeeder::class,
 
             // Quiz Hierarchy
             QuizSeeder::class,
+            QuizSubmissionSeeder::class,
 
             // Training Package Hierarchy
             TeamTrainingPackageSeeder::class,

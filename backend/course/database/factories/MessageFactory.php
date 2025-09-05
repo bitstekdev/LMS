@@ -20,8 +20,8 @@ class MessageFactory extends Factory
         return [
             'sender_id' => User::inRandomOrder()->first()->id ?? User::factory(),
             'receiver_id' => User::inRandomOrder()->first()->id ?? User::factory(),
-            'message' => $this->faker->sentence,
-            'read' => $this->faker->boolean(50),
+            'message' => fake()->sentence,
+            'read' => fake()->boolean(50),
         ];
     }
 }

@@ -22,7 +22,7 @@ class QuizFactory extends Factory
         return [
             'user_id' => User::inRandomOrder()->first()->id ?? User::factory(),
             'section_id' => Section::inRandomOrder()->first()->id ?? Section::factory(),
-            'title' => $this->faker->sentence,
+            'title' => fake()->sentence,
             'duration' => '10:00',
             'total_mark' => 100,
             'pass_mark' => 70,

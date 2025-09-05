@@ -17,9 +17,9 @@ class QuestionFactory extends Factory
     public function definition(): array
     {
         return [
-            'title' => $this->faker->paragraph,
+            'title' => fake()->paragraph,
             'type' => 'fill_blanks',
-            'answer' => json_encode([$this->faker->word]),
+            'answer' => json_encode([fake()->word]),
         ];
     }
 }
