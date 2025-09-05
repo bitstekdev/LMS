@@ -16,7 +16,8 @@ class DatabaseSeeder extends Seeder
             LanguageSeeder::class,
             LanguagePhraseSeeder::class,
 
-            // Settings
+            // Payment Gateways & Settings
+            PaymentGatewaySeeder::class,
             HomePageSettingSeeder::class,
             SettingSeeder::class,
             PlayerSettingSeeder::class,
