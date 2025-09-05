@@ -1,0 +1,5314 @@
+{
+    "language_phrases": [
+        {
+            "language_id": 1,
+            "phrase": "Log In",
+            "translated": "Log In"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Login",
+            "translated": "Login"
+        },
+        {
+            "language_id": 1,
+            "phrase": "See your growth and get consulting support!",
+            "translated": "See your growth and get consulting support!"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Email",
+            "translated": "Email"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Your Email",
+            "translated": "Your Email"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Password",
+            "translated": "Password"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Remember Me",
+            "translated": "Remember Me"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Forget Password?",
+            "translated": "Forget Password?"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Not have an account yet?",
+            "translated": "Not have an account yet?"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Create Account",
+            "translated": "Create Account"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Home",
+            "translated": "Home"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Courses",
+            "translated": "Courses"
+        },
+        {
+            "language_id": 1,
+            "phrase": "All Courses",
+            "translated": "All Courses"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Bootcamp",
+            "translated": "Bootcamp"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Search...",
+            "translated": "Search..."
+        },
+        {
+            "language_id": 1,
+            "phrase": "Search courses",
+            "translated": "Search courses"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Cart",
+            "translated": "Cart"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Sign Up",
+            "translated": "Sign Up"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Contact with Us",
+            "translated": "Contact with Us"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Top Categories",
+            "translated": "Top Categories"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Useful links",
+            "translated": "Useful links"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Course",
+            "translated": "Course"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Blog",
+            "translated": "Blog"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Company",
+            "translated": "Company"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Phone : ",
+            "translated": "Phone : "
+        },
+        {
+            "language_id": 1,
+            "phrase": "Email : ",
+            "translated": "Email : "
+        },
+        {
+            "language_id": 1,
+            "phrase": "Email address",
+            "translated": "Email address"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Submit",
+            "translated": "Submit"
+        },
+        {
+            "language_id": 1,
+            "phrase": "About Us",
+            "translated": "About Us"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Privacy Policy",
+            "translated": "Privacy Policy"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Terms And Use",
+            "translated": "Terms And Use"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Sales and Refunds",
+            "translated": "Sales and Refunds"
+        },
+        {
+            "language_id": 1,
+            "phrase": "FAQ",
+            "translated": "FAQ"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Close",
+            "translated": "Close"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Are you sure?",
+            "translated": "Are you sure?"
+        },
+        {
+            "language_id": 1,
+            "phrase": "You can't bring it back!",
+            "translated": "You can't bring it back!"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Cancel",
+            "translated": "Cancel"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Yes, I'm sure",
+            "translated": "Yes, I'm sure"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Just Now",
+            "translated": "Just Now"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Success !",
+            "translated": "Success !"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Attention !",
+            "translated": "Attention !"
+        },
+        {
+            "language_id": 1,
+            "phrase": "An Error Occurred !",
+            "translated": "An Error Occurred !"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Remove from wishlist",
+            "translated": "Remove from wishlist"
+        },
+        {
+            "language_id": 1,
+            "phrase": "This course added to your wishlist",
+            "translated": "This course added to your wishlist"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Add to wishlist",
+            "translated": "Add to wishlist"
+        },
+        {
+            "language_id": 1,
+            "phrase": "This course removed from your wishlist",
+            "translated": "This course removed from your wishlist"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Enter your keywords",
+            "translated": "Enter your keywords"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Show less",
+            "translated": "Show less"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Show more",
+            "translated": "Show more"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Showing",
+            "translated": "Showing"
+        },
+        {
+            "language_id": 1,
+            "phrase": "of",
+            "translated": "of"
+        },
+        {
+            "language_id": 1,
+            "phrase": "data",
+            "translated": "data"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Grid",
+            "translated": "Grid"
+        },
+        {
+            "language_id": 1,
+            "phrase": "List",
+            "translated": "List"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Filter",
+            "translated": "Filter"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Categories",
+            "translated": "Categories"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Price",
+            "translated": "Price"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Paid",
+            "translated": "Paid"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Discount",
+            "translated": "Discount"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Free",
+            "translated": "Free"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Level",
+            "translated": "Level"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Beginner",
+            "translated": "Beginner"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Intermediate",
+            "translated": "Intermediate"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Advanced",
+            "translated": "Advanced"
+        },
+        {
+            "language_id": 1,
+            "phrase": "language",
+            "translated": "Language"
+        },
+        {
+            "language_id": 1,
+            "phrase": "English",
+            "translated": "English"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Spanish",
+            "translated": "Spanish"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Italic",
+            "translated": "Italic"
+        },
+        {
+            "language_id": 1,
+            "phrase": "German",
+            "translated": "German"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Ratings",
+            "translated": "Ratings"
+        },
+        {
+            "language_id": 1,
+            "phrase": "No data found !",
+            "translated": "No data found !"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Please attempt utilizing the suitable keywords in your search query to obtain more precise results.",
+            "translated": "Please attempt utilizing the suitable keywords in your search query to obtain more precise results."
+        },
+        {
+            "language_id": 1,
+            "phrase": "Back",
+            "translated": "Back"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Dashboard",
+            "translated": "Dashboard"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Number of Courses",
+            "translated": "Number of Courses"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Number of Lessons",
+            "translated": "Number of Lessons"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Number of Enrollment",
+            "translated": "Number of Enrollment"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Number of Students",
+            "translated": "Number of Students"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Number of Instructor",
+            "translated": "Number of Instructor"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Admin Revenue This Year",
+            "translated": "Admin Revenue This Year"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Admin Revenue",
+            "translated": "Admin Revenue"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Course Status",
+            "translated": "Course Status"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Explore Courses",
+            "translated": "Explore Courses"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Active",
+            "translated": "Active"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Upcoming",
+            "translated": "Upcoming"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Pending",
+            "translated": "Pending"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Private",
+            "translated": "Private"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Draft",
+            "translated": "Draft"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Inactive",
+            "translated": "Inactive"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Pending Requested withdrawal",
+            "translated": "Pending Requested withdrawal"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Instructor Payout",
+            "translated": "Instructor Payout"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Main Menu",
+            "translated": "Main Menu"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Category",
+            "translated": "Category"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Manage Courses",
+            "translated": "Manage Courses"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Add New Course",
+            "translated": "Add New Course"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Coupons",
+            "translated": "Coupons"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Manage Bootcamps",
+            "translated": "Manage Bootcamps"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Add New Bootcamp",
+            "translated": "Add New Bootcamp"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Purchase History",
+            "translated": "Purchase History"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Student enrollment",
+            "translated": "Student enrollment"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Course enrollment",
+            "translated": "Course enrollment"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Enrollment History",
+            "translated": "Enrollment History"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Enroll student",
+            "translated": "Enroll student"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Payment Report",
+            "translated": "Payment Report"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Offline payments",
+            "translated": "Offline payments"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Instructor Revenue",
+            "translated": "Instructor Revenue"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Payment History",
+            "translated": "Payment History"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Users",
+            "translated": "Users"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Admin",
+            "translated": "Admin"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Manage Admin",
+            "translated": "Manage Admin"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Add New Admin",
+            "translated": "Add New Admin"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Instructor",
+            "translated": "Instructor"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Manage Instructors",
+            "translated": "Manage Instructors"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Add new Instructor",
+            "translated": "Add new Instructor"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Instructor Setting",
+            "translated": "Instructor Setting"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Application",
+            "translated": "Application"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Student",
+            "translated": "Student"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Manage Students",
+            "translated": "Manage Students"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Add new Student",
+            "translated": "Add new Student"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Message",
+            "translated": "Message"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Newsletter",
+            "translated": "Newsletter"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Manage Newsletters",
+            "translated": "Manage Newsletters"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Subscribed User",
+            "translated": "Subscribed User"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Contacts",
+            "translated": "Contacts"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Blogs",
+            "translated": "Blogs"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Manage Blogs",
+            "translated": "Manage Blogs"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Pending Blogs",
+            "translated": "Pending Blogs"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Settings",
+            "translated": "Settings"
+        },
+        {
+            "language_id": 1,
+            "phrase": "System Settings",
+            "translated": "System Settings"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Website Settings",
+            "translated": "Website Settings"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Payment Settings",
+            "translated": "Payment Settings"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Manage Language",
+            "translated": "Manage Language"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Live Class Settings",
+            "translated": "Live Class Settings"
+        },
+        {
+            "language_id": 1,
+            "phrase": "SMTP Settings",
+            "translated": "SMTP Settings"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Certificate Settings",
+            "translated": "Certificate Settings"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Player Settings",
+            "translated": "Player Settings"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Open AI Settings",
+            "translated": "Open AI Settings"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Home Page Builder",
+            "translated": "Home Page Builder"
+        },
+        {
+            "language_id": 1,
+            "phrase": "SEO Settings",
+            "translated": "SEO Settings"
+        },
+        {
+            "language_id": 1,
+            "phrase": "About",
+            "translated": "About"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Manage Profile",
+            "translated": "Manage Profile"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Admin Panel",
+            "translated": "Admin Panel"
+        },
+        {
+            "language_id": 1,
+            "phrase": "View site",
+            "translated": "View site"
+        },
+        {
+            "language_id": 1,
+            "phrase": "AI Assistant",
+            "translated": "AI Assistant"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Help Center",
+            "translated": "Help Center"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Read documentation",
+            "translated": "Read documentation"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Watch video tutorial",
+            "translated": "Watch video tutorial"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Get customer support",
+            "translated": "Get customer support"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Order customization",
+            "translated": "Order customization"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Request a new feature",
+            "translated": "Request a new feature"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Get Services",
+            "translated": "Get Services"
+        },
+        {
+            "language_id": 1,
+            "phrase": "My Profile",
+            "translated": "My Profile"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Sign Out",
+            "translated": "Sign Out"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Confirm",
+            "translated": "Confirm"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Loading",
+            "translated": "Loading"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Website name",
+            "translated": "Website name"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Website title",
+            "translated": "Website title"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Website keywords",
+            "translated": "Website keywords"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Website description",
+            "translated": "Website description"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Author",
+            "translated": "Author"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Slogan",
+            "translated": "Slogan"
+        },
+        {
+            "language_id": 1,
+            "phrase": "System email",
+            "translated": "System email"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Address",
+            "translated": "Address"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Phone",
+            "translated": "Phone"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Youtube API key",
+            "translated": "Youtube API key"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Get YouTube API key",
+            "translated": "Get YouTube API key"
+        },
+        {
+            "language_id": 1,
+            "phrase": "If you want to use Google Drive video, you need to enable the Google Drive service in this API",
+            "translated": "If you want to use Google Drive video, you need to enable the Google Drive service in this API"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Vimeo API key",
+            "translated": "Vimeo API key"
+        },
+        {
+            "language_id": 1,
+            "phrase": "get Vimeo API key",
+            "translated": "get Vimeo API key"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Purchase code",
+            "translated": "Purchase code"
+        },
+        {
+            "language_id": 1,
+            "phrase": "System language",
+            "translated": "System language"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Course selling tax",
+            "translated": "Course selling tax"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Enter 0 if you want to disable the tax option",
+            "translated": "Enter 0 if you want to disable the tax option"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Device limitation",
+            "translated": "Device limitation"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Footer text",
+            "translated": "Footer text"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Footer link",
+            "translated": "Footer link"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Save Changes",
+            "translated": "Save Changes"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Update Product",
+            "translated": "Update Product"
+        },
+        {
+            "language_id": 1,
+            "phrase": "File",
+            "translated": "File"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Update",
+            "translated": "Update"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Version updated successfully",
+            "translated": "Version updated successfully"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Select your service",
+            "translated": "Select your service"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Course title",
+            "translated": "Course title"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Course short description",
+            "translated": "Course short description"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Course long description",
+            "translated": "Course long description"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Course requirements",
+            "translated": "Course requirements"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Course outcomes",
+            "translated": "Course outcomes"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Course faq",
+            "translated": "Course faq"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Course seo tags",
+            "translated": "Course seo tags"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Course lesson text",
+            "translated": "Course lesson text"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Course certificate text",
+            "translated": "Course certificate text"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Course quiz text",
+            "translated": "Course quiz text"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Course blog title",
+            "translated": "Course blog title"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Course blog post",
+            "translated": "Course blog post"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Course thumbnail",
+            "translated": "Course thumbnail"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Enter your keyword",
+            "translated": "Enter your keyword"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Generate",
+            "translated": "Generate"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Generating",
+            "translated": "Generating"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Your images",
+            "translated": "Your images"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Generated text",
+            "translated": "Generated text"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Copy",
+            "translated": "Copy"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Copied",
+            "translated": "Copied"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Not found",
+            "translated": "Not found"
+        },
+        {
+            "language_id": 1,
+            "phrase": "About This Application",
+            "translated": "About This Application"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Software version",
+            "translated": "Software version"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Laravel version",
+            "translated": "Laravel version"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Check update",
+            "translated": "Check update"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Php version",
+            "translated": "PHP version"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Curl enable",
+            "translated": "CURL enable"
+        },
+        {
+            "language_id": 1,
+            "phrase": "enabled",
+            "translated": "Enabled"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Product license",
+            "translated": "Product license"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Enter valid purchase code",
+            "translated": "Enter valid purchase code"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Customer support status",
+            "translated": "Customer support status"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Support expiry date",
+            "translated": "Support expiry date"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Customer name",
+            "translated": "Customer name"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Customer support",
+            "translated": "Customer support"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Payment setting",
+            "translated": "Payment setting"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Currency Settings",
+            "translated": "Currency Settings"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Heads up !!",
+            "translated": "Heads up !!"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Ensure that the system currency and all active payment gateway currencies are same",
+            "translated": "Ensure that the system currency and all active payment gateway currencies are same"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Select currency",
+            "translated": "Select currency"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Currency position",
+            "translated": "Currency position"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Left",
+            "translated": "Left"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Right",
+            "translated": "Right"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Left with a space",
+            "translated": "Left with a space"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Right with a space",
+            "translated": "Right with a space"
+        },
+        {
+            "language_id": 1,
+            "phrase": "No",
+            "translated": "No"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Yes",
+            "translated": "Yes"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Want to keep test mode enabled",
+            "translated": "Want to keep test mode enabled"
+        },
+        {
+            "language_id": 1,
+            "phrase": "sandbox client id",
+            "translated": "sandbox client id"
+        },
+        {
+            "language_id": 1,
+            "phrase": "sandbox secret key",
+            "translated": "sandbox secret key"
+        },
+        {
+            "language_id": 1,
+            "phrase": "production client id",
+            "translated": "production client id"
+        },
+        {
+            "language_id": 1,
+            "phrase": "production secret key",
+            "translated": "production secret key"
+        },
+        {
+            "language_id": 1,
+            "phrase": "setting",
+            "translated": "setting"
+        },
+        {
+            "language_id": 1,
+            "phrase": "public key",
+            "translated": "public key"
+        },
+        {
+            "language_id": 1,
+            "phrase": "secret key",
+            "translated": "secret key"
+        },
+        {
+            "language_id": 1,
+            "phrase": "public live key",
+            "translated": "public live key"
+        },
+        {
+            "language_id": 1,
+            "phrase": "secret live key",
+            "translated": "secret live key"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Choose an option",
+            "translated": "Choose an option"
+        },
+        {
+            "language_id": 1,
+            "phrase": "bank information",
+            "translated": "bank information"
+        },
+        {
+            "language_id": 1,
+            "phrase": "secret test key",
+            "translated": "secret test key"
+        },
+        {
+            "language_id": 1,
+            "phrase": "public test key",
+            "translated": "public test key"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Cookie Policy",
+            "translated": "Cookie Policy"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Accept",
+            "translated": "Accept"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Learn More",
+            "translated": "Learn More"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Students has Enrolled",
+            "translated": "Students has Enrolled"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Page Builder",
+            "translated": "Page Builder"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Create Page",
+            "translated": "Create Page"
+        },
+        {
+            "language_id": 1,
+            "phrase": "#",
+            "translated": "#"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Page Name",
+            "translated": "Page Name"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Status",
+            "translated": "Status"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Action",
+            "translated": "Action"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Edit Home Page",
+            "translated": "Edit Home Page"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Edit Home",
+            "translated": "Edit Home"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Preview",
+            "translated": "Preview"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Edit Layout",
+            "translated": "Edit Layout"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Edit Page",
+            "translated": "Edit Page"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Edit",
+            "translated": "Edit"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Delete",
+            "translated": "Delete"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Home page activated",
+            "translated": "Home page activated"
+        },
+        {
+            "language_id": 1,
+            "phrase": "The Leader in online learning",
+            "translated": "The Leader in online learning"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Get Started",
+            "translated": "Get Started"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Special Featured Course",
+            "translated": "Special Featured Course"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Those course highlights a handpicked course with exceptional content or exclusive offerings.",
+            "translated": "Those course highlights a handpicked course with exceptional content or exclusive offerings."
+        },
+        {
+            "language_id": 1,
+            "phrase": "Why Choose Us",
+            "translated": "Why Choose Us"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Happy student",
+            "translated": "Happy student"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Quality educators",
+            "translated": "Quality educators"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Premium courses",
+            "translated": "Premium courses"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Cost-free course",
+            "translated": "Cost-free course"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Top Rated Course",
+            "translated": "Top Rated Course"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Top rated course showcases the highest-rated course based on student reviews and performance metrics.",
+            "translated": "Top rated course showcases the highest-rated course based on student reviews and performance metrics."
+        },
+        {
+            "language_id": 1,
+            "phrase": "What the people Thinks About Us",
+            "translated": "What the people Thinks About Us"
+        },
+        {
+            "language_id": 1,
+            "phrase": "It highlights feedback and testimonials from users, reflecting their experiences and satisfaction.",
+            "translated": "It highlights feedback and testimonials from users, reflecting their experiences and satisfaction."
+        },
+        {
+            "language_id": 1,
+            "phrase": "Frequently Asked Questions",
+            "translated": "Frequently Asked Questions"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Our Latest Blog",
+            "translated": "Our Latest Blog"
+        },
+        {
+            "language_id": 1,
+            "phrase": "The latest blog highlights the most recent articles, updates, and insights from our platform.",
+            "translated": "The latest blog highlights the most recent articles, updates, and insights from our platform."
+        },
+        {
+            "language_id": 1,
+            "phrase": "Wishlist",
+            "translated": "Wishlist"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Log Out",
+            "translated": "Log Out"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Logout",
+            "translated": "Logout"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Admin Dashboard",
+            "translated": "Admin Dashboard"
+        },
+        {
+            "language_id": 1,
+            "phrase": "It is a long established fact that a reader will be the distract by the read content of a page layout",
+            "translated": "It is a long established fact that a reader will be the distract by the read content of a page layout"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Subscribe to stay tuned for new web design and latest updates. Let's do it!",
+            "translated": "Subscribe to stay tuned for new web design and latest updates. Let's do it!"
+        },
+        {
+            "language_id": 1,
+            "phrase": "© 2024 All Rights Reserved",
+            "translated": "© 2024 All Rights Reserved"
+        },
+        {
+            "language_id": 1,
+            "phrase": "404 not found",
+            "translated": "404 not found"
+        },
+        {
+            "language_id": 1,
+            "phrase": "The page you requested could not be found",
+            "translated": "The page you requested could not be found"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Please try the following",
+            "translated": "Please try the following"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Check the spelling of the url",
+            "translated": "Check the spelling of the url"
+        },
+        {
+            "language_id": 1,
+            "phrase": "If you are still puzzled, click on the home link below",
+            "translated": "If you are still puzzled, click on the home link below"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Back to home",
+            "translated": "Back to home"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Become An Instructor",
+            "translated": "Become An Instructor"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Title",
+            "translated": "Title"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Description",
+            "translated": "Description"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Video Url",
+            "translated": "Video Url"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Image",
+            "translated": "Image"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Banner Information",
+            "translated": "Banner Information"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Add new",
+            "translated": "Add new"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Remove",
+            "translated": "Remove"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Video Link",
+            "translated": "Video Link"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Youtube",
+            "translated": "Youtube"
+        },
+        {
+            "language_id": 1,
+            "phrase": "HTML5",
+            "translated": "HTML5"
+        },
+        {
+            "language_id": 1,
+            "phrase": "All Category",
+            "translated": "All Category"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Add new category",
+            "translated": "Add new category"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Category Name",
+            "translated": "Category Name"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Enter your category name",
+            "translated": "Enter your category name"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Enter your unique category name",
+            "translated": "Enter your unique category name"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Pick Your Icon",
+            "translated": "Pick Your Icon"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Pick your category icon",
+            "translated": "Pick your category icon"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Keywords",
+            "translated": "Keywords"
+        },
+        {
+            "language_id": 1,
+            "phrase": "optional",
+            "translated": "optional"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Category Description",
+            "translated": "Category Description"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Enter your description",
+            "translated": "Enter your description"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Thumbnail",
+            "translated": "Thumbnail"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Category logo",
+            "translated": "Category logo"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Category added successfully",
+            "translated": "Category added successfully"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Add",
+            "translated": "Add"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Edit category",
+            "translated": "Edit category"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Create course",
+            "translated": "Create course"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Enter Course Title",
+            "translated": "Enter Course Title"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Short Description",
+            "translated": "Short Description"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Enter Short Description",
+            "translated": "Enter Short Description"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Enter Description",
+            "translated": "Enter Description"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Create as",
+            "translated": "Create as"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Select a category",
+            "translated": "Select a category"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Course level",
+            "translated": "Course level"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Select your course level",
+            "translated": "Select your course level"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Made in",
+            "translated": "Made in"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Select your course language",
+            "translated": "Select your course language"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Pricing type",
+            "translated": "Pricing type"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Enter your course price",
+            "translated": "Enter your course price"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Check if this course has discount",
+            "translated": "Check if this course has discount"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Discounted price",
+            "translated": "Discounted price"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Enter your discount price",
+            "translated": "Enter your discount price"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Finish!",
+            "translated": "Finish!"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Course added successfully",
+            "translated": "Course added successfully"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Edit course",
+            "translated": "Edit course"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Editing",
+            "translated": "Editing"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Help",
+            "translated": "Help"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Frontend View",
+            "translated": "Frontend View"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Course Player",
+            "translated": "Course Player"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Curriculum",
+            "translated": "Curriculum"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Basic",
+            "translated": "Basic"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Live Class",
+            "translated": "Live Class"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Pricing",
+            "translated": "Pricing"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Info",
+            "translated": "Info"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Media",
+            "translated": "Media"
+        },
+        {
+            "language_id": 1,
+            "phrase": "SEO",
+            "translated": "SEO"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Add new section",
+            "translated": "Add new section"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Add section",
+            "translated": "Add section"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Add a new Section",
+            "translated": "Add a new Section"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Create bootcamp",
+            "translated": "Create bootcamp"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Check if this bootcamp has discount",
+            "translated": "Check if this bootcamp has discount"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Publish Date",
+            "translated": "Publish Date"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Bootcamp Category",
+            "translated": "Bootcamp Category"
+        },
+        {
+            "language_id": 1,
+            "phrase": "No data found",
+            "translated": "No data found"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Add category",
+            "translated": "Add category"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Category has been created.",
+            "translated": "Category has been created."
+        },
+        {
+            "language_id": 1,
+            "phrase": "Total bootcamps",
+            "translated": "Total bootcamps"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Bootcamp has been created.",
+            "translated": "Bootcamp has been created."
+        },
+        {
+            "language_id": 1,
+            "phrase": "Edit bootcamp",
+            "translated": "Edit bootcamp"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Frontent View",
+            "translated": "Frontent View"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Create Student",
+            "translated": "Create Student"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Student Info",
+            "translated": "Student Info"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Login Credentials",
+            "translated": "Login Credentials"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Social Links",
+            "translated": "Social Links"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Name",
+            "translated": "Name"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Biography",
+            "translated": "Biography"
+        },
+        {
+            "language_id": 1,
+            "phrase": "User image",
+            "translated": "User image"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Facebook",
+            "translated": "Facebook"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Twitter",
+            "translated": "Twitter"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Linkedin",
+            "translated": "Linkedin"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Student add successfully",
+            "translated": "Student add successfully"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Student List",
+            "translated": "Student List"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Export",
+            "translated": "Export"
+        },
+        {
+            "language_id": 1,
+            "phrase": "PDF",
+            "translated": "PDF"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Print",
+            "translated": "Print"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Search user",
+            "translated": "Search user"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Search",
+            "translated": "Search"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Enrolled Course",
+            "translated": "Enrolled Course"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Options",
+            "translated": "Options"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Email Verification",
+            "translated": "Email Verification"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Thanks for signing up! Before getting started, could you verify your email address by clicking on the link we just emailed to you? If you didn't receive the email, we will gladly send you another.",
+            "translated": "Thanks for signing up! Before getting started, could you verify your email address by clicking on the link we just emailed to you? If you didn't receive the email, we will gladly send you another."
+        },
+        {
+            "language_id": 1,
+            "phrase": "Resend Verification Email",
+            "translated": "Resend Verification Email"
+        },
+        {
+            "language_id": 1,
+            "phrase": "My Courses",
+            "translated": "My Courses"
+        },
+        {
+            "language_id": 1,
+            "phrase": "My Bootcamps",
+            "translated": "My Bootcamps"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Upload picture",
+            "translated": "Upload picture"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Upload New",
+            "translated": "Upload New"
+        },
+        {
+            "language_id": 1,
+            "phrase": "My Teams",
+            "translated": "My Teams"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Please try using the appropriate keywords.",
+            "translated": "Please try using the appropriate keywords."
+        },
+        {
+            "language_id": 1,
+            "phrase": "Bootcamps",
+            "translated": "Bootcamps"
+        },
+        {
+            "language_id": 1,
+            "phrase": "All Bootcamps",
+            "translated": "All Bootcamps"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Class",
+            "translated": "Class"
+        },
+        {
+            "language_id": 1,
+            "phrase": "View Details",
+            "translated": "View Details"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Buy Now",
+            "translated": "Buy Now"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Item is already purchased.",
+            "translated": "Item is already purchased."
+        },
+        {
+            "language_id": 1,
+            "phrase": "Bootcamp payment",
+            "translated": "Bootcamp payment"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Order summary",
+            "translated": "Order summary"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Cancel Payment",
+            "translated": "Cancel Payment"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Select payment gateway",
+            "translated": "Select payment gateway"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Item List",
+            "translated": "Item List"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Total",
+            "translated": "Total"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Grand Total",
+            "translated": "Grand Total"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Reviews",
+            "translated": "Reviews"
+        },
+        {
+            "language_id": 1,
+            "phrase": "lesson",
+            "translated": "lesson"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Students",
+            "translated": "Students"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Terms and condition",
+            "translated": "Terms and condition"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Terms",
+            "translated": "Terms"
+        },
+        {
+            "language_id": 1,
+            "phrase": "WELLCOME TO CHEF",
+            "translated": "WELLCOME TO CHEF"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Visit Courses",
+            "translated": "Visit Courses"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Enrolled Learners",
+            "translated": "Enrolled Learners"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Online Instructors",
+            "translated": "Online Instructors"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Latest Top Skills",
+            "translated": "Latest Top Skills"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Awesome  site the top advertising been business.",
+            "translated": "Awesome  site the top advertising been business."
+        },
+        {
+            "language_id": 1,
+            "phrase": "Industry Experts",
+            "translated": "Industry Experts"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Learning From Anywhere",
+            "translated": "Learning From Anywhere"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Top Rated Courses",
+            "translated": "Top Rated Courses"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Upcoming Courses",
+            "translated": "Upcoming Courses"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Highlights the latest courses set to launch, giving students a sneak peek at new opportunities for learning and skill development. Stay ahead with our curated selection of upcoming educational offerings!",
+            "translated": "Highlights the latest courses set to launch, giving students a sneak peek at new opportunities for learning and skill development. Stay ahead with our curated selection of upcoming educational offerings!"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Featured Courses",
+            "translated": "Featured Courses"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Think more clearly",
+            "translated": "Think more clearly"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Awesome  site. on the top advertising a business online includes assembling Having the most keep.",
+            "translated": "Awesome  site. on the top advertising a business online includes assembling Having the most keep."
+        },
+        {
+            "language_id": 1,
+            "phrase": "Video title",
+            "translated": "Video title"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Our Popular Instructor",
+            "translated": "Our Popular Instructor"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Highlights our most sought-after educator, recognized for their engaging teaching style and exceptional course content. Discover their expertise and join the many students who have benefited from their classes!",
+            "translated": "Highlights our most sought-after educator, recognized for their engaging teaching style and exceptional course content. Discover their expertise and join the many students who have benefited from their classes!"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Frequently Asked Questions?",
+            "translated": "Frequently Asked Questions?"
+        },
+        {
+            "language_id": 1,
+            "phrase": "FAQ provides quick answers to common inquiries, helping users resolve doubts efficiently.",
+            "translated": "FAQ provides quick answers to common inquiries, helping users resolve doubts efficiently."
+        },
+        {
+            "language_id": 1,
+            "phrase": "Follow The Latest News",
+            "translated": "Follow The Latest News"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Top Courses",
+            "translated": "Top Courses"
+        },
+        {
+            "language_id": 1,
+            "phrase": "lessons",
+            "translated": "lessons"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Subscribe to our newsletter to get latest updates",
+            "translated": "Subscribe to our newsletter to get latest updates"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Subscribe to stay tuned for new latest updates and offer. Let's do it! ",
+            "translated": "Subscribe to stay tuned for new latest updates and offer. Let's do it! "
+        },
+        {
+            "language_id": 1,
+            "phrase": "Subscribe",
+            "translated": "Subscribe"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Read our privacy policy",
+            "translated": "Read our privacy policy"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Here",
+            "translated": "Here"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Blog category",
+            "translated": "Blog category"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Subtitle",
+            "translated": "Subtitle"
+        },
+        {
+            "language_id": 1,
+            "phrase": "(80  Character)",
+            "translated": "(80  Character)"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Category add successfully",
+            "translated": "Category add successfully"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Total number of blog",
+            "translated": "Total number of blog"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Add new blog",
+            "translated": "Add new blog"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Search Title",
+            "translated": "Search Title"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Add Blog",
+            "translated": "Add Blog"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Enter blog title",
+            "translated": "Enter blog title"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Writing your keyword and hit htw enter button",
+            "translated": "Writing your keyword and hit htw enter button"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Blog banner",
+            "translated": "Blog banner"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Blog thumbnail",
+            "translated": "Blog thumbnail"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Would you like to designate it as popular?",
+            "translated": "Would you like to designate it as popular?"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Blog add successfully",
+            "translated": "Blog add successfully"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Creator",
+            "translated": "Creator"
+        },
+        {
+            "language_id": 1,
+            "phrase": "View on frontend",
+            "translated": "View on frontend"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Read More",
+            "translated": "Read More"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Get Started Now",
+            "translated": "Get Started Now"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Creating A Community Of Life Long Learners",
+            "translated": "Creating A Community Of Life Long Learners"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Our LMS goes beyond just providing courses. It's a platform designed to ignite curiosity and empower your lifelong learning journey.  This supportive community provides a space to ask questions, no matter how big or small, and receive insightful answers from experienced learners and subject-matter experts.",
+            "translated": "Our LMS goes beyond just providing courses. It's a platform designed to ignite curiosity and empower your lifelong learning journey.  This supportive community provides a space to ask questions, no matter how big or small, and receive insightful answers from experienced learners and subject-matter experts."
+        },
+        {
+            "language_id": 1,
+            "phrase": "Share your own experiences and challenges, and find encouragement and inspiration from others on a similar path. The diverse perspectives within our community will broaden your horizons and challenge your thinking, fostering a deeper understanding and a richer learning experience.  Together, we'll transform learning from a solitary pursuit into a collaborative adventure, where shared knowledge fuels individual growth and collective discovery.",
+            "translated": "Share your own experiences and challenges, and find encouragement and inspiration from others on a similar path. The diverse perspectives within our community will broaden your horizons and challenge your thinking, fostering a deeper understanding and a richer learning experience.  Together, we'll transform learning from a solitary pursuit into a collaborative adventure, where shared knowledge fuels individual growth and collective discovery."
+        },
+        {
+            "language_id": 1,
+            "phrase": "Learn more about us",
+            "translated": "Learn more about us"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Our Online Courses",
+            "translated": "Our Online Courses"
+        },
+        {
+            "language_id": 1,
+            "phrase": "See More",
+            "translated": "See More"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Our Blog",
+            "translated": "Our Blog"
+        },
+        {
+            "language_id": 1,
+            "phrase": "LEARN FROM TODAY",
+            "translated": "LEARN FROM TODAY"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Watch Video",
+            "translated": "Watch Video"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Expert Mentors",
+            "translated": "Expert Mentors"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Students Globally",
+            "translated": "Students Globally"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Cost Free Course",
+            "translated": "Cost Free Course"
+        },
+        {
+            "language_id": 1,
+            "phrase": "What they’re saying about our courses",
+            "translated": "What they’re saying about our courses"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Having enjoyed a breathlessly successful 2015, there can be no DJ  dynamic set of teaching tools Billed to be deployed.",
+            "translated": "Having enjoyed a breathlessly successful 2015, there can be no DJ  dynamic set of teaching tools Billed to be deployed."
+        },
+        {
+            "language_id": 1,
+            "phrase": "Student email verification",
+            "translated": "Student email verification"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Disabled",
+            "translated": "Disabled"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Frontend Settings",
+            "translated": "Frontend Settings"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Motivational Speech",
+            "translated": "Motivational Speech"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Website FAQS",
+            "translated": "Website FAQS"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Contact Information",
+            "translated": "Contact Information"
+        },
+        {
+            "language_id": 1,
+            "phrase": "User Reviews",
+            "translated": "User Reviews"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Logo & Images",
+            "translated": "Logo & Images"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Frontend website settings",
+            "translated": "Frontend website settings"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Banner title",
+            "translated": "Banner title"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Banner sub title",
+            "translated": "Banner sub title"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Promo Video Provider",
+            "translated": "Promo Video Provider"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Youtube Video Link",
+            "translated": "Youtube Video Link"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Vimeo Video Link",
+            "translated": "Vimeo Video Link"
+        },
+        {
+            "language_id": 1,
+            "phrase": "HTML5 Video link",
+            "translated": "HTML5 Video link"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Promo video link",
+            "translated": "Promo video link"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Cookie status",
+            "translated": "Cookie status"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Cookie note",
+            "translated": "Cookie note"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Refund policy",
+            "translated": "Refund policy"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Mobile App download Link",
+            "translated": "Mobile App download Link"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Update Settings",
+            "translated": "Update Settings"
+        },
+        {
+            "language_id": 1,
+            "phrase": "designation",
+            "translated": "designation"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Question",
+            "translated": "Question"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Write a question",
+            "translated": "Write a question"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Answer",
+            "translated": "Answer"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Write a question answer",
+            "translated": "Write a question answer"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Contact Email",
+            "translated": "Contact Email"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Phone Number",
+            "translated": "Phone Number"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Office Hours",
+            "translated": "Office Hours"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Location",
+            "translated": "Location"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Latitude",
+            "translated": "Latitude"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Longitude",
+            "translated": "Longitude"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Recaptcha settings",
+            "translated": "Recaptcha settings"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Recaptcha status",
+            "translated": "Recaptcha status"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Recaptcha sitekey",
+            "translated": "Recaptcha sitekey"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Recaptcha secretkey",
+            "translated": "Recaptcha secretkey"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Update recaptcha settings",
+            "translated": "Update recaptcha settings"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Review",
+            "translated": "Review"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Add new Review",
+            "translated": "Add new Review"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Click here to choose a banner image",
+            "translated": "Click here to choose a banner image"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Upload banner image",
+            "translated": "Upload banner image"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Click here to choose a light logo",
+            "translated": "Click here to choose a light logo"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Upload light logo",
+            "translated": "Upload light logo"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Click here to choose a dark logo",
+            "translated": "Click here to choose a dark logo"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Upload dark logo",
+            "translated": "Upload dark logo"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Click here to choose a favicon",
+            "translated": "Click here to choose a favicon"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Upload favicon",
+            "translated": "Upload favicon"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Frontend settings update successfully",
+            "translated": "Frontend settings update successfully"
+        },
+        {
+            "language_id": 1,
+            "phrase": "User already register and signing up for using it",
+            "translated": "User already register and signing up for using it"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Get Courses",
+            "translated": "Get Courses"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Start Learning",
+            "translated": "Start Learning"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Coding",
+            "translated": "Coding"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Languages",
+            "translated": "Languages"
+        },
+        {
+            "language_id": 1,
+            "phrase": "The industry's standard dummy text ever since the  unknown printer took a galley of type and scrambled",
+            "translated": "The industry's standard dummy text ever since the  unknown printer took a galley of type and scrambled"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Online Courses",
+            "translated": "Online Courses"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Top Instructors",
+            "translated": "Top Instructors"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Online Certificates",
+            "translated": "Online Certificates"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Pick A Course To",
+            "translated": "Pick A Course To"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Download our mobile app, start learning",
+            "translated": "Download our mobile app, start learning"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Academy",
+            "translated": "Academy"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Download Now",
+            "translated": "Download Now"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Frequently Asked",
+            "translated": "Frequently Asked"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Questions",
+            "translated": "Questions"
+        },
+        {
+            "language_id": 1,
+            "phrase": "What Our",
+            "translated": "What Our"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Have To Say",
+            "translated": "Have To Say"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Get News with",
+            "translated": "Get News with"
+        },
+        {
+            "language_id": 1,
+            "phrase": "comment",
+            "translated": "comment"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Course Manager",
+            "translated": "Course Manager"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Active courses",
+            "translated": "Active courses"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Pending courses",
+            "translated": "Pending courses"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Free courses",
+            "translated": "Free courses"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Paid courses",
+            "translated": "Paid courses"
+        },
+        {
+            "language_id": 1,
+            "phrase": "All",
+            "translated": "All"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Apply",
+            "translated": "Apply"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Lesson & Section",
+            "translated": "Lesson & Section"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Enrolled Student",
+            "translated": "Enrolled Student"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Section",
+            "translated": "Section"
+        },
+        {
+            "language_id": 1,
+            "phrase": "View Course On Frontend",
+            "translated": "View Course On Frontend"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Go To Course Playing Page",
+            "translated": "Go To Course Playing Page"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Duplicate Course",
+            "translated": "Duplicate Course"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Make As Active",
+            "translated": "Make As Active"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Delete Course",
+            "translated": "Delete Course"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Course updated successfully",
+            "translated": "Course updated successfully"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Multi language setting",
+            "translated": "Multi language setting"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Language list",
+            "translated": "Language list"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Add Language",
+            "translated": "Add Language"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Import Language",
+            "translated": "Import Language"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Direction",
+            "translated": "Direction"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Option",
+            "translated": "Option"
+        },
+        {
+            "language_id": 1,
+            "phrase": "LTR",
+            "translated": "LTR"
+        },
+        {
+            "language_id": 1,
+            "phrase": "RTL",
+            "translated": "RTL"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Edit phrase",
+            "translated": "Edit phrase"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Add new language",
+            "translated": "Add new language"
+        },
+        {
+            "language_id": 1,
+            "phrase": "No special character or space is allowed. Valid examples: French, Spanish, Bengali etc",
+            "translated": "No special character or space is allowed. Valid examples: French, Spanish, Bengali etc"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Save",
+            "translated": "Save"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Import your language files from here. (Ex: english.json)",
+            "translated": "Import your language files from here. (Ex: english.json)"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Import",
+            "translated": "Import"
+        },
+        {
+            "language_id": 1,
+            "phrase": "phrase_updated",
+            "translated": "phrase_updated"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Direction has been updated",
+            "translated": "Direction has been updated"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Education For Eeveryone",
+            "translated": "Education For Eeveryone"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Search here",
+            "translated": "Search here"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Online Instructor have a new ideas every week.",
+            "translated": "Online Instructor have a new ideas every week."
+        },
+        {
+            "language_id": 1,
+            "phrase": "Special Featured Course.",
+            "translated": "Special Featured Course."
+        },
+        {
+            "language_id": 1,
+            "phrase": "View More",
+            "translated": "View More"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Know About Academy LMS Learning Platform",
+            "translated": "Know About Academy LMS Learning Platform"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Far far away, behind the word mountains, far from the away countries Vokalia and Consonantia, there live the blind texts.",
+            "translated": "Far far away, behind the word mountains, far from the away countries Vokalia and Consonantia, there live the blind texts."
+        },
+        {
+            "language_id": 1,
+            "phrase": "Free Resources Learning English for Beginner",
+            "translated": "Free Resources Learning English for Beginner"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Far far away, behind the word mountains, far from the away countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.",
+            "translated": "Far far away, behind the word mountains, far from the away countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean."
+        },
+        {
+            "language_id": 1,
+            "phrase": "Instructor have a new ideas every week.",
+            "translated": "Instructor have a new ideas every week."
+        },
+        {
+            "language_id": 1,
+            "phrase": "Meet Our Team",
+            "translated": "Meet Our Team"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Download our mobile app, start learning today",
+            "translated": "Download our mobile app, start learning today"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Includes all Course && Features",
+            "translated": "Includes all Course && Features"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Get Bundle",
+            "translated": "Get Bundle"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Create Instructor",
+            "translated": "Create Instructor"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Instructor Info",
+            "translated": "Instructor Info"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Payment Information",
+            "translated": "Payment Information"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Instructor add successfully",
+            "translated": "Instructor add successfully"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Instructor List",
+            "translated": "Instructor List"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Number Of Course",
+            "translated": "Number Of Course"
+        },
+        {
+            "language_id": 1,
+            "phrase": "View courses",
+            "translated": "View courses"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Make As Inactive",
+            "translated": "Make As Inactive"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Enroll Students",
+            "translated": "Enroll Students"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Course to enrol",
+            "translated": "Course to enrol"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Select a course",
+            "translated": "Select a course"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Enroll History",
+            "translated": "Enroll History"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Add new enrollment",
+            "translated": "Add new enrollment"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Enrolled Date",
+            "translated": "Enrolled Date"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Expiry Date",
+            "translated": "Expiry Date"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Lifetime access",
+            "translated": "Lifetime access"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Add Review",
+            "translated": "Add Review"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Select User",
+            "translated": "Select User"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Select an user",
+            "translated": "Select an user"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Rating",
+            "translated": "Rating"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Select a Rating",
+            "translated": "Select a Rating"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Review added successfull",
+            "translated": "Review added successfull"
+        },
+        {
+            "language_id": 1,
+            "phrase": "About Us Image",
+            "translated": "About Us Image"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Faq  Image",
+            "translated": "Faq  Image"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Faq Image",
+            "translated": "Faq Image"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Slider image & video link",
+            "translated": "Slider image & video link"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Add Image",
+            "translated": "Add Image"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Add Video Link",
+            "translated": "Add Video Link"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Homepage updated successfully",
+            "translated": "Homepage updated successfully"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Duration",
+            "translated": "Duration"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Course Details",
+            "translated": "Course Details"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Certificate Course",
+            "translated": "Certificate Course"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Overview",
+            "translated": "Overview"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Details",
+            "translated": "Details"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Course Overview",
+            "translated": "Course Overview"
+        },
+        {
+            "language_id": 1,
+            "phrase": "No Course Description",
+            "translated": "No Course Description"
+        },
+        {
+            "language_id": 1,
+            "phrase": "FAQ area empty",
+            "translated": "FAQ area empty"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Course curriculum",
+            "translated": "Course curriculum"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Course curriculum Empty",
+            "translated": "Course curriculum Empty"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Requirment",
+            "translated": "Requirment"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Outcomes",
+            "translated": "Outcomes"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Rate this course : ",
+            "translated": "Rate this course : "
+        },
+        {
+            "language_id": 1,
+            "phrase": "Remove all",
+            "translated": "Remove all"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Write a reveiw ...",
+            "translated": "Write a reveiw ..."
+        },
+        {
+            "language_id": 1,
+            "phrase": "Add to cart",
+            "translated": "Add to cart"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Share",
+            "translated": "Share"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Share on Facebook",
+            "translated": "Share on Facebook"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Share on Twitter",
+            "translated": "Share on Twitter"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Share on Whatsapp",
+            "translated": "Share on Whatsapp"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Share on Linkedin",
+            "translated": "Share on Linkedin"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Certificate",
+            "translated": "Certificate"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Certificate template",
+            "translated": "Certificate template"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Build your certificate",
+            "translated": "Build your certificate"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Upload your certificate template",
+            "translated": "Upload your certificate template"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Upload",
+            "translated": "Upload"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Certificate elements",
+            "translated": "Certificate elements"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Available Variable Data",
+            "translated": "Available Variable Data"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Add a new element",
+            "translated": "Add a new element"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Enter Text with variable data",
+            "translated": "Enter Text with variable data"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Total Lesson",
+            "translated": "Total Lesson"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Choice a font-family",
+            "translated": "Choice a font-family"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Default",
+            "translated": "Default"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Pinyon Script",
+            "translated": "Pinyon Script"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Font Size",
+            "translated": "Font Size"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Save Template",
+            "translated": "Save Template"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Certificate builder template has been updated",
+            "translated": "Certificate builder template has been updated"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Progress",
+            "translated": "Progress"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Start Now",
+            "translated": "Start Now"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Course Playing Page",
+            "translated": "Course Playing Page"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Summary",
+            "translated": "Summary"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Forum",
+            "translated": "Forum"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Class Schedules",
+            "translated": "Class Schedules"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Topic",
+            "translated": "Topic"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Date & time",
+            "translated": "Date & time"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Keep up the great work!",
+            "translated": "Keep up the great work!"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Your dedication to ongoing progress is inspiring.",
+            "translated": "Your dedication to ongoing progress is inspiring."
+        },
+        {
+            "language_id": 1,
+            "phrase": "Every step forward is a testament to your commitment to growth and excellence.",
+            "translated": "Every step forward is a testament to your commitment to growth and excellence."
+        },
+        {
+            "language_id": 1,
+            "phrase": "Stay focused, stay determined, and continue to push yourself to new heights.",
+            "translated": "Stay focused, stay determined, and continue to push yourself to new heights."
+        },
+        {
+            "language_id": 1,
+            "phrase": "You have got this!",
+            "translated": "You have got this!"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Search answers here",
+            "translated": "Search answers here"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Questions in this course",
+            "translated": "Questions in this course"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Ask question",
+            "translated": "Ask question"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Completed",
+            "translated": "Completed"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Enter title",
+            "translated": "Enter title"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Section added successfully",
+            "translated": "Section added successfully"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Add new lesson",
+            "translated": "Add new lesson"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Add lesson",
+            "translated": "Add lesson"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Add new quiz",
+            "translated": "Add new quiz"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Add quiz",
+            "translated": "Add quiz"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Sort sections",
+            "translated": "Sort sections"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Sort Section",
+            "translated": "Sort Section"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Edit section",
+            "translated": "Edit section"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Delete section",
+            "translated": "Delete section"
+        },
+        {
+            "language_id": 1,
+            "phrase": "No lessons are available.",
+            "translated": "No lessons are available."
+        },
+        {
+            "language_id": 1,
+            "phrase": "Select lesson type",
+            "translated": "Select lesson type"
+        },
+        {
+            "language_id": 1,
+            "phrase": "YouTube Video",
+            "translated": "YouTube Video"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Vimeo Video",
+            "translated": "Vimeo Video"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Video file",
+            "translated": "Video file"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Video url [ .mp4 ]",
+            "translated": "Video url [ .mp4 ]"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Google drive video",
+            "translated": "Google drive video"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Document file",
+            "translated": "Document file"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Text",
+            "translated": "Text"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Iframe embed",
+            "translated": "Iframe embed"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Next",
+            "translated": "Next"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Lesson type",
+            "translated": "Lesson type"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Change",
+            "translated": "Change"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Enter your text",
+            "translated": "Enter your text"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Do you want to keep it free as a preview lesson",
+            "translated": "Do you want to keep it free as a preview lesson"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Mark as free lesson",
+            "translated": "Mark as free lesson"
+        },
+        {
+            "language_id": 1,
+            "phrase": "lesson added successfully",
+            "translated": "lesson added successfully"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Sort lessons",
+            "translated": "Sort lessons"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Edit lesson",
+            "translated": "Edit lesson"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Delete lesson",
+            "translated": "Delete lesson"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Congratulations!",
+            "translated": "Congratulations!"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Your hard work has paid off. Here is to new beginnings and endless opportunities ahead!",
+            "translated": "Your hard work has paid off. Here is to new beginnings and endless opportunities ahead!"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Get Certificate",
+            "translated": "Get Certificate"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Download Certificate",
+            "translated": "Download Certificate"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Download",
+            "translated": "Download"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Auto",
+            "translated": "Auto"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Continue",
+            "translated": "Continue"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Shopping cart",
+            "translated": "Shopping cart"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Cart items",
+            "translated": "Cart items"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Payment summary",
+            "translated": "Payment summary"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Sub total",
+            "translated": "Sub total"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Tax",
+            "translated": "Tax"
+        },
+        {
+            "language_id": 1,
+            "phrase": "%",
+            "translated": "%"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Apply coupon",
+            "translated": "Apply coupon"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Send as a gift",
+            "translated": "Send as a gift"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Enter user email",
+            "translated": "Enter user email"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Continue to payment",
+            "translated": "Continue to payment"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Payment failed! Please try again.",
+            "translated": "Payment failed! Please try again."
+        },
+        {
+            "language_id": 1,
+            "phrase": "Parent category",
+            "translated": "Parent category"
+        },
+        {
+            "language_id": 1,
+            "phrase": "- Mark it as parent -",
+            "translated": "- Mark it as parent -"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Choose category thumbnail",
+            "translated": "Choose category thumbnail"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Choose category Logo",
+            "translated": "Choose category Logo"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Category updated successfully",
+            "translated": "Category updated successfully"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Enable the Fileinfo extension on your server to upload files.",
+            "translated": "Enable the Fileinfo extension on your server to upload files."
+        },
+        {
+            "language_id": 1,
+            "phrase": "Fileinfo extension",
+            "translated": "Fileinfo extension"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Enable this Fileinfo extension on your server to upload files",
+            "translated": "Enable this Fileinfo extension on your server to upload files"
+        },
+        {
+            "language_id": 1,
+            "phrase": "paytm merchant key",
+            "translated": "paytm merchant key"
+        },
+        {
+            "language_id": 1,
+            "phrase": "paytm merchant mid",
+            "translated": "paytm merchant mid"
+        },
+        {
+            "language_id": 1,
+            "phrase": "paytm merchant website",
+            "translated": "paytm merchant website"
+        },
+        {
+            "language_id": 1,
+            "phrase": "industry type id",
+            "translated": "industry type id"
+        },
+        {
+            "language_id": 1,
+            "phrase": "channel id",
+            "translated": "channel id"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Payment settings update successfully",
+            "translated": "Payment settings update successfully"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Configure ZOOM server-to-server-oauth credentials",
+            "translated": "Configure ZOOM server-to-server-oauth credentials"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Account Email",
+            "translated": "Account Email"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Account ID",
+            "translated": "Account ID"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Client ID",
+            "translated": "Client ID"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Client Secret",
+            "translated": "Client Secret"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Do you want to use Web SDK for your live class?",
+            "translated": "Do you want to use Web SDK for your live class?"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Meeting SDK Client ID",
+            "translated": "Meeting SDK Client ID"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Meeting SDK Client Secret",
+            "translated": "Meeting SDK Client Secret"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Enroll delete successfully",
+            "translated": "Enroll delete successfully"
+        },
+        {
+            "language_id": 1,
+            "phrase": "500 error found",
+            "translated": "500 error found"
+        },
+        {
+            "language_id": 1,
+            "phrase": "A technical error has occurred",
+            "translated": "A technical error has occurred"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Please contact with site administrator",
+            "translated": "Please contact with site administrator"
+        },
+        {
+            "language_id": 1,
+            "phrase": "please_do_not_refresh_this_page",
+            "translated": "please_do_not_refresh_this_page"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Please do not refresh this page",
+            "translated": "Please do not refresh this page"
+        },
+        {
+            "language_id": 1,
+            "phrase": "User",
+            "translated": "User"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Item",
+            "translated": "Item"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Paid amount",
+            "translated": "Paid amount"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Payment method",
+            "translated": "Payment method"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Purchased date",
+            "translated": "Purchased date"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Invoice",
+            "translated": "Invoice"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Select an option",
+            "translated": "Select an option"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Total Mark",
+            "translated": "Total Mark"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Pass Mark",
+            "translated": "Pass Mark"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Retake",
+            "translated": "Retake"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Quiz has been created.",
+            "translated": "Quiz has been created."
+        },
+        {
+            "language_id": 1,
+            "phrase": "Result",
+            "translated": "Result"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Edit quiz",
+            "translated": "Edit quiz"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Update Quiz",
+            "translated": "Update Quiz"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Add Question",
+            "translated": "Add Question"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Question Type",
+            "translated": "Question Type"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Multiple Choice",
+            "translated": "Multiple Choice"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Fill in the blanks",
+            "translated": "Fill in the blanks"
+        },
+        {
+            "language_id": 1,
+            "phrase": "True or False",
+            "translated": "True or False"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Write question",
+            "translated": "Write question"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Your questions here",
+            "translated": "Your questions here"
+        },
+        {
+            "language_id": 1,
+            "phrase": "You can keep multiple options. Just put an option and hit enter.",
+            "translated": "You can keep multiple options. Just put an option and hit enter."
+        },
+        {
+            "language_id": 1,
+            "phrase": "You can select multiple answers.",
+            "translated": "You can select multiple answers."
+        },
+        {
+            "language_id": 1,
+            "phrase": "Manage Course",
+            "translated": "Manage Course"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Time left : ",
+            "translated": "Time left : "
+        },
+        {
+            "language_id": 1,
+            "phrase": "Hour",
+            "translated": "Hour"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Minute",
+            "translated": "Minute"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Second",
+            "translated": "Second"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Total Marks",
+            "translated": "Total Marks"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Pass Marks",
+            "translated": "Pass Marks"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Attempts",
+            "translated": "Attempts"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Total Question",
+            "translated": "Total Question"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Start Quiz",
+            "translated": "Start Quiz"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Quiz has been updated.",
+            "translated": "Quiz has been updated."
+        },
+        {
+            "language_id": 1,
+            "phrase": "Question has been added.",
+            "translated": "Question has been added."
+        },
+        {
+            "language_id": 1,
+            "phrase": "Sort Questions",
+            "translated": "Sort Questions"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Edit Question",
+            "translated": "Edit Question"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Update Question",
+            "translated": "Update Question"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Watermark Type",
+            "translated": "Watermark Type"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Js Watermark",
+            "translated": "Js Watermark"
+        },
+        {
+            "language_id": 1,
+            "phrase": "FFMpeg",
+            "translated": "FFMpeg"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Watermark",
+            "translated": "Watermark"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Opacity",
+            "translated": "Opacity"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Opacity (0 - 100)",
+            "translated": "Opacity (0 - 100)"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Width",
+            "translated": "Width"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Width (px)",
+            "translated": "Width (px)"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Height",
+            "translated": "Height"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Height (px)",
+            "translated": "Height (px)"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Top",
+            "translated": "Top"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Top (px)",
+            "translated": "Top (px)"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Left (px)",
+            "translated": "Left (px)"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Enter your html5 video url",
+            "translated": "Enter your html5 video url"
+        },
+        {
+            "language_id": 1,
+            "phrase": "The image size should be",
+            "translated": "The image size should be"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Caption",
+            "translated": "Caption"
+        },
+        {
+            "language_id": 1,
+            "phrase": ".vtt",
+            "translated": ".vtt"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Animation speed",
+            "translated": "Animation speed"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Second (0 - 200)",
+            "translated": "Second (0 - 200)"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Your changes has been saved.",
+            "translated": "Your changes has been saved."
+        },
+        {
+            "language_id": 1,
+            "phrase": "Second (0 - 10000)",
+            "translated": "Second (0 - 10000)"
+        },
+        {
+            "language_id": 1,
+            "phrase": "by",
+            "translated": "by"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Find A Tutor",
+            "translated": "Find A Tutor"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Tutor Booking",
+            "translated": "Tutor Booking"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Subjects",
+            "translated": "Subjects"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Subject Category",
+            "translated": "Subject Category"
+        },
+        {
+            "language_id": 1,
+            "phrase": "It is a long established fact that a reader will be the distract by the read content of a page layout.",
+            "translated": "It is a long established fact that a reader will be the distract by the read content of a page layout."
+        },
+        {
+            "language_id": 1,
+            "phrase": "Knowledge Base",
+            "translated": "Knowledge Base"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Timezone",
+            "translated": "Timezone"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Recaptcha",
+            "translated": "Recaptcha"
+        },
+        {
+            "language_id": 1,
+            "phrase": "System settings update successfully",
+            "translated": "System settings update successfully"
+        },
+        {
+            "language_id": 1,
+            "phrase": "store key",
+            "translated": "store key"
+        },
+        {
+            "language_id": 1,
+            "phrase": "store password",
+            "translated": "store password"
+        },
+        {
+            "language_id": 1,
+            "phrase": "store live key",
+            "translated": "store live key"
+        },
+        {
+            "language_id": 1,
+            "phrase": "store live password",
+            "translated": "store live password"
+        },
+        {
+            "language_id": 1,
+            "phrase": "sslcz testmode",
+            "translated": "sslcz testmode"
+        },
+        {
+            "language_id": 1,
+            "phrase": "is localhost",
+            "translated": "is localhost"
+        },
+        {
+            "language_id": 1,
+            "phrase": "sslcz live testmode",
+            "translated": "sslcz live testmode"
+        },
+        {
+            "language_id": 1,
+            "phrase": "is live localhost",
+            "translated": "is live localhost"
+        },
+        {
+            "language_id": 1,
+            "phrase": "store id",
+            "translated": "store id"
+        },
+        {
+            "language_id": 1,
+            "phrase": "signature key",
+            "translated": "signature key"
+        },
+        {
+            "language_id": 1,
+            "phrase": "store live id",
+            "translated": "store live id"
+        },
+        {
+            "language_id": 1,
+            "phrase": "signature live key",
+            "translated": "signature live key"
+        },
+        {
+            "language_id": 1,
+            "phrase": "merchant id",
+            "translated": "merchant id"
+        },
+        {
+            "language_id": 1,
+            "phrase": "merchant password",
+            "translated": "merchant password"
+        },
+        {
+            "language_id": 1,
+            "phrase": "merchant live id",
+            "translated": "merchant live id"
+        },
+        {
+            "language_id": 1,
+            "phrase": "merchant live password",
+            "translated": "merchant live password"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Select Language to Replace",
+            "translated": "Select Language to Replace"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Edit ____ phrases",
+            "translated": "Edit ____ phrases"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Import all phrases from english",
+            "translated": "Import all phrases from english"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Phrase updated",
+            "translated": "Phrase updated"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Notification settings",
+            "translated": "Notification settings"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Protocol",
+            "translated": "Protocol"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Smtp crypto",
+            "translated": "Smtp crypto"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Smtp host",
+            "translated": "Smtp host"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Smtp port",
+            "translated": "Smtp port"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Smtp from email",
+            "translated": "Smtp from email"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Smtp username",
+            "translated": "Smtp username"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Smtp password",
+            "translated": "Smtp password"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Manage your open ai settings",
+            "translated": "Manage your open ai settings"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Select ai model",
+            "translated": "Select ai model"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Required premium account",
+            "translated": "Required premium account"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Max tokens",
+            "translated": "Max tokens"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Start learning from the world's pro",
+            "translated": "Start learning from the world's pro"
+        },
+        {
+            "language_id": 1,
+            "phrase": "instructors",
+            "translated": "instructors"
+        },
+        {
+            "language_id": 1,
+            "phrase": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum.",
+            "translated": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum."
+        },
+        {
+            "language_id": 1,
+            "phrase": "Fast Performance",
+            "translated": "Fast Performance"
+        },
+        {
+            "language_id": 1,
+            "phrase": "It is a long established fact that a reader will be distracted.",
+            "translated": "It is a long established fact that a reader will be distracted."
+        },
+        {
+            "language_id": 1,
+            "phrase": "Perfect Responsive",
+            "translated": "Perfect Responsive"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Fast & Friendly Support",
+            "translated": "Fast & Friendly Support"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Easy to Use",
+            "translated": "Easy to Use"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Explore Top Courses Caterories",
+            "translated": "Explore Top Courses Caterories"
+        },
+        {
+            "language_id": 1,
+            "phrase": "View All Courses",
+            "translated": "View All Courses"
+        },
+        {
+            "language_id": 1,
+            "phrase": "150k +",
+            "translated": "150k +"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Know About Us",
+            "translated": "Know About Us"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Learn & Grow Your Skills From",
+            "translated": "Learn & Grow Your Skills From"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Educate",
+            "translated": "Educate"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Life time Access",
+            "translated": "Life time Access"
+        },
+        {
+            "language_id": 1,
+            "phrase": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.",
+            "translated": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout."
+        },
+        {
+            "language_id": 1,
+            "phrase": "Learn from Anywhere",
+            "translated": "Learn from Anywhere"
+        },
+        {
+            "language_id": 1,
+            "phrase": "More about us",
+            "translated": "More about us"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Testimonial",
+            "translated": "Testimonial"
+        },
+        {
+            "language_id": 1,
+            "phrase": "What our clients says about us",
+            "translated": "What our clients says about us"
+        },
+        {
+            "language_id": 1,
+            "phrase": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of use Lorem Ipsum.",
+            "translated": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of use Lorem Ipsum."
+        },
+        {
+            "language_id": 1,
+            "phrase": "Linchon Philips",
+            "translated": "Linchon Philips"
+        },
+        {
+            "language_id": 1,
+            "phrase": "CEO @ Yahoo",
+            "translated": "CEO @ Yahoo"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Have a look on our news",
+            "translated": "Have a look on our news"
+        },
+        {
+            "language_id": 1,
+            "phrase": "View All Blogs",
+            "translated": "View All Blogs"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Manage SEO Settings",
+            "translated": "Manage SEO Settings"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Meta Title",
+            "translated": "Meta Title"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Meta Keywords",
+            "translated": "Meta Keywords"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Writing your keyword and hit the enter",
+            "translated": "Writing your keyword and hit the enter"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Meta Description",
+            "translated": "Meta Description"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Meta Robot",
+            "translated": "Meta Robot"
+        },
+        {
+            "language_id": 1,
+            "phrase": " Canonical Url",
+            "translated": " Canonical Url"
+        },
+        {
+            "language_id": 1,
+            "phrase": " Custom Url",
+            "translated": " Custom Url"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Og Title",
+            "translated": "Og Title"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Og Description",
+            "translated": "Og Description"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Og Image",
+            "translated": "Og Image"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Json Id",
+            "translated": "Json Id"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Facebook link",
+            "translated": "Facebook link"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Twitter link",
+            "translated": "Twitter link"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Linkedin link",
+            "translated": "Linkedin link"
+        },
+        {
+            "language_id": 1,
+            "phrase": "A short title about yourself",
+            "translated": "A short title about yourself"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Skills",
+            "translated": "Skills"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Write your skill and click the enter button",
+            "translated": "Write your skill and click the enter button"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Photo",
+            "translated": "Photo"
+        },
+        {
+            "language_id": 1,
+            "phrase": "The image size should be any square image",
+            "translated": "The image size should be any square image"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Update profile",
+            "translated": "Update profile"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Current password",
+            "translated": "Current password"
+        },
+        {
+            "language_id": 1,
+            "phrase": "New password",
+            "translated": "New password"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Confirm password",
+            "translated": "Confirm password"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Update password",
+            "translated": "Update password"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Knowledge_base",
+            "translated": "Knowledge_base"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Add knowledge base",
+            "translated": "Add knowledge base"
+        },
+        {
+            "language_id": 1,
+            "phrase": " Knowledge Base",
+            "translated": " Knowledge Base"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Subject",
+            "translated": "Subject"
+        },
+        {
+            "language_id": 1,
+            "phrase": "successfullly added",
+            "translated": "successfullly added"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Total Articles",
+            "translated": "Total Articles"
+        },
+        {
+            "language_id": 1,
+            "phrase": " Articles",
+            "translated": " Articles"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Edit Newsletter",
+            "translated": "Edit Newsletter"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Add Article",
+            "translated": "Add Article"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Enter Article title",
+            "translated": "Enter Article title"
+        },
+        {
+            "language_id": 1,
+            "phrase": "article saved.",
+            "translated": "article saved."
+        },
+        {
+            "language_id": 1,
+            "phrase": "Edit Articles",
+            "translated": "Edit Articles"
+        },
+        {
+            "language_id": 1,
+            "phrase": " Article",
+            "translated": " Article"
+        },
+        {
+            "language_id": 1,
+            "phrase": " Share On :",
+            "translated": " Share On :"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Pending Blog",
+            "translated": "Pending Blog"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Blog Setting",
+            "translated": "Blog Setting"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Blog settings",
+            "translated": "Blog settings"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Instructor permission",
+            "translated": "Instructor permission"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Provide access",
+            "translated": "Provide access"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Decline access",
+            "translated": "Decline access"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Visibility on homepage",
+            "translated": "Visibility on homepage"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Visible",
+            "translated": "Visible"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Hidden",
+            "translated": "Hidden"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Contact",
+            "translated": "Contact"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Search Contact",
+            "translated": "Search Contact"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Contact us",
+            "translated": "Contact us"
+        },
+        {
+            "language_id": 1,
+            "phrase": "We're always here to help you.",
+            "translated": "We're always here to help you."
+        },
+        {
+            "language_id": 1,
+            "phrase": "Our Address",
+            "translated": "Our Address"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Our location",
+            "translated": "Our location"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Contact Info",
+            "translated": "Contact Info"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Open a chat or give us call at",
+            "translated": "Open a chat or give us call at"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Send your message",
+            "translated": "Send your message"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Send Message",
+            "translated": "Send Message"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Add Newsletter",
+            "translated": "Add Newsletter"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Subscriber",
+            "translated": "Subscriber"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Subscribers",
+            "translated": "Subscribers"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Search Email",
+            "translated": "Search Email"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Private Message",
+            "translated": "Private Message"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Chat List",
+            "translated": "Chat List"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Create a new thread",
+            "translated": "Create a new thread"
+        },
+        {
+            "language_id": 1,
+            "phrase": "New message",
+            "translated": "New message"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Admins",
+            "translated": "Admins"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Admin List",
+            "translated": "Admin List"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Root Admin",
+            "translated": "Root Admin"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Pending payouts",
+            "translated": "Pending payouts"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Completed payouts",
+            "translated": "Completed payouts"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Public Instructor Settings",
+            "translated": "Public Instructor Settings"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Instructor settings",
+            "translated": "Instructor settings"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Allow public instructor",
+            "translated": "Allow public instructor"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Instructor application note",
+            "translated": "Instructor application note"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Revenue settings",
+            "translated": "Revenue settings"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Instructor revenue percentage",
+            "translated": "Instructor revenue percentage"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Admin revenue percentage",
+            "translated": "Admin revenue percentage"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Instructor setting updated",
+            "translated": "Instructor setting updated"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Instructor Applicationss",
+            "translated": "Instructor Applicationss"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Pending applications",
+            "translated": "Pending applications"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Approved applications",
+            "translated": "Approved applications"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Approved",
+            "translated": "Approved"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Suspended",
+            "translated": "Suspended"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Tutor subjects",
+            "translated": "Tutor subjects"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Add new subject",
+            "translated": "Add new subject"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Tutor categories",
+            "translated": "Tutor categories"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Fee",
+            "translated": "Fee"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Min",
+            "translated": "Min"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Max",
+            "translated": "Max"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Results",
+            "translated": "Results"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Subject Name",
+            "translated": "Subject Name"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Enter subject name",
+            "translated": "Enter subject name"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Subject added successfully",
+            "translated": "Subject added successfully"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Edit subject",
+            "translated": "Edit subject"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Deactive",
+            "translated": "Deactive"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Enter your subject category name",
+            "translated": "Enter your subject category name"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Enter your unique subject category name",
+            "translated": "Enter your unique subject category name"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Subject category added successfully",
+            "translated": "Subject category added successfully"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Mark email as verified",
+            "translated": "Mark email as verified"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Bootcamp Manager",
+            "translated": "Bootcamp Manager"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Manage Bootcamp",
+            "translated": "Manage Bootcamp"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Discounted",
+            "translated": "Discounted"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Enter Bootcamp Title",
+            "translated": "Enter Bootcamp Title"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Enter your bootcamp price",
+            "translated": "Enter your bootcamp price"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Coupon",
+            "translated": "Coupon"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Add Coupon",
+            "translated": "Add Coupon"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Search coupon",
+            "translated": "Search coupon"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Expiry period",
+            "translated": "Expiry period"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Lifetime",
+            "translated": "Lifetime"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Limited time",
+            "translated": "Limited time"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Number of month",
+            "translated": "Number of month"
+        },
+        {
+            "language_id": 1,
+            "phrase": "After purchase, students can access the course until your selected month.",
+            "translated": "After purchase, students can access the course until your selected month."
+        },
+        {
+            "language_id": 1,
+            "phrase": "Enable drip content",
+            "translated": "Enable drip content"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Off",
+            "translated": "Off"
+        },
+        {
+            "language_id": 1,
+            "phrase": "On",
+            "translated": "On"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Subject deleted successfully",
+            "translated": "Subject deleted successfully"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Subject category deleted successfully",
+            "translated": "Subject category deleted successfully"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Remove account",
+            "translated": "Remove account"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Revoke Instructor Access",
+            "translated": "Revoke Instructor Access"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Edit Instructor",
+            "translated": "Edit Instructor"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Update Instructor",
+            "translated": "Update Instructor"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Instructor update successfully",
+            "translated": "Instructor update successfully"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Update Student",
+            "translated": "Update Student"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Student update successfully",
+            "translated": "Student update successfully"
+        },
+        {
+            "language_id": 1,
+            "phrase": "My Bookings",
+            "translated": "My Bookings"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Instructor Revenue This Year",
+            "translated": "Instructor Revenue This Year"
+        },
+        {
+            "language_id": 1,
+            "phrase": "My Subjects",
+            "translated": "My Subjects"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Manage Schedules",
+            "translated": "Manage Schedules"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Add Booking",
+            "translated": "Add Booking"
+        },
+        {
+            "language_id": 1,
+            "phrase": "All Bookings",
+            "translated": "All Bookings"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Sales",
+            "translated": "Sales"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Payout",
+            "translated": "Payout"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Withdraw",
+            "translated": "Withdraw"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Profile Settings",
+            "translated": "Profile Settings"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Manage Resume",
+            "translated": "Manage Resume"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Instructor Panel",
+            "translated": "Instructor Panel"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Add subject",
+            "translated": "Add subject"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Add schedule",
+            "translated": "Add schedule"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Schedule Create",
+            "translated": "Schedule Create"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Select Category",
+            "translated": "Select Category"
+        },
+        {
+            "language_id": 1,
+            "phrase": "First select category",
+            "translated": "First select category"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Tution type",
+            "translated": "Tution type"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Single time",
+            "translated": "Single time"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Repeated days",
+            "translated": "Repeated days"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Schedule start time",
+            "translated": "Schedule start time"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Schedule end Date",
+            "translated": "Schedule end Date"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Select days",
+            "translated": "Select days"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Check all",
+            "translated": "Check all"
+        },
+        {
+            "language_id": 1,
+            "phrase": "sunday",
+            "translated": "sunday"
+        },
+        {
+            "language_id": 1,
+            "phrase": "monday",
+            "translated": "monday"
+        },
+        {
+            "language_id": 1,
+            "phrase": "tuesday",
+            "translated": "tuesday"
+        },
+        {
+            "language_id": 1,
+            "phrase": "wednesday",
+            "translated": "wednesday"
+        },
+        {
+            "language_id": 1,
+            "phrase": "thursday",
+            "translated": "thursday"
+        },
+        {
+            "language_id": 1,
+            "phrase": "friday",
+            "translated": "friday"
+        },
+        {
+            "language_id": 1,
+            "phrase": "saturday",
+            "translated": "saturday"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Class Duration",
+            "translated": "Class Duration"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Save Schedule",
+            "translated": "Save Schedule"
+        },
+        {
+            "language_id": 1,
+            "phrase": "You can not keep any field empty",
+            "translated": "You can not keep any field empty"
+        },
+        {
+            "language_id": 1,
+            "phrase": "List of bookings",
+            "translated": "List of bookings"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Live & Upcoming",
+            "translated": "Live & Upcoming"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Archive",
+            "translated": "Archive"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Payout report",
+            "translated": "Payout report"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Payouts",
+            "translated": "Payouts"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Request a new withdrawal",
+            "translated": "Request a new withdrawal"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Request withdrawal",
+            "translated": "Request withdrawal"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Available",
+            "translated": "Available"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Total payout",
+            "translated": "Total payout"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Requested",
+            "translated": "Requested"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Payout setting",
+            "translated": "Payout setting"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Be careful !!",
+            "translated": "Be careful !!"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Just configure the payment gateway you want to use, leave the rest blank.",
+            "translated": "Just configure the payment gateway you want to use, leave the rest blank."
+        },
+        {
+            "language_id": 1,
+            "phrase": "Also, make sure that you have configured your payment settings correctly",
+            "translated": "Also, make sure that you have configured your payment settings correctly"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Drip Content",
+            "translated": "Drip Content"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Scorm Content",
+            "translated": "Scorm Content"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Video",
+            "translated": "Video"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Invalid url",
+            "translated": "Invalid url"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Your video source has to be either YouTube",
+            "translated": "Your video source has to be either YouTube"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Analyzing",
+            "translated": "Analyzing"
+        },
+        {
+            "language_id": 1,
+            "phrase": "vimeo",
+            "translated": "vimeo"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Your video source has to be either Vimeo",
+            "translated": "Your video source has to be either Vimeo"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Upload system video file",
+            "translated": "Upload system video file"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Your video source has to be either Google drive",
+            "translated": "Your video source has to be either Google drive"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Document type",
+            "translated": "Document type"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Select type of document",
+            "translated": "Select type of document"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Text file",
+            "translated": "Text file"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Pdf file",
+            "translated": "Pdf file"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Attachment",
+            "translated": "Attachment"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Iframe source",
+            "translated": "Iframe source"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Provide the source url only",
+            "translated": "Provide the source url only"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Provide the source only",
+            "translated": "Provide the source only"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Select scorm provider",
+            "translated": "Select scorm provider"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Select a provider",
+            "translated": "Select a provider"
+        },
+        {
+            "language_id": 1,
+            "phrase": "iSpring",
+            "translated": "iSpring"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Articulate",
+            "translated": "Articulate"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Adobe Captivate",
+            "translated": "Adobe Captivate"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Upload scorm file",
+            "translated": "Upload scorm file"
+        },
+        {
+            "language_id": 1,
+            "phrase": "Your answer here",
+            "translated": "Your answer here"
+        },
+        {
+            "language_id": 1,
+            "phrase": "You can keep multiple answers. Just put your answer and hit enter.",
+            "translated": "You can keep multiple answers. Just put your answer and hit enter."
+        }
+    ]
+}

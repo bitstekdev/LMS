@@ -2,7 +2,9 @@
 
 namespace Database\Factories;
 
+use App\Models\Blog;
 use App\Models\BlogLike;
+use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class BlogLikeFactory extends Factory
@@ -12,8 +14,8 @@ class BlogLikeFactory extends Factory
     public function definition(): array
     {
         return [
-            'blog_id' => 1,
-            'user_id' => 1,
+            'blog_id' => Blog::inRandomOrder()->first() ?? Blog::factory(),
+            'user_id' => User::inRandomOrder()->first() ?? User::factory(),
         ];
     }
 }

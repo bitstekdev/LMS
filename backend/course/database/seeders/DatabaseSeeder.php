@@ -12,21 +12,25 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
         $this->call([
+            // Language and Phrases
+            LanguageSeeder::class,
+            LanguagePhraseSeeder::class,
+
+            // Settings
+            HomePageSettingSeeder::class,
+            SettingSeeder::class,
+            PlayerSettingSeeder::class,
+            NotificationSettingSeeder::class,
+
             // Independent
             CurrencySeeder::class,
-            LanguageSeeder::class,
             CountrySeeder::class,
-            PlayerSettingSeeder::class,
-            HomePageSettingSeeder::class,
             BuilderPageSeeder::class,
             CategorySeeder::class,
 
             // Dependent
             UserSeeder::class,
             ContactSeeder::class,
-
-            // Needs more than one
-            NotificationSettingSeeder::class,
             UserReviewSeeder::class,
 
             // Bootcamp Hierarchy
