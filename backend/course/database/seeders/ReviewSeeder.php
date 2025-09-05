@@ -2,13 +2,13 @@
 
 namespace Database\Seeders;
 
-use App\Models\Wishlist;
+use App\Models\Review;
 use Illuminate\Database\Seeder;
 
-class WishlistSeeder extends Seeder
+class ReviewSeeder extends Seeder
 {
     public function run(): void
     {
-        Wishlist::factory()->count(10)->create();
+        Review::factory()->count(20)->create();
     }
 }

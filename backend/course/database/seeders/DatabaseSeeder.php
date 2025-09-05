@@ -12,36 +12,60 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
         $this->call([
-            // Language and Phrases
+            /*
+            |--------------------------------------------------------------------------
+            | Core Setup
+            |--------------------------------------------------------------------------
+            */
             LanguageSeeder::class,
             LanguagePhraseSeeder::class,
+            CurrencySeeder::class,
+            CountrySeeder::class,
 
-            // Payment Gateways & Settings
+            /*
+            |--------------------------------------------------------------------------
+            | System Settings
+            |--------------------------------------------------------------------------
+            */
             PaymentGatewaySeeder::class,
             HomePageSettingSeeder::class,
             SettingSeeder::class,
             PlayerSettingSeeder::class,
             NotificationSettingSeeder::class,
 
-            // Independent
-            CurrencySeeder::class,
-            CountrySeeder::class,
+            /*
+            |--------------------------------------------------------------------------
+            | Independent Content
+            |--------------------------------------------------------------------------
+            */
             BuilderPageSeeder::class,
             CategorySeeder::class,
 
-            // Dependent
+            /*
+            |--------------------------------------------------------------------------
+            | Users & Related
+            |--------------------------------------------------------------------------
+            */
             UserSeeder::class,
             ContactSeeder::class,
             UserReviewSeeder::class,
 
-            // Bootcamp Hierarchy
+            /*
+            |--------------------------------------------------------------------------
+            | Bootcamp Hierarchy
+            |--------------------------------------------------------------------------
+            */
             BootcampCategorySeeder::class,
             BootcampSeeder::class,
-            BootcampLiveClassSeeder::class,
             BootcampModuleSeeder::class,
             BootcampResourceSeeder::class,
+            BootcampLiveClassSeeder::class,
 
-            // Tutor Hierarchy
+            /*
+            |--------------------------------------------------------------------------
+            | Tutor Hierarchy
+            |--------------------------------------------------------------------------
+            */
             TutorCategorySeeder::class,
             TutorSubjectSeeder::class,
             TutorScheduleSeeder::class,
@@ -49,13 +73,21 @@ class DatabaseSeeder extends Seeder
             TutorCanTeachSeeder::class,
             TutorReviewSeeder::class,
 
-            // Blog Hierarchy
+            /*
+            |--------------------------------------------------------------------------
+            | Blog Hierarchy
+            |--------------------------------------------------------------------------
+            */
             BlogCategorySeeder::class,
             BlogSeeder::class,
             BlogCommentSeeder::class,
             BlogLikeSeeder::class,
 
-            // Course Hierarchy
+            /*
+            |--------------------------------------------------------------------------
+            | Course Hierarchy
+            |--------------------------------------------------------------------------
+            */
             CourseSeeder::class,
             SectionSeeder::class,
             LessonSeeder::class,
@@ -67,15 +99,33 @@ class DatabaseSeeder extends Seeder
             CartItemSeeder::class,
             WishlistSeeder::class,
             EnrollmentSeeder::class,
+            ReviewSeeder::class,
+            LikeDislikeReviewSeeder::class,
+            InstructorReviewSeeder::class,
+            PaymentHistorySeeder::class,
 
-            // Quiz Hierarchy
+            /*
+            |--------------------------------------------------------------------------
+            | Quiz Hierarchy
+            |--------------------------------------------------------------------------
+            */
             QuizSeeder::class,
             QuizSubmissionSeeder::class,
 
-            // Training Package Hierarchy
+            /*
+            |--------------------------------------------------------------------------
+            | Team Training Packages
+            |--------------------------------------------------------------------------
+            */
             TeamTrainingPackageSeeder::class,
+            TeamPackageMemberSeeder::class,
+            TeamPackagePurchaseSeeder::class,
 
-            // SEO
+            /*
+            |--------------------------------------------------------------------------
+            | SEO & Final
+            |--------------------------------------------------------------------------
+            */
             SeoFieldSeeder::class,
         ]);
     }
