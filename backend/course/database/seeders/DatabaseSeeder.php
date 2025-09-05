@@ -43,6 +43,12 @@ class DatabaseSeeder extends Seeder
             TutorBookingSeeder::class,
             TutorCanTeachSeeder::class,
             TutorReviewSeeder::class,
+
+            // Blog Hierarchy
+            BlogCategorySeeder::class,
+            BlogSeeder::class,
+            BlogCommentSeeder::class,
+            BlogLikeSeeder::class,
         ]);
     }
 }
