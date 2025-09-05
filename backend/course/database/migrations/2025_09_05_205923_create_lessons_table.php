@@ -1,0 +1,46 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+return new class extends Migration
+{
+    /**
+     * Run the migrations.
+     */
+    public function up(): void
+    {
+        Schema::create('lessons', function (Blueprint $table) {
+            $table->id();
+            $table->foreignId('user_id')->nullable()->constrained()->nullOnDelete();
+            $table->foreignId('course_id')->nullable()->constrained()->nullOnDelete();
+            $table->foreignId('section_id')->nullable()->constrained()->nullOnDelete();
+            $table->string('title')->nullable();
+            $table->string('lesson_type')->nullable();
+            $table->string('duration')->nullable();
+            $table->integer('total_mark')->nullable();
+            $table->integer('pass_mark')->nullable();
+            $table->integer('retake')->nullable();
+            $table->string('lesson_src')->nullable();
+            $table->longText('attachment')->nullable();
+            $table->string('attachment_type')->nullable();
+            $table->text('video_type')->nullable();
+            $table->string('thumbnail')->nullable();
+            $table->boolean('is_free')->nullable();
+            $table->integer('sort')->nullable();
+            $table->longText('description')->nullable();
+            $table->longText('summary')->nullable();
+            $table->integer('status')->nullable();
+            $table->timestamps();
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     */
+    public function down(): void
+    {
+        Schema::dropIfExists('lessons');
+    }
+};

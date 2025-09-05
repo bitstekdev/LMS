@@ -54,6 +54,22 @@ class DatabaseSeeder extends Seeder
             BlogSeeder::class,
             BlogCommentSeeder::class,
             BlogLikeSeeder::class,
+
+            // Course Hierarchy
+            CourseSeeder::class,
+            SectionSeeder::class,
+            LessonSeeder::class,
+            ForumSeeder::class,
+            MessageSeeder::class,
+
+            // Quiz Hierarchy
+            QuizSeeder::class,
+
+            // Training Package Hierarchy
+            TeamTrainingPackageSeeder::class,
+
+            // SEO
+            SeoFieldSeeder::class,
         ]);
     }
 }

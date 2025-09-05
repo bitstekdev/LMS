@@ -11,14 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('language_phrases', function (Blueprint $table) {
+        Schema::create('sections', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('language_id')->constrained()->cascadeOnDelete();
-            $table->text('phrase');
-            $table->text('translated')->nullable();
+            $table->foreignId('user_id')->nullable()->constrained()->nullOnDelete();
+            $table->foreignId('course_id')->nullable()->constrained()->nullOnDelete();
+            $table->string('title')->nullable();
+            $table->integer('sort')->nullable();
             $table->timestamps();
-
-            $table->unique(['language_id', 'phrase']);
         });
     }
 
@@ -27,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('language_phrases');
+        Schema::dropIfExists('sections');
     }
 };
