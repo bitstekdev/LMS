@@ -39,6 +39,11 @@ class Course extends Model
         'expiry_period',
     ];
 
+    protected $appends = [
+        'total_duration',
+        'total_seconds',
+    ];
+
     public function user()
     {
         return $this->belongsTo(User::class);
@@ -46,7 +51,7 @@ class Course extends Model
 
     public function sections()
     {
-        return $this->hasMany(Section::class);
+        return $this->hasMany(Section::class)->orderBy('sort');
     }
 
     public function lessons()
@@ -62,5 +67,43 @@ class Course extends Model
     public function reviews()
     {
         return $this->hasMany(Review::class);
+    }
+
+    // Custom Accessor
+    public function getTotalSecondsAttribute()
+    {
+        return $this->lessons()
+            ->selectRaw('SUM(TIME_TO_SEC(duration)) as total_time')
+            ->value('total_time') ?? 0;
+    }
+
+    public function getTotalDurationAttribute()
+    {
+        $seconds = $this->total_seconds;
+
+        $hours = floor($seconds / 3600);
+        $minutes = floor(($seconds % 3600) / 60);
+        $remainingSeconds = $seconds % 60;
+
+        return sprintf('%02d:%02d:%02d', $hours, $minutes, $remainingSeconds);
+    }
+
+    // Helper Methods
+    public function instructors($instructorIds = null)
+    {
+        // Determine source of instructor IDs
+        if (is_null($instructorIds)) {
+            $instructorIds = $this->instructor_ids ?? [];
+        }
+
+        if (is_string($instructorIds)) {
+            $instructorIds = json_decode($instructorIds, true) ?? [];
+        }
+
+        if (! is_array($instructorIds) || empty($instructorIds)) {
+            return collect(); // Return empty collection
+        }
+
+        return User::whereIn('id', $instructorIds)->get();
     }
 }

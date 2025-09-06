@@ -1,0 +1,28 @@
+<?php
+
+namespace App\Notifications;
+
+use Illuminate\Notifications\Messages\MailMessage;
+use Illuminate\Notifications\Notification;
+
+class CustomResetPasswordNotification extends Notification
+{
+    public $token;
+
+    public function __construct($token)
+    {
+        $this->token = $token;
+    }
+
+    public function via($notifiable)
+    {
+        return ['mail'];
+    }
+
+    public function toMail($notifiable)
+    {
+        return (new MailMessage)
+            ->subject('Custom Password Reset Subject')
+            ->action('Reset Password', url(config('app.url').route('password.reset', $this->token, false)));
+    }
+}

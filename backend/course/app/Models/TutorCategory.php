@@ -14,4 +14,10 @@ class TutorCategory extends Model
         'slug',
         'status',
     ];
+
+    public function upcomingTutorSchedules()
+    {
+        return $this->hasMany(TutorSchedule::class, 'category_id')
+            ->where('start_time', '>=', now()->timestamp);
+    }
 }

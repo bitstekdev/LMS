@@ -58,7 +58,7 @@ test('user can delete their account', function () {
         ->assertRedirect('/');
 
     expect($user->fresh())->toBeNull();
-    expect(auth()->check())->toBeFalse();
+    expect(auth('web')->check())->toBeFalse();
 });
 
 test('correct password must be provided to delete account', function () {

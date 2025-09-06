@@ -10,4 +10,9 @@ class Language extends Model
         'name',
         'direction',
     ];
+
+    public function phrases()
+    {
+        return $this->hasMany(LanguagePhrase::class);
+    }
 }

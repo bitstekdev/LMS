@@ -41,4 +41,11 @@ class TutorSchedule extends Model
     {
         return $this->belongsTo(TutorBooking::class, 'booking_id');
     }
+
+    public function canTeach()
+    {
+        return $this->hasOne(TutorCanTeach::class, 'subject_id', 'subject_id')
+            ->where('category_id', $this->category_id)
+            ->where('user_id', $this->tutor_id);
+    }
 }

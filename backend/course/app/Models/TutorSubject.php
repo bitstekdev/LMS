@@ -14,4 +14,10 @@ class TutorSubject extends Model
         'slug',
         'status',
     ];
+
+    public function upcomingSchedules()
+    {
+        return $this->hasMany(TutorSchedule::class, 'subject_id', 'id')
+            ->where('start_time', '>=', time());
+    }
 }

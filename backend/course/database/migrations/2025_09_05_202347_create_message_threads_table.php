@@ -14,8 +14,8 @@ return new class extends Migration
         Schema::create('message_threads', function (Blueprint $table) {
             $table->id();
             $table->string('code')->nullable();
-            $table->unsignedBigInteger('contact_one')->nullable();
-            $table->unsignedBigInteger('contact_two')->nullable();
+            $table->foreignId('contact_one')->nullable()->constrained('users')->nullOnDelete();
+            $table->foreignId('contact_two')->nullable()->constrained('users')->nullOnDelete();
             $table->timestamps();
         });
     }

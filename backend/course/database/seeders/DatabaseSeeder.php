@@ -60,6 +60,7 @@ class DatabaseSeeder extends Seeder
             BootcampModuleSeeder::class,
             BootcampResourceSeeder::class,
             BootcampLiveClassSeeder::class,
+            BootcampPurchaseSeeder::class,
 
             /*
             |--------------------------------------------------------------------------
