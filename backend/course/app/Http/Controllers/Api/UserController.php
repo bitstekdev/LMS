@@ -11,6 +11,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Str;
+use Throwable;
 
 class UserController extends Controller
 {
@@ -59,7 +60,7 @@ class UserController extends Controller
                 'data' => $user,
                 'errors' => null,
             ]);
-        } catch (\Throwable $e) {
+        } catch (Throwable $e) {
             Log::error('Update user data error: '.$e->getMessage());
 
             return response()->json([
@@ -108,7 +109,7 @@ class UserController extends Controller
                 'data' => null,
                 'errors' => null,
             ]);
-        } catch (\Throwable $e) {
+        } catch (Throwable $e) {
             Log::error('Update password error: '.$e->getMessage());
 
             return response()->json([
@@ -146,7 +147,7 @@ class UserController extends Controller
                 'data' => null,
                 'errors' => null,
             ]);
-        } catch (\Throwable $e) {
+        } catch (Throwable $e) {
             Log::error('Account disable error: '.$e->getMessage());
 
             return response()->json([

@@ -12,9 +12,13 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Password;
 use Illuminate\Validation\Rules;
+use Throwable;
 
 class AuthController extends Controller
 {
+    /**
+     * @unauthenticated
+     */
     public function login(Request $request)
     {
         try {
@@ -37,7 +41,7 @@ class AuthController extends Controller
             if ($user->role !== 'student') {
                 return response()->json([
                     'success' => false,
-                    'message' => 'User not found!',
+                    'message' => 'Only students are allowed to log in through this API.',
                     'data' => null,
                     'errors' => null,
                 ], 400);
@@ -55,7 +59,7 @@ class AuthController extends Controller
                 ],
                 'errors' => null,
             ], 201);
-        } catch (\Throwable $e) {
+        } catch (Throwable $e) {
             Log::error('Login error: '.$e->getMessage());
 
             return response()->json([
@@ -100,7 +104,7 @@ class AuthController extends Controller
                 'data' => $user,
                 'errors' => null,
             ], 201);
-        } catch (\Throwable $e) {
+        } catch (Throwable $e) {
             Log::error('Signup error: '.$e->getMessage());
 
             return response()->json([
@@ -127,7 +131,7 @@ class AuthController extends Controller
                 'data' => null,
                 'errors' => null,
             ], $status === Password::RESET_LINK_SENT ? 200 : 400);
-        } catch (\Throwable $e) {
+        } catch (Throwable $e) {
             Log::error('Forgot password error: '.$e->getMessage());
 
             return response()->json([
@@ -150,7 +154,7 @@ class AuthController extends Controller
                 'data' => null,
                 'errors' => null,
             ], 200);
-        } catch (\Throwable $e) {
+        } catch (Throwable $e) {
             Log::error('Logout error: '.$e->getMessage());
 
             return response()->json([

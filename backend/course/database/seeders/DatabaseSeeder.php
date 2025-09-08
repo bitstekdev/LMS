@@ -32,6 +32,7 @@ class DatabaseSeeder extends Seeder
             SettingSeeder::class,
             PlayerSettingSeeder::class,
             NotificationSettingSeeder::class,
+            FrontendSettingSeeder::class,
 
             /*
             |--------------------------------------------------------------------------
@@ -94,7 +95,9 @@ class DatabaseSeeder extends Seeder
             LessonSeeder::class,
             ForumSeeder::class,
             MessageSeeder::class,
+            LiveClassSeeder::class,
             WatchHistorySeeder::class,
+            WatchDurationSeeder::class,
             CertificateSeeder::class,
             AddToCartSeeder::class,
             CartItemSeeder::class,

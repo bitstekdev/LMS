@@ -5,8 +5,8 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use App\Models\CartItem;
 use App\Models\Course;
+use App\Models\Currency;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 
 class CartController extends Controller
 {
@@ -49,7 +49,7 @@ class CartController extends Controller
         return [
             'course_selling_tax' => get_settings('course_selling_tax'),
             'currency_position' => get_settings('currency_position'),
-            'currency_symbol' => DB::table('currencies')->where('code', get_settings('system_currency'))->value('symbol'),
+            'currency_symbol' => Currency::where('code', get_settings('system_currency'))->value('symbol'),
         ];
     }
 }

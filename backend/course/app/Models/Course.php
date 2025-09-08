@@ -11,6 +11,7 @@ class Course extends Model
 
     protected $fillable = [
         'user_id',
+        'category_id',
         'title',
         'slug',
         'short_description',
@@ -44,9 +45,22 @@ class Course extends Model
         'total_seconds',
     ];
 
+    protected $casts = [
+        'faqs' => 'array',
+        'instructor_ids' => 'array',
+        'requirements' => 'array',
+        'outcomes' => 'array',
+        'drip_content_settings' => 'array',
+    ];
+
     public function user()
     {
         return $this->belongsTo(User::class);
+    }
+
+    public function category()
+    {
+        return $this->belongsTo(Category::class);
     }
 
     public function sections()
@@ -69,12 +83,49 @@ class Course extends Model
         return $this->hasMany(Review::class);
     }
 
+    public function wishlists()
+    {
+        $query = $this->hasMany(Wishlist::class);
+
+        if (auth('web')->user()) {
+            $query->where('user_id', auth('web')->user()->id);
+        }
+
+        return $query;
+    }
+
     // Custom Accessor
     public function getTotalSecondsAttribute()
     {
-        return $this->lessons()
-            ->selectRaw('SUM(TIME_TO_SEC(duration)) as total_time')
-            ->value('total_time') ?? 0;
+        // Fetch durations as a collection of strings
+        $durations = $this->lessons()->pluck('duration');
+
+        $totalSeconds = 0;
+
+        foreach ($durations as $duration) {
+            if (! $duration) {
+                continue;
+            }
+
+            // Try to parse "H:i:s" or "i:s"
+            $parts = explode(':', $duration);
+
+            if (count($parts) === 3) {
+                [$hours, $minutes, $seconds] = $parts;
+            } elseif (count($parts) === 2) {
+                $hours = 0;
+                [$minutes, $seconds] = $parts;
+            } else {
+                // fallback: assume it's seconds already
+                $hours = 0;
+                $minutes = 0;
+                $seconds = (int) $duration;
+            }
+
+            $totalSeconds += ((int) $hours * 3600) + ((int) $minutes * 60) + (int) $seconds;
+        }
+
+        return $totalSeconds;
     }
 
     public function getTotalDurationAttribute()

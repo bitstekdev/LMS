@@ -1,0 +1,13 @@
+admin.php // Done
+api.php // Done
+auth.php // Done
+channels.php // Not Required
+chat.php // Done
+console.php // Done
+custom_route.php
+guest.php // Done
+instructor.php
+payment.php // Done
+player.php // Done
+student.php // Done
+web.php // Done

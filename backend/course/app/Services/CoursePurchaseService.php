@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Str;
+use Throwable;
 
 class CoursePurchaseService
 {
@@ -89,7 +90,7 @@ class CoursePurchaseService
 
             return redirect($paymentDetails['cancel_url'] ?? '/dashboard');
 
-        } catch (\Throwable $e) {
+        } catch (Throwable $e) {
             DB::rollBack();
             Log::error('Course Purchase Failed: '.$e->getMessage());
 

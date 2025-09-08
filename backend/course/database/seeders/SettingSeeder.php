@@ -35,7 +35,7 @@ class SettingSeeder extends Seeder
             ['type' => 'website_description', 'description' => 'Talemy is your ideal education the WordPress theme for sharing and selling your knowledge online. Teach what you love. Talemy gives you the tools.'],
             ['type' => 'website_keywords', 'description' => 'LMS,Learning Management System,Creativeitem,Academy LMS'],
             ['type' => 'footer_text', 'description' => 'LMS'],
-            ['type' => 'footer_link', 'description' => 'https:\/\/lms.com\/'],
+            ['type' => 'footer_link', 'description' => 'https://lms.com/'],
             ['type' => 'protocol', 'description' => 'smtp'],
             ['type' => 'smtp_host', 'description' => 'smtp.gmail.com'],
             ['type' => 'smtp_port', 'description' => '465'],
@@ -52,7 +52,7 @@ class SettingSeeder extends Seeder
             ['type' => 'fb_app_secret', 'description' => 'fb-app-secret'],
             ['type' => 'fb_social_login', 'description' => '0'],
 
-            ['type' => 'drip_content_settings', 'description' => '{"lesson_completion_role":"duration","minimum_duration":"15:30:00","minimum_percentage":"60","locked_lesson_message":"<h3 xss=\\"removed\\" style=\\"text-align: center; \\"><span xss=\\"removed\\" style=\\"\\">Permission denied!<\\/span><\\/h3><p xss=\\"removed\\" style=\\"text-align: center; \\"><span xss=\\"removed\\">This course supports drip content, so you must complete the previous lessons.<\\/span><\\/p>","files":null}'],
+            ['type' => 'drip_content_settings', 'description' => '{"lesson_completion_role":"duration","minimum_duration":"15:30:00","minimum_percentage":"60","locked_lesson_message":"<h3 xss=\\"removed\\" style=\\"text-align: center; \\"><span xss=\\"removed\\" style=\\"\\">Permission denied!<\/span><\/h3><p xss=\\"removed\\" style=\\"text-align: center; \\"><span xss=\\"removed\\">This course supports drip content, so you must complete the previous lessons.<\/span><\/p>","files":null}'],
 
             ['type' => 'course_accessibility', 'description' => 'publicly'],
             ['type' => 'smtp_crypto', 'description' => 'ssl'],
@@ -74,7 +74,7 @@ class SettingSeeder extends Seeder
             ['type' => 'meta_pixel_id', 'description' => null],
             ['type' => 'smtp_from_email', 'description' => 'your-email-address'],
             ['type' => 'language_dirs', 'description' => '{"english":"ltr","hindi":"rtl","arabic":"rtl"}'],
-            ['type' => 'certificate_template', 'description' => 'uploads\/certificate-template\/certificate-default.png'],
+            ['type' => 'certificate_template', 'description' => 'uploads/certificate-template/certificate-default.png'],
 
             // Big multi-line HTML kept intact with NOWDOC for readability
             ['type' => 'certificate_builder_content', 'description' => <<<'HTML'
@@ -164,7 +164,7 @@ HTML
             ['type' => 'open_ai_max_token', 'description' => '100'],
             ['type' => 'open_ai_secret_key', 'description' => 'sk-JPYxxxxxxxxxxxxxxxxxxx'],
 
-            ['type' => 'timezone', 'description' => 'Asia\/Kolkata'],
+            ['type' => 'timezone', 'description' => 'Asia/Kolkata'],
             ['type' => 'device_limitation', 'description' => '10'],
         ];
 

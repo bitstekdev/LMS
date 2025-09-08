@@ -55,17 +55,18 @@ if (! function_exists('enroll_history')) {
 if (! function_exists('course_data')) {
     function course_data($courses)
     {
-        // allow array input
         $courses = collect($courses);
 
         return $courses->map(function ($course) {
-            // Ensure model instance (support raw objects)
             /** @var \App\Models\Course $course */
-            $course->requirements = json_decode($course->requirements ?? '[]') ?: [];
-            $course->outcomes = json_decode($course->outcomes ?? '[]') ?: [];
-            $course->faqs = json_decode($course->faqs ?? '[]') ?: [];
-            $course->instructors = json_decode($course->instructor_ids ?? '[]') ?: [];
 
+            // Already casted as arrays
+            $course->requirements = $course->requirements ?? [];
+            $course->outcomes = $course->outcomes ?? [];
+            $course->faqs = $course->faqs ?? [];
+            $course->instructors = $course->instructor_ids ?? [];
+
+            // Media
             $course->thumbnail = get_photo('course_thumbnail', $course->thumbnail);
             $course->banner = get_photo('course_banner', $course->banner);
 
@@ -77,29 +78,25 @@ if (! function_exists('course_data')) {
             ) {
                 $course->preview = $preview;
             } else {
-                $course->preview = $preview ? url('public/'.ltrim($preview, '/')) : $preview;
+                $course->preview = $preview ? url('public/'.ltrim($preview, '/')) : null;
             }
 
             // Price / labels
             if ((int) $course->is_paid === 0) {
                 $course->price = 'Free';
                 $course->price_cart = 0;
+            } elseif ((int) $course->discount_flag === 1 && ! is_null($course->discounted_price)) {
+                $course->price = currency($course->discounted_price);
+                $course->price_cart = $course->discounted_price;
             } else {
-                if ((int) $course->discount_flag === 1 && ! is_null($course->discounted_price)) {
-                    $course->price = currency($course->discounted_price);
-                    $course->price_cart = $course->discounted_price;
-                } else {
-                    $course->price_cart = $course->price;
-                    $course->price = currency($course->price);
-                }
+                $course->price_cart = $course->price;
+                $course->price = currency($course->price);
             }
 
-            // Instructor info (existing project helper)
+            // Instructor info
             $instructor = get_user_info($course->user_id);
             $course->instructor_name = $instructor->name ?? '';
-            $course->instructor_image = isset($instructor->photo)
-                ? url('public/'.ltrim($instructor->photo, '/'))
-                : null;
+            $course->instructor_image = $instructor->photo ? url('public/'.ltrim($instructor->photo, '/')) : null;
 
             // Enrollment stats
             $course->total_enrollment = enroll_history($course->id)->count();
@@ -108,7 +105,7 @@ if (! function_exists('course_data')) {
             $course->shareable_link = url('course/'.slugify($course->title));
 
             // Reviews & rating
-            $reviews = Review::query()->where('course_id', $course->id)->get();
+            $reviews = Review::where('course_id', $course->id)->get();
             $total = $reviews->count();
             $sum = (int) $reviews->sum('rating');
             $avg = $total ? round($sum / $total, 1) : 0.0;
@@ -769,9 +766,13 @@ if (! function_exists('readable_time_for_humans')) {
  * @return string
  */
 if (! function_exists('remove_js')) {
-    function remove_js($description = '')
+    function remove_js($input = '')
     {
-        return preg_replace('/<script\b[^>]*>(.*?)<\/script>/is', '', $description);
+        if (! is_string($input)) {
+            return $input;
+        }
+
+        return preg_replace('#<script(.*?)>(.*?)</script>#is', '', $input);
     }
 }
 

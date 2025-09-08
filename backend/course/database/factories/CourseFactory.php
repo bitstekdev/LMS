@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\Category;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
@@ -14,6 +15,7 @@ class CourseFactory extends Factory
     {
         return [
             'user_id' => User::inRandomOrder()->first()->id ?? User::factory(),
+            'category_id' => Category::inRandomOrder()->first()->id ?? Category::factory(),
             'title' => fake()->sentence,
             'slug' => fake()->slug,
             'short_description' => fake()->paragraph,

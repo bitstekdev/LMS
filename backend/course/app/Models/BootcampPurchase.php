@@ -25,10 +25,10 @@ class BootcampPurchase extends Model
     ];
 
     protected $casts = [
-        'price' => 'decimal',
-        'tax' => 'decimal',
-        'admin_revenue' => 'decimal',
-        'instructor_revenue' => 'decimal',
+        'price' => 'float',
+        'tax' => 'float',
+        'admin_revenue' => 'float',
+        'instructor_revenue' => 'float',
         'status' => 'integer',
     ];
 

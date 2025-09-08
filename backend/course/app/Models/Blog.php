@@ -22,6 +22,11 @@ class Blog extends Model
         'status',
     ];
 
+    protected $casts = [
+        'is_popular' => 'boolean',
+        'status' => 'boolean',
+    ];
+
     public function user()
     {
         return $this->belongsTo(User::class);
@@ -30,5 +35,21 @@ class Blog extends Model
     public function category()
     {
         return $this->belongsTo(BlogCategory::class, 'category_id');
+    }
+
+    /**
+     * Scope for published blogs (status = true)
+     */
+    public function scopePublished($query)
+    {
+        return $query->where('status', true);
+    }
+
+    /**
+     * Scope: Latest popular blogs (is_popular = true, ordered by latest)
+     */
+    public function scopeLatestPopular($query)
+    {
+        return $query->where('is_popular', true)->latest();
     }
 }

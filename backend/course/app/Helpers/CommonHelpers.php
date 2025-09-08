@@ -737,16 +737,25 @@ if (! function_exists('is_root_admin')) {
 if (! function_exists('removeScripts')) {
     function removeScripts($text)
     {
-        if (! $text) {
+        if (! is_string($text) || trim($text) === '') {
             return $text;
         }
 
-        $clean = preg_replace('/<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/is', '', $text);
-        $clean = preg_replace('/\s*on\w+="[^"]*"/i', '', $clean);
-        $clean = preg_replace('/\s*href="javascript:[^"]*"/i', '', $clean);
-        $clean = preg_replace('/<(object|applet|meta|link|style|base|form)\b[^<]*(?:(?!<\/\1>)<[^<]*)*<\/\1>/is', '', $clean);
+        // Remove <script>...</script> blocks
+        $text = preg_replace('/<script\b[^>]*>(.*?)<\/script>/is', '', $text);
 
-        return $clean;
+        // Remove dangerous tags (e.g., object, iframe, etc.)
+        $text = preg_replace('/<(object|applet|meta|link|style|base|form|iframe)\b[^>]*>(.*?)<\/\1>/is', '', $text);
+
+        // Remove inline JS event handlers like onclick="..."
+        $text = preg_replace('/\s*on\w+\s*=\s*"[^"]*"/i', '', $text);
+        $text = preg_replace("/\s*on\w+\s*=\s*'[^']*'/i", '', $text);
+
+        // Remove javascript: from href/src attributes
+        $text = preg_replace('/\s*(href|src)\s*=\s*"javascript:[^"]*"/i', '', $text);
+        $text = preg_replace("/\s*(href|src)\s*=\s*'javascript:[^']*'/i", '', $text);
+
+        return $text;
     }
 }
 
@@ -1025,13 +1034,13 @@ if (! function_exists('date_formatter')) {
  * @return string
  */
 if (! function_exists('currency')) {
-    function currency($price = 0)
+    function currency($price = 0, $decimals = 2)
     {
         $pattern = get_settings('currency_position');
         $symbol = Currency::where('code', get_settings('system_currency'))->value('symbol');
 
         $price = (float) $price;
-        $formatted = number_format($price, 2, '.', '');
+        $formatted = number_format($price, $decimals, '.', '');
 
         return match ($pattern) {
             'right' => $formatted.$symbol,
@@ -1114,20 +1123,20 @@ if (! function_exists('random')) {
  * @return mixed
  */
 if (! function_exists('get_settings')) {
-    function get_settings($type = '', $returnType = false)
+    function get_settings(string $type = '', $returnType = false)
     {
-        $q = Setting::where('type', $type);
+        $val = Setting::where('type', $type)->value('description');
 
-        if (! $q->exists()) {
-            return false;
+        if (is_null($val)) {
+            return $returnType === true ? [] : ($returnType === 'object' ? (object) [] : false);
         }
 
-        $val = $q->value('description');
         if ($returnType === true) {
-            return json_decode($val, true);
+            return is_array($val) ? $val : json_decode($val, true);
         }
+
         if ($returnType === 'object') {
-            return json_decode($val);
+            return is_object($val) ? $val : json_decode($val);
         }
 
         return $val;
@@ -1172,23 +1181,47 @@ if (! function_exists('lesson_progress')) {
 if (! function_exists('get_frontend_settings')) {
     function get_frontend_settings($key = '', $returnType = false)
     {
-        $q = FrontendSetting::where('key', $key);
-        if (! $q->exists()) {
+        $setting = FrontendSetting::where('key', $key)->value('value');
+
+        if (is_null($setting)) {
             return false;
         }
 
-        $val = $q->value('value');
-        if ($returnType === true) {
-            return json_decode($val, true);
-        }
-        if ($returnType === 'object') {
-            return json_decode($val);
+        // Check if it's JSON
+        $isJson = is_string($setting) && is_array(json_decode($setting, true)) && (json_last_error() === JSON_ERROR_NONE);
+
+        if ($isJson) {
+            if ($returnType === true || $returnType === 'array') {
+                return json_decode($setting, true);
+            } elseif ($returnType === 'object') {
+                return json_decode($setting);
+            }
         }
 
-        return $val;
+        return $setting;
     }
 }
 
+/**
+ * Frontend settings getter with double JSON decode (for nested structures).
+ *
+ * @param  string  $key
+ * @param  mixed  $default
+ * @return mixed
+ */
+if (! function_exists('get_frontend_json_setting')) {
+    function get_frontend_json_setting($key, $default = [])
+    {
+        $raw = get_frontend_settings($key);
+        $first_decode = json_decode($raw, true);
+
+        $decoded = is_string($first_decode)
+            ? json_decode($first_decode, true)
+            : $first_decode;
+
+        return is_array($decoded) ? $decoded : $default;
+    }
+}
 /**
  * Is email already registered?
  *
@@ -1467,7 +1500,7 @@ if (! function_exists('get_blog_tags')) {
 if (! function_exists('replace_url_symbol')) {
     function replace_url_symbol($str)
     {
-        return preg_replace('/[\?#&\/:@=%]/', '-', (string) $str);
+        return preg_replace('/[\?#&/:@=%]/', '-', (string) $str);
     }
 }
 
@@ -2014,8 +2047,8 @@ if (! function_exists('remove_js')) {
         }
 
         $description = str_replace(['&lt;script&gt;', '&lt;/script&gt;'], '', $description);
-        $description = preg_replace('/<script\b[^>]*>(.*?)<\/script>/is', '', $description);
-        $description = preg_replace("/[<][^<]*script.*[>].*[<].*[\/].*script*[>]/i", '', $description);
+        $description = preg_replace('/<script\b[^>]*>(.*?)</script>/is', '', $description);
+        $description = preg_replace('/[<][^<]*script.*[>].*[<].*[/].*script*[>]/i', '', $description);
         $description = preg_replace("/([ ]on[a-zA-Z0-9_-]{1,}=\".*\")|([ ]on[a-zA-Z0-9_-]{1,}='.*')|([ ]on[a-zA-Z0-9_-]{1,}=.*[.].*)/", '', $description);
         $description = preg_replace('/(<.+?)(?<=\s)on[a-z]+\s*=\s*(?:([\'"])(?!\2).+?\2|(?:\S+?\(.*?\)(?=[\s>])))(.*?>)/i', '$1 $3', $description);
         $description = preg_replace("/([ ]href.*=\".*javascript:.*\")|([ ]href.*='.*javascript:.*')|([ ]href.*=.*javascript:.*)/i", '', $description);
@@ -2148,5 +2181,18 @@ if (! function_exists('check_recaptcha')) {
         $json = json_decode($resp);
 
         return (bool) ($json->success ?? false);
+    }
+}
+
+/**
+ * Clean a string to be used as a path segment (alphanumeric, underscore, hyphen).
+ *
+ * @param  string  $string
+ * @return string
+ */
+if (! function_exists('clean_path_segment')) {
+    function clean_path_segment($string)
+    {
+        return preg_replace('/[^A-Za-z0-9_\-]/', '_', $string);
     }
 }
