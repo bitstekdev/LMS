@@ -103,7 +103,7 @@
         </ul>
         <ul class="f-socials d-flex flex-column gap-3">
             <p class="description text-center text-14">{{ get_phrase('Contact Instructor') }}</p>
-            @php $instructor = $bootcamp_details->instructor; @endphp
+            @php $instructor = $bootcamp_details->user; @endphp
             <div class="d-flex justify-content-center gap-3">
                 @if (isset($instructor->twitter))
                     <li><a href="{{ $instructor->twitter }}"><i class="fa-brands fa-twitter"></i></a></li>

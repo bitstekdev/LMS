@@ -62,7 +62,7 @@
                         <path d="M13.0875 12.65L10.5042 11.1083C10.0542 10.8416 9.6875 10.2 9.6875 9.67497V6.2583"
                             stroke="#6B7385" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" />
                     </svg>
-                    {{ date('d-M-Y', $bootcamp->publish_date) }}
+                    {{ $bootcamp->publish_date->format('d-M-Y') }}
                 </li>
                 <li>
                     <svg width="20" height="20" viewBox="0 0 20 20" fill="none"

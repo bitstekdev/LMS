@@ -30,6 +30,15 @@ class Bootcamp extends Model
         'status',
     ];
 
+    protected $casts = [
+        // 'faqs' => 'array',
+        // 'requirements' => 'array',
+        // 'outcomes' => 'array',
+        // 'meta_keywords' => 'array',
+        // 'meta_description' => 'string',
+        'publish_date' => 'datetime',
+    ];
+
     public function user()
     {
         return $this->belongsTo(User::class);
@@ -42,6 +51,6 @@ class Bootcamp extends Model
 
     public function modules()
     {
-        return $this->hasMany(BootcampModule::class, 'module_id');
+        return $this->hasMany(BootcampModule::class, 'bootcamp_id');
     }
 }

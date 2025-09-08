@@ -49,7 +49,7 @@
                                         stroke="#192335" stroke-width="1.25" stroke-linecap="round"
                                         stroke-linejoin="round" />
                                 </svg>
-                                {{ date('d-M-Y', $bootcamp_details->publish_date) }}
+                                {{ $bootcamp_details->publish_date->format('d-M-Y') }}
                             </li>
                         </ul>
                         <ul class="course-motion-top bottom-motion mt-15">
