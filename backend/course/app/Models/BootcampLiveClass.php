@@ -7,7 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class BootcampLiveClass extends Model
 {
-    /** @use HasFactory<\Database\Factories\BootcampLiveClassFactory> */
     use HasFactory;
 
     protected $fillable = [

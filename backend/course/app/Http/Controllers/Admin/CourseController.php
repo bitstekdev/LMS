@@ -477,7 +477,7 @@ class CourseController extends Controller
         ];
 
         try {
-            Mail::to($course->creator->email)->send(new Mailer($mail_data));
+            Mail::to($course->user->email)->send(new Mailer($mail_data));
         } catch (Exception $e) {
             // silently fail
         }

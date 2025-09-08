@@ -7,7 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class BootcampResource extends Model
 {
-    /** @use HasFactory<\Database\Factories\BootcampResourceFactory> */
     use HasFactory;
 
     protected $fillable = [

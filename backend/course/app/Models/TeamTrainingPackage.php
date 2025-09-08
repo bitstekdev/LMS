@@ -7,7 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class TeamTrainingPackage extends Model
 {
-    /** @use HasFactory<\Database\Factories\TeamTrainingPackageFactory> */
     use HasFactory;
 
     protected $fillable = [

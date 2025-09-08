@@ -30,8 +30,8 @@
 
                     <div class="package-detail d-flex justify-content-between">
                         <div class="creator">
-                            <img src="{{ get_image($package->creator_photo) }}" alt="author-image">
-                            <p><span>{{ $package->creator_name }}</span></p>
+                            <img src="{{ get_image($package->user_photo) }}" alt="author-image">
+                            <p><span>{{ $package->user_name }}</span></p>
                         </div>
                     </div>
 

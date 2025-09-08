@@ -7,7 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class NotificationSetting extends Model
 {
-    /** @use HasFactory<\Database\Factories\NotificationSettingFactory> */
     use HasFactory;
 
     protected $fillable = [

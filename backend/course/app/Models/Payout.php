@@ -7,7 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class Payout extends Model
 {
-    /** @use HasFactory<\Database\Factories\PayoutFactory> */
     use HasFactory;
 
     protected $fillable = [

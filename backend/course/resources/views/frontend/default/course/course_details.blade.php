@@ -47,7 +47,7 @@
                         <div class="row row-gap-4">
                             <div class="col-6 col-sm-6 col-md-4">
                                 <a class="d-flex align-items-center text-dark"
-                                    href="{{ route('instructor.details', ['name' => slugify($course_details->creator->name), 'id' => $course_details->creator->id]) }}">
+                                    href="{{ route('instructor.details', ['name' => slugify($course_details->user->name), 'id' => $course_details->user->id]) }}">
                                     <img class="pro-32 me-2"
                                         src="{{ get_image(course_by_instructor($course_details->id)->photo) }}"
                                         alt="instructor-image">

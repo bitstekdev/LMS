@@ -65,7 +65,7 @@
                     <div class="learn-creator">
                         <div class="creator">
                             <img src="{{ get_image($course->instructor_image) }}" alt="author-image">
-                            <p><span>{{ $course->instructor_name }}</span></p>
+                            <p><span>{{ $course->user->name }}</span></p>
                         </div>
                         <div class="learn-more">{{ get_phrase('Learn more') }} <i
                                 class="fa-solid fa-arrow-right-long ms-2"></i></div>

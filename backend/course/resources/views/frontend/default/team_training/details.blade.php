@@ -22,10 +22,9 @@
                         <ul class="course-motion-top">
                             <li>
                                 <a class="d-flex align-items-center text-dark"
-                                    href="{{ route('instructor.details', ['name' => slugify($package->creator_name), 'id' => $package->user_id]) }}">
-                                    <img class="pro-32" src="{{ get_image($package->creator_photo) }}"
-                                        alt="instructor-image">
-                                    {{ $package->creator_name }}
+                                    href="{{ route('instructor.details', ['name' => slugify($package->user_name), 'id' => $package->user_id]) }}">
+                                    <img class="pro-32" src="{{ get_image($package->user_photo) }}" alt="instructor-image">
+                                    {{ $package->user_name }}
                                 </a>
                             </li>
                             <li>

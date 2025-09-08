@@ -7,7 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class BuilderPage extends Model
 {
-    /** @use HasFactory<\Database\Factories\BuilderPageFactory> */
     use HasFactory;
 
     protected $fillable = [

@@ -95,7 +95,7 @@ if (! function_exists('course_data')) {
 
             // Instructor info
             $instructor = get_user_info($course->user_id);
-            $course->instructor_name = $instructor->name ?? '';
+            $course->user->name = $instructor->name ?? '';
             $course->instructor_image = $instructor->photo ? url('public/'.ltrim($instructor->photo, '/')) : null;
 
             // Enrollment stats

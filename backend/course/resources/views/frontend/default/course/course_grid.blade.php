@@ -51,7 +51,7 @@
             <div class="info-card mb-15">
                 <div class="creator">
                     <img src="{{ get_image($course->instructor_image) }}" alt="author-image">
-                    <h5>{{ $course->instructor_name }}</h5>
+                    <h5>{{ $course->user->name }}</h5>
                 </div>
             </div>
             <div class="entry-title">

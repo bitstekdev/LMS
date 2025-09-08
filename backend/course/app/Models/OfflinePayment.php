@@ -7,7 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class OfflinePayment extends Model
 {
-    /** @use HasFactory<\Database\Factories\OfflinePaymentFactory> */
     use HasFactory;
 
     protected $fillable = [

@@ -40,10 +40,10 @@
         </a>
         <div class="card-body entry-details mt-0 pb-0">
             <div class="info-card mb-15">
-                <a href="{{ route('instructor.details', [slugify($bootcamp->instructor_name), $bootcamp->user_id]) }}"
+                <a href="{{ route('instructor.details', [slugify($bootcamp->user->name), $bootcamp->user_id]) }}"
                     class="creator text-color">
                     <img src="{{ get_image($bootcamp->instructor_image) }}" alt="author-image">
-                    <h5>{{ $bootcamp->instructor_name }}</h5>
+                    <h5>{{ $bootcamp->user->name }}</h5>
                 </a>
             </div>
             <div class="entry-title">

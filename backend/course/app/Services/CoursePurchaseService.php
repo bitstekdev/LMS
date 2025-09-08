@@ -125,7 +125,7 @@ class CoursePurchaseService
             $finalAmount = $discountedPrice ?: $price;
 
             $course = Course::findOrFail($courseId);
-            $creator = $course->creator;
+            $creator = $course->user;
 
             $adminRevenue = $instructorRevenue = 0;
             if ($creator->role === 'admin') {
