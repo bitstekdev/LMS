@@ -57,7 +57,7 @@ class CategoryController extends Controller
         }
 
         $data = [
-            'parent_id' => (int) $request->parent_id,
+            'parent_id' => (int) $request->parent_id ?? null,
             'title' => $request->title,
             'slug' => $slug,
             'icon' => $request->icon,
