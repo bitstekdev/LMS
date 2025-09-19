@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 
 <head>
-    <title>{{ $booking->schedule->subject->name }} | {{ get_phrase('Tution Class') }}
-    </title>
+    <title>{{ $booking->schedule->subject->name }} | {{ get_phrase('Tution Class') }}</title>
     <meta charset="utf-8" />
     <meta name="format-detection" content="telephone=no">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -31,7 +30,7 @@
         var mn = "{{ $meeting_info['id'] }}";
         var user_name = "{{ $user->name }}";
         var pwd = "{{ $meeting_info['password'] }}";
-        var role = {{ isset($is_host) ? 1 : 0 }};
+        var role = {{ $is_host }};
         var email = "{{ $user->email }}";
         var lang = "en-US";
         var china = 0;

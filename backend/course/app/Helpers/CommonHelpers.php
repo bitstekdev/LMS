@@ -1036,10 +1036,13 @@ if (! function_exists('date_formatter')) {
 if (! function_exists('currency')) {
     function currency($price = 0, $decimals = 2)
     {
-        $pattern = get_settings('currency_position');
-        $symbol = Currency::where('code', get_settings('system_currency'))->value('symbol');
+        $pattern = get_settings('currency_position') ?? 'left';
+        $symbol = Currency::where('code', get_settings('system_currency'))
+            ->value('symbol') ?? '$';
 
-        $price = (float) $price;
+        // Ensure null, string, or invalid values become 0.00
+        $price = is_numeric($price) ? (float) $price : 0;
+
         $formatted = number_format($price, $decimals, '.', '');
 
         return match ($pattern) {

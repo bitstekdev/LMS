@@ -3,7 +3,7 @@
         @foreach ($schedules as $schedule)
             <div class="col-xl-4 col-lg-6 col-md-4 col-sm-6">
                 <div class="tutor-single-service">
-                    <h5 class="in-title-16px mb-3 fw-semibold">{{ $schedule->schedule_to_tutorSubjects->name }}</h5>
+                    <h5 class="in-title-16px mb-3 fw-semibold">{{ $schedule->subject->name }}</h5>
                     <ul class="mb-3 d-flex flex-column gap-12px">
                         <li class="d-flex service-activity-list-item gap-6px">
                             <img src="{{ asset('assets/frontend/default/image/timer-start-gray-20.svg') }}"
@@ -15,7 +15,7 @@
                             <img src="{{ asset('assets/frontend/default/image/shopping-cart-gray-20.svg') }}"
                                 alt="">
                             <span
-                                class="in-title-14px">{{ currency($schedule->schedule_to_tutorCanTeach->price) . '/' . get_phrase('session') }}</span>
+                                class="in-title-14px">{{ currency($schedule->canTeach->price) . '/' . get_phrase('session') }}</span>
                         </li>
                         <li class="d-flex service-activity-list-item gap-6px">
                             <img src="{{ asset('assets/frontend/default/image/user-gray-20.svg') }}" alt="">

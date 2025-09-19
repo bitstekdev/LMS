@@ -5,7 +5,7 @@
     <div class="lg-w-329px">
         <div>
             <h3 class="in-title-18px pb-3 mb-3 lms-border-bottom">
-                {{ $schedule_details->schedule_to_tutorSubjects->name }}</h3>
+                {{ $schedule_details->subject->name }}</h3>
             <ul class="mb-20px d-flex gap-20px flex-column">
                 <li class="d-flex align-items-center gap-3 justify-content-between flex-wrap">
                     <div class="d-flex align-items-center gap-6px">
@@ -23,7 +23,7 @@
                         <p class="in-title-14px">{{ get_phrase('Session Fee') }}</p>
                     </div>
                     <p class="in-title-16px">
-                        {{ currency($schedule_details->schedule_to_tutorCanTeach->price) . '/' . get_phrase('person') }}
+                        {{ currency($schedule_details->canTeach->price) . '/' . get_phrase('person') }}
                     </p>
                 </li>
                 <li class="d-flex align-items-center gap-3 justify-content-between flex-wrap">
@@ -113,7 +113,7 @@
     <!-- Right -->
     <div>
         <div class="service-banner-image mb-3">
-            <img src="{{ asset($schedule_details->schedule_to_tutorCanTeach->thumbnail) }}" alt="">
+            <img src="{{ asset($schedule_details->canTeach->thumbnail) }}" alt="">
         </div>
         <div class="description-style description-style-sm">{!! $schedule_details->description !!}</div>
     </div>

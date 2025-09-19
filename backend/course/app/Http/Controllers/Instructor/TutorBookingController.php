@@ -287,7 +287,7 @@ class TutorBookingController extends Controller
 
         if (empty($booking->joining_data)) {
             $meetingInfo = json_decode($this->create_zoom_meeting(
-                $booking->booking_to_schedule->schedule_to_tutorSubjects->name,
+                $booking->schedule->subject->name,
                 $booking->start_time
             ), true);
 

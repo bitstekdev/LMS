@@ -14,13 +14,11 @@ class MyCoursesController extends Controller
 
         $my_courses = Enrollment::with([
             'course:id,title,slug,thumbnail,user_id',
-            'course.instructor:id,name,photo',
+            'course.user:id,name,photo',
         ])
             ->where('user_id', $userId)
             ->latest()
-            ->get()
-            ->unique('course_id')
-            ->values();
+            ->paginate();
 
         $view_path = 'frontend.'.get_frontend_settings('theme').'.student.my_courses.index';
 

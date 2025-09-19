@@ -96,7 +96,7 @@
 
                                                     @php
                                                         $categoryName = $schedule->schedule_to_tutorCategory->name;
-                                                        $subjectName = $schedule->schedule_to_tutorSubjects->name;
+                                                        $subjectName = $schedule->subject->name;
                                                     @endphp
                                                     <td scope="row">
                                                         <div class="dAdmin_profile d-flex align-items-center min-w-200px">

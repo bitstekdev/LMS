@@ -6,6 +6,7 @@ use App\Models\TutorBooking;
 use App\Models\TutorSchedule;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Illuminate\Support\Carbon;
 
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\TutorBooking>
@@ -16,23 +17,27 @@ class TutorBookingFactory extends Factory
 
     public function definition(): array
     {
-        $tutor = User::where('role', 'instructor')->first();
-        $student = User::where('role', 'student')->first();
+        $tutor = User::where('role', 'instructor')->inRandomOrder()->first() ?? User::factory()->create(['role' => 'instructor']);
+        $student = User::where('role', 'student')->inRandomOrder()->first() ?? User::factory()->create(['role' => 'student']);
+
+        // Generate a random start & end time
+        $start = fake()->dateTimeBetween('+1 days', '+7 days');
+        $end = Carbon::instance($start)->addHours(2); // 2-hour session
 
         return [
-            'invoice' => fake()->word,
+            'invoice' => strtoupper(fake()->bothify('INV-####')),
             'schedule_id' => TutorSchedule::inRandomOrder()->first()->id ?? TutorSchedule::factory(),
-            'student_id' => $student ? $student->id : null,
-            'tutor_id' => $tutor ? $tutor->id : null,
-            'start_time' => fake()->word,
-            'end_time' => fake()->word,
-            'joining_data' => fake()->word,
-            'price' => fake()->word,
-            'admin_revenue' => fake()->word,
-            'instructor_revenue' => fake()->word,
-            'tax' => fake()->word,
-            'payment_method' => fake()->word,
-            'payment_details' => fake()->word,
+            'student_id' => $student->id,
+            'tutor_id' => $tutor->id,
+            'start_time' => $start,
+            'end_time' => $end,
+            'joining_data' => fake()->url,
+            'price' => fake()->randomFloat(2, 20, 200),
+            'admin_revenue' => fake()->randomFloat(2, 5, 50),
+            'instructor_revenue' => fake()->randomFloat(2, 10, 150),
+            'tax' => fake()->randomFloat(2, 0, 20),
+            'payment_method' => fake()->randomElement(['stripe', 'paypal', 'bank_transfer']),
+            'payment_details' => fake()->text(100),
         ];
     }
 }

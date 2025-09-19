@@ -14,13 +14,16 @@ class TutorCanTeachFactory extends Factory
 
     public function definition(): array
     {
+        $instructor = User::where('role', 'instructor')->inRandomOrder()->first()
+            ?? User::factory()->create(['role' => 'instructor']);
+
         return [
-            'instructor_id' => User::where('role', 'instructor')->inRandomOrder()->first()->id ?? null,
+            'instructor_id' => $instructor->id,
             'category_id' => TutorCategory::inRandomOrder()->first()->id ?? TutorCategory::factory(),
             'subject_id' => TutorSubject::inRandomOrder()->first()->id ?? TutorSubject::factory(),
-            'description' => fake()->word,
-            'thumbnail' => fake()->word,
-            'price' => fake()->word,
+            'description' => fake()->sentence(10),
+            'thumbnail' => fake()->imageUrl(640, 480, 'education', true, 'subject'),
+            'price' => fake()->randomFloat(2, 10, 200),
         ];
     }
 }

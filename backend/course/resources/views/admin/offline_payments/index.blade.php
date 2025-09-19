@@ -172,7 +172,7 @@
                                                         @if ($payment->item_type == 'tutor_booking')
                                                             @foreach (App\Models\TutorSchedule::whereIn('id', json_decode($payment->items, true))->get() as $tutor_schedule)
                                                                 <p class="sub-title text-12px">
-                                                                    {{ $tutor_schedule->schedule_to_tutorSubjects->name }}
+                                                                    {{ $tutor_schedule->subject->name }}
                                                                 </p>
                                                                 <small><a
                                                                         href="{{ route('tutor_schedule', [$tutor_schedule->tutor_id, slugify($tutor_schedule->schedule_to_tutor->name)]) }}"

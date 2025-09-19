@@ -81,14 +81,14 @@ class TutorBookingController extends Controller
             return redirect()->back();
         }
 
-        $price = optional(optional($schedule->schedule_to_tutorCanTeach)->price) ?? 0;
+        $price = optional(optional($schedule->canTeach)->price) ?? 0;
 
         $payment_details = [
             'items' => [
                 [
                     'id' => $schedule->id,
                     'title' => optional($schedule->schedule_to_tutorCategory)->name,
-                    'subtitle' => optional($schedule->schedule_to_tutorSubjects)->name,
+                    'subtitle' => optional($schedule->subject)->name,
                     'price' => $price,
                     'discount_price' => '',
                 ],
@@ -135,7 +135,7 @@ class TutorBookingController extends Controller
         }
 
         if (empty($booking->joining_data)) {
-            $subjectName = optional(optional($booking->booking_to_schedule)->schedule_to_tutorSubjects)->name;
+            $subjectName = optional(optional($booking->schedule)->subject)->name;
             $joining_info = $this->create_zoom_meeting($subjectName, $booking->start_time);
 
             $meeting_info = json_decode($joining_info, true);

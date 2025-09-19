@@ -31,7 +31,7 @@
                                         <div class="ms-1 mt-1">
                                             <h4 class="title fs-14px">
                                                 <a href="">
-                                                    {{ $booking->booking_to_student->name }}
+                                                    {{ $booking->student->name }}
                                                 </a>
                                             </h4>
                                         </div>
@@ -42,7 +42,7 @@
                                     <div class="sub-title2 text-12px text-center">
                                         <p>
                                             <strong>
-                                                {{ $booking->booking_to_schedule->schedule_to_tutorSubjects->name }}
+                                                {{ $booking->schedule->subject->name }}
                                             </strong>
                                         </p>
 
@@ -51,7 +51,7 @@
                                 <td>
                                     <div class="sub-title2 text-12px text-center">
                                         <p>
-                                            {{ $booking->booking_to_schedule->schedule_to_tutorCanteach->price }}
+                                            {{ $booking->schedule->canTeach->price }}
                                         </p>
                                     </div>
                                 </td>

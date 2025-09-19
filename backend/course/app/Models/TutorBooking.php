@@ -25,6 +25,11 @@ class TutorBooking extends Model
         'payment_details',
     ];
 
+    protected $casts = [
+        'start_time' => 'datetime',
+        'end_time' => 'datetime',
+    ];
+
     public function schedule()
     {
         return $this->belongsTo(TutorSchedule::class, 'schedule_id');
