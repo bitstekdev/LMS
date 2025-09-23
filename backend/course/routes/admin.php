@@ -1,14 +1,11 @@
 <?php
 
-use App\Http\Controllers\Admin\BlogCategoryController;
-use App\Http\Controllers\Admin\BlogController;
 use App\Http\Controllers\Admin\BootcampCategoryController;
 use App\Http\Controllers\Admin\BootcampController;
 use App\Http\Controllers\Admin\BootcampLiveClassController;
 use App\Http\Controllers\Admin\BootcampModuleController;
 use App\Http\Controllers\Admin\BootcampResourceController;
 use App\Http\Controllers\Admin\CategoryController;
-use App\Http\Controllers\Admin\ContactController;
 use App\Http\Controllers\Admin\CouponController;
 use App\Http\Controllers\Admin\CourseController;
 use App\Http\Controllers\Admin\CurriculumController;
@@ -17,17 +14,15 @@ use App\Http\Controllers\Admin\InvoiceController;
 use App\Http\Controllers\Admin\LanguageController;
 use App\Http\Controllers\Admin\LiveClassController;
 use App\Http\Controllers\Admin\MessageController;
-use App\Http\Controllers\Admin\NewsletterController;
-use App\Http\Controllers\Admin\OfflinePaymentController;
 use App\Http\Controllers\Admin\QuestionController;
 use App\Http\Controllers\Admin\QuizController;
-use App\Http\Controllers\Admin\ReportController;
 use App\Http\Controllers\Admin\SeoController;
 use App\Http\Controllers\Admin\SettingController;
-use App\Http\Controllers\Admin\TutorBookingController;
+use App\Http\Controllers\Admin\TeamTrainingController;
 use App\Http\Controllers\Admin\UsersController;
 use App\Http\Middleware\Admin;
 use App\Http\Middleware\AdminMiddleware;
+use App\Http\Middleware\RecordVerification;
 use Illuminate\Support\Facades\Route;
 
 Route::name('admin.')->prefix('admin')->middleware(AdminMiddleware::class)->group(function () {
@@ -97,7 +92,6 @@ Route::name('admin.')->prefix('admin')->middleware(AdminMiddleware::class)->grou
         Route::get('instructor_payout', 'instructor_payout')->name('instructor.payout');
         Route::get('instructor_payout/filter', 'instructor_payout_filter')->name('instructor.payout.filter');
         Route::get('instructor_payout/invoice/{id?}', 'instructor_payout_invoice')->name('instructor.payout.invoice');
-        Route::post('instructor_payment', 'instructor_payment')->name('instructor.payment');
         Route::get('instructor_setting', 'instructor_setting')->name('instructor.setting');
         Route::post('instructor/setting/store', 'instructor_setting_store')->name('instructor.setting.store');
         Route::get('instructor_application', 'instructor_application')->name('instructor.application');
@@ -118,53 +112,6 @@ Route::name('admin.')->prefix('admin')->middleware(AdminMiddleware::class)->grou
         Route::get('enroll_student', 'student_enrol')->name('student.enroll');
         Route::get('get/students', 'student_get')->name('student.get');
         Route::post('post/students', 'student_post')->name('student.post');
-    });
-
-    // === Blog Posts ===
-    Route::controller(BlogController::class)->group(function () {
-        Route::get('blogs', 'index')->name('blogs');
-        Route::get('blog/create', 'create')->name('blog.create');
-        Route::post('blog/store', 'store')->name('blog.store');
-        Route::get('blog/edit/{id}', 'edit')->name('blog.edit');
-        Route::get('blog/delete/{id}', 'delete')->name('blog.delete');
-        Route::post('blog/update/{id}', 'update')->name('blog.update');
-        Route::get('blog/status/{id}', 'status')->name('blog.status');
-        Route::get('blog/pending', 'pending')->name('blog.pending');
-        Route::get('blog/settings', 'settings')->name('blog.settings');
-        Route::post('blog/settings/update', 'update_settings')->name('blog.settings.update');
-    });
-
-    // === Blog Categories ===
-    Route::controller(BlogCategoryController::class)->group(function () {
-        Route::get('blog/category', 'index')->name('blog.category');
-        Route::post('blog/category/create', 'create')->name('blog.category.create');
-        Route::post('blog/category/store', 'store')->name('blog.category.store');
-        Route::get('blog/category/delete/{id}', 'delete')->name('blog.category.delete');
-        Route::post('blog/category/update/{id}', 'update')->name('blog.category.update');
-    });
-
-    // === Newsletter ===
-    Route::controller(NewsletterController::class)->group(function () {
-        Route::get('newsletters', 'index')->name('newsletter');
-        Route::post('newsletter-statistics', 'newsletter_statistics')->name('newsletter_statistics');
-        Route::post('newsletter/store', 'store')->name('newsletter.store');
-        Route::get('newsletters/delete/{id}', 'delete')->name('newsletter.delete');
-        Route::post('newsletter/update/{id}', 'update')->name('newsletter.update');
-        Route::get('newsletter/subscribers', 'subscribers')->name('subscribed_user');
-        Route::get('subscribed_user/delete/{id}', 'subscribed_user_delete')->name('subscribed_user.delete');
-        Route::get('newsletters_form', 'newsletters_form')->name('newsletters.form');
-        Route::get('get_user', 'get_user')->name('get.user');
-        Route::post('send/newsletters', 'send_newsletters')->name('send.newsletters');
-    });
-
-    // === Reports ===
-    Route::controller(ReportController::class)->group(function () {
-        Route::get('admin_revenue', 'admin_revenue')->name('revenue');
-        Route::get('admin_revenue/delete/{id}', 'admin_revenue_delete')->name('revenue.delete');
-        Route::get('instructor_revenue', 'instructor_revenue')->name('instructor.revenue');
-        Route::get('instructor_revenue/delete/{id}', 'instructor_revenue_delete')->name('instructor_revenue.delete');
-        Route::get('purchase_history', 'purchase_history')->name('purchase.history');
-        Route::get('purchase_history/invoice/{id?}', 'purchase_history_invoice')->name('purchase.history.invoice');
     });
 
     // === Bootcamp Categories ===
@@ -215,23 +162,24 @@ Route::name('admin.')->prefix('admin')->middleware(AdminMiddleware::class)->grou
         Route::get('bootcamp/resource/download/{id}', 'download')->name('bootcamp.resource.download');
     });
 
-    // === Tutor Booking ===
-    Route::controller(TutorBookingController::class)->group(function () {
-        Route::get('tutor-booking/subjects', 'subjects')->name('tutor_subjects');
-        Route::get('tutor-booking/subject/create', 'tutor_subject_create')->name('tutor_subject_create');
-        Route::post('tutor-booking/subject/store', 'tutor_subject_store')->name('tutor_subject_store');
-        Route::get('tutor-booking/subject/edit', 'tutor_subject_edit')->name('tutor_subject_edit');
-        Route::post('tutor-booking/subject/update/{id}', 'tutor_subject_update')->name('tutor_subject_update');
-        Route::get('tutor-booking/subject/subject-status-update/{id}/{status}', 'tutor_subject_status')->name('tutor_subject_status');
-        Route::get('tutor-booking/subject/delete/{id}', 'tutor_subject_delete')->name('tutor_subject_delete');
+    // === Team Training Packages ===
+    Route::controller(TeamTrainingController::class)->group(function () {
+        Route::get('team-packages', 'index')->name('team.packages');
+        Route::view('team-packages/create', 'admin.team_training.create')->name('team.packages.create');
+        Route::post('team-packages/store', 'store')->name('team.packages.store');
+        Route::get('team-packages/purchase/history', 'purchase_history')->name('team.packages.purchase.history');
 
-        Route::get('tutor-booking/tutor-categories', 'tutor_categories')->name('tutor_categories');
-        Route::get('tutor-booking/category/create', 'tutor_category_create')->name('tutor_category_create');
-        Route::post('tutor-booking/category/store', 'tutor_category_store')->name('tutor_category_store');
-        Route::get('tutor-booking/category/edit', 'tutor_category_edit')->name('tutor_category_edit');
-        Route::post('tutor-booking/category/update/{id}', 'tutor_category_update')->name('tutor_category_update');
-        Route::get('tutor-booking/category/category-status-update/{id}/{status}', 'tutor_category_status')->name('tutor_category_status');
-        Route::get('tutor-booking/category/delete/{id}', 'tutor_category_delete')->name('tutor_category_delete');
+        Route::middleware([RecordVerification::class.':TeamTrainingPackage,id,user_id'])->group(function () {
+            Route::get('team-packages/edit/{id}', 'edit')->name('team.packages.edit');
+            Route::post('team-packages/update/{id}', 'update')->name('team.packages.update');
+            Route::get('team-packages/delete/{id}', 'delete')->name('team.packages.delete');
+            Route::get('team-packages/duplicate/{id}', 'duplicate')->name('team.packages.duplicate');
+            Route::get('team-packages/toggle-status/{id}', 'toggle_status')->name('team.toggle.status');
+            Route::get('team-packages/purchase/invoice/{id}', 'invoice')->name('team.packages.purchase.invoice');
+        });
+
+        Route::get('get-courses-by-privacy/', 'get_courses')->name('get.courses.by.privacy');
+        Route::get('get-courses-price/', 'get_course_price')->name('get.course.price');
     });
 
     // === Settings ===
@@ -244,9 +192,6 @@ Route::name('admin.')->prefix('admin')->middleware(AdminMiddleware::class)->grou
 
         Route::get('drip_content_settings', 'drip_content_settings')->name('drip.settings');
         Route::post('drip_content_settings/update', 'drip_content_settings_update')->name('drip.settings.update');
-
-        Route::get('payment_settings', 'payment_settings')->name('payment.settings');
-        Route::post('payment_settings/update', 'payment_settings_update')->name('payment.settings.update');
 
         Route::get('manage_language', 'manage_language')->name('manage.language');
         Route::post('language/store', 'language_store')->name('language.store');
@@ -288,15 +233,6 @@ Route::name('admin.')->prefix('admin')->middleware(AdminMiddleware::class)->grou
         Route::post('seo_settings/update/{route}', 'seo_settings_update')->name('seo.settings.update');
     });
 
-    // === Offline Payments ===
-    Route::controller(OfflinePaymentController::class)->group(function () {
-        Route::get('offline-payments', 'index')->name('offline.payments');
-        Route::get('offline-payment/doc/{id}', 'download_doc')->name('offline.payment.doc');
-        Route::get('offline-payment/accept/{id}', 'accept_payment')->name('offline.payment.accept');
-        Route::get('offline-payment/decline/{id}', 'decline_payment')->name('offline.payment.decline');
-        Route::get('offline-payment/delete/{id}', 'delete_payment')->name('offline.payment.delete');
-    });
-
     // === Coupons ===
     Route::controller(CouponController::class)->group(function () {
         Route::get('coupons', 'index')->name('coupons');
@@ -334,13 +270,6 @@ Route::name('admin.')->prefix('admin')->middleware(AdminMiddleware::class)->grou
         Route::get('live-class/start/{id}', 'live_class_start')->name('live.class.start');
         Route::get('live-class/settings', 'live_class_settings')->name('live.class.settings');
         Route::post('live-class/settings/update', 'update_live_class_settings')->name('live.class.settings.update');
-    });
-
-    // === Contact Messages ===
-    Route::controller(ContactController::class)->group(function () {
-        Route::any('contacts', 'index')->name('contacts');
-        Route::post('reply', 'reply')->name('reply');
-        Route::get('contact/delete/{id}', 'contact_delete')->name('contact.delete');
     });
 
     // === Messages ===

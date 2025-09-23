@@ -27,7 +27,7 @@ class BootcampController extends Controller
 
         $page_data['bootcamps'] = $query->latest('id')->paginate(9)->appends($request->query());
 
-        return view(theme_path().'bootcamp.index', $page_data);
+        return view('frontend.default.bootcamp.index', $page_data);
     }
 
     public function show($slug)
@@ -46,6 +46,6 @@ class BootcampController extends Controller
         $page_data['bootcamp_details'] = $bootcamp;
         $page_data['modules'] = $bootcamp->modules;
 
-        return view(theme_path().'bootcamp.details', $page_data);
+        return view('frontend.default.bootcamp.details', $page_data);
     }
 }

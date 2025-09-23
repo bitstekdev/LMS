@@ -24,7 +24,7 @@ class TeamTrainingController extends Controller
 
         $page_data['packages'] = $query->latest()->paginate(20)->appends(request()->query());
 
-        return view('instructor.team_training.index', $page_data);
+        return view('admin.team_training.index', $page_data);
     }
 
     public function store(Request $request)
@@ -77,7 +77,7 @@ class TeamTrainingController extends Controller
     {
         $page_data['package'] = TeamTrainingPackage::with('course')->where('id', $id)->firstOrFail();
 
-        return view('instructor.team_training.edit', $page_data);
+        return view('admin.team_training.edit', $page_data);
     }
 
     public function update(Request $request, $id)
@@ -153,7 +153,7 @@ class TeamTrainingController extends Controller
         $status = $request->privacy === 'public' ? 'active' : 'private';
         $courses = Course::where('status', $status)->get();
 
-        return view('instructor.team_training.load_courses', compact('courses'));
+        return view('admin.team_training.load_courses', compact('courses'));
     }
 
     public function get_course_price(Request $request)
@@ -177,7 +177,7 @@ class TeamTrainingController extends Controller
             ->paginate(20)
             ->appends(request()->query());
 
-        return view('instructor.team_training.purchase_history', $page_data);
+        return view('admin.team_training.purchase_history', $page_data);
     }
 
     public function invoice($id)
@@ -187,6 +187,6 @@ class TeamTrainingController extends Controller
             ->whereHas('package', fn ($q) => $q->where('user_id', auth('web')->id()))
             ->firstOrFail();
 
-        return view('instructor.team_training.invoice', $page_data);
+        return view('admin.team_training.invoice', $page_data);
     }
 }

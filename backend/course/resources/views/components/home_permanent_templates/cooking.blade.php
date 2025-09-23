@@ -28,10 +28,10 @@
 @endpush
 @section('content')
     @php
-        $total_students = DB::table('users')->where('role', 'student')->get();
-        $total_instructors = DB::table('users')->where('role', 'instructor')->get();
-        $free_courses = DB::table('courses')->where('is_paid', 0)->get();
-        $premium_courses = DB::table('courses')->where('is_paid', 1)->get();
+        $total_students = App\Models\User::where('role', 'student')->get();
+        $total_instructors = App\Models\User::where('role', 'instructor')->get();
+        $free_courses = App\Models\Course::where('is_paid', 0)->get();
+        $premium_courses = App\Models\Course::where('is_paid', 1)->get();
     @endphp
     <!-- Banner Area Start -->
     <section class="cooking-banner-section">
@@ -160,8 +160,12 @@
             </div>
             <div class="row row-28 mb-110">
                 @php
-                    $top_courses = DB::table('courses')
-                        ->leftJoin('payment_histories', 'courses.id', '=', 'payment_histories.course_id')
+                    $top_courses = App\Models\Course::leftJoin(
+                        'payment_histories',
+                        'courses.id',
+                        '=',
+                        'payment_histories.course_id',
+                    )
                         ->select(
                             'courses.id',
                             'courses.slug',
@@ -256,7 +260,7 @@
 
             <div class="row row-28 mb-110">
                 @php
-                    $upcoming_courses = DB::table('courses')->where('status', 'upcoming')->latest('id')->take(4)->get();
+                    $upcoming_courses = App\Models\Course::where('status', 'upcoming')->latest('id')->take(4)->get();
                 @endphp
                 @foreach ($upcoming_courses as $key => $row)
                     <div class="col-md-12">
@@ -326,11 +330,11 @@
             </div>
             <div class="row row-28 mb-110">
                 @php
-                    $featured_courses = DB::table('courses')->where('status', 'active')->latest('id')->take(4)->get();
+                    $featured_courses = App\Models\Course::where('status', 'active')->latest('id')->take(4)->get();
                 @endphp
                 @foreach ($featured_courses->take(4) as $key => $row)
                     @php
-                        $ratings = DB::table('reviews')->where('course_id', $row->id)->pluck('rating')->toArray();
+                        $ratings = App\Models\Review::where('course_id', $row->id)->pluck('rating')->toArray();
                         $average_rating = count($ratings) > 0 ? array_sum($ratings) / count($ratings) : null;
                     @endphp
                     <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6">
@@ -439,7 +443,7 @@
                             <div class="lms-event-single1 d-flex gap-2">
                                 <div class="lms-event-number">
                                     @php
-                                        $admininfo = DB::table('users')->where('role', 'admin')->first();
+                                        $admininfo = App\Models\User::where('role', 'admin')->first();
 
                                     @endphp
                                     <h1 class="title-5 fs-44px lh-29px fw-500">{{ $increment++ }}</h1>
@@ -575,8 +579,10 @@
             </div>
             <div class="row row-28 mb-110">
                 @php
-                    $popular_instaructors = DB::table('courses')
-                        ->select('enrollments.user_id', DB::raw('count(*) as enrol_number'))
+                    $popular_instaructors = App\Models\Course::select(
+                        'enrollments.user_id',
+                        DB::raw('count(*) as enrol_number'),
+                    )
                         ->join('enrollments', 'courses.id', '=', 'enrollments.course_id')
                         ->groupBy('enrollments.user_id')
                         ->orderBy('enrollments.user_id', 'DESC')
@@ -723,63 +729,6 @@
             </div>
         </div>
     </section>
-    <!-- Frequently Asked Questions Area End -->
-    @php
-        use Carbon\Carbon;
-    @endphp
-    @if (get_frontend_settings('blog_visibility_on_the_home_page'))
-        <!-- Latest News Area Start -->
-        <section class="cooking-news-section">
-            <div class="container">
-                <div class="cooking-news-main-area">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="cooking-section-title">
-                                <h3 class="title-5 fs-32px lh-42px fw-600 text-center mb-20">
-                                    {{ get_phrase('Follow The Latest News') }}</h3>
-                                <p class="info">
-                                    {{ get_phrase('The latest blog highlights the most recent articles, updates, and insights from our platform.') }}
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row row-28">
-
-                        @foreach ($blogs as $key => $blog)
-                            <div class="col-lg-6">
-                                <a href="{{ route('blog.details', $blog->slug) }}" class="list-news1-link">
-                                    <div class="list-link1-card d-flex align-items-center">
-                                        <div class="banner">
-                                            <img class="h-230px" src="{{ get_image($blog->thumbnail) }}"
-                                                alt="">
-                                        </div>
-                                        <div class="list-news1-card-body">
-                                            <div class="date-wrap d-flex align-items-center">
-                                                <img src="{{ asset('assets/frontend/default/image/calendar-green-14.svg') }}"
-                                                    alt="">
-                                                <p class="date">
-                                                    {{ Carbon::parse($blog->created_at)->format('F j, Y') }}</p>
-                                            </div>
-                                            <h4 class="title">{{ ucfirst($blog->title) }}</h4>
-                                            <p class="info mb-0 ellipsis-line-2">
-                                                {{ ellipsis(strip_tags($blog->description), 160) }}</p>
-                                            <div class="arrow mt-4">
-                                                <img src="{{ asset('assets/frontend/default/image/arrow-right-green-20.svg') }}"
-                                                    alt="">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                        @endforeach
-
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- Latest News Area End -->
-    @endif
-
 
     <!-- Vertically centered modal -->
     <div class="modal fade-in-effect" id="promoVideo" tabindex="-1" aria-labelledby="promoVideoLabel"

@@ -54,7 +54,6 @@
                             <h4>{{ get_phrase('Useful links') }}</h4>
                             <ul>
                                 <li><a href="{{ route('courses') }}">{{ get_phrase('Course') }}</a></li>
-                                <li><a href="{{ route('blogs') }}">{{ get_phrase('Blog') }}</a></li>
                             </ul>
                         </div>
                     </div>
@@ -75,26 +74,6 @@
                                     </a>
                                 </li>
                             </ul>
-                            <div class="newslater-bottom">
-                                <h4 class="builder-editable" builder-identity="2">{{ get_phrase('Newsletter') }}</h4>
-                                <p class="description builder-editable" builder-identity="3">
-                                    {{ get_phrase("Subscribe to stay tuned for new web design and latest updates. Let's do it!") }}
-                                </p>
-                                <form action="{{ route('newsletter.store') }}" method="post" class="newslater-form"
-                                    id="newslater-form">
-                                    @csrf
-                                    <input type="text" name="email" class="form-control"
-                                        placeholder="{{ get_phrase('Email address') }}">
-                                    @if (get_frontend_settings('recaptcha_status'))
-                                        <button class="eBtn gradient g-recaptcha"
-                                            data-sitekey="{{ get_frontend_settings('recaptcha_sitekey') }}"
-                                            data-callback='onNewslaterSubmit'
-                                            data-action='submit'>{{ get_phrase('Submit') }}</button>
-                                    @else
-                                        <button class="eBtn gradient">{{ get_phrase('Submit') }}</button>
-                                    @endif
-                                </form>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -125,14 +104,3 @@
     </div>
 
 </footer>
-
-
-@push('js')
-    <script>
-        "use strict";
-
-        function onNewslaterSubmit(token) {
-            document.getElementById("newslater-form").submit();
-        }
-    </script>
-@endpush

@@ -41,7 +41,6 @@ class User extends Authenticatable implements MustVerifyEmail
         'email_verified_at',
         'password',
         'remember_token',
-        'paymentkeys',
         'video_url',
     ];
 
@@ -66,7 +65,6 @@ class User extends Authenticatable implements MustVerifyEmail
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
             'status' => 'boolean',
-            'paymentkeys' => 'array',
         ];
     }
 

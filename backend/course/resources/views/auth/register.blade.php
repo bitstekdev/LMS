@@ -1,4 +1,4 @@
-@extends('layouts.' . get_frontend_settings('theme'))
+@extends('layouts.default')
 @push('title', get_phrase('Sign Up'))
 @push('meta')@endpush
 @push('css')
@@ -15,8 +15,7 @@
             <div class="row">
                 <div class="col-lg-7 col-md-6">
                     <div class="login-img">
-                        <img src="{{ asset('assets/frontend/' . get_frontend_settings('theme') . '/image/signup.gif') }}"
-                            alt="register-banner">
+                        <img src="{{ asset('assets/frontend/default/image/signup.gif') }}" alt="register-banner">
                     </div>
                 </div>
                 <div class="col-lg-5 col-md-6">

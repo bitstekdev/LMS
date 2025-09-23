@@ -1,8 +1,10 @@
 @extends('layouts.instructor')
+
 @push('title', get_phrase('Dashboard'))
 @push('meta')@endpush
 @push('css')
 @endpush
+
 @section('content')
     <div class="ol-card radius-8px">
         <div class="ol-card-body my-3 py-4 px-20px">
@@ -60,32 +62,15 @@
             <div class="ol-card card-hover">
                 <div class="ol-card-body px-20px py-3">
                     <p class="title card-title-hover fs-18px my-2">
-                        {{ App\Models\User::where('role', 'instructor')->count() }}</p>
+                        {{ App\Models\User::where('role', 'instructor')->count() }}
+                    </p>
                     <p class="sub-title fs-14px">{{ get_phrase('Number of Instructor') }}</p>
                 </div>
             </div>
         </div>
     </div>
 
-    <div class="row">
-        <div class="col-xl-12">
-            <div class="ol-card p-3">
-                <div class="row">
-                    <div class="col-md-6">
-                        <h2 class="title fs-14px">{{ get_phrase('Instructor Revenue This Year') }}</h2>
-                    </div>
-                    <div class="col-md-6 text-end">
-                        <a class="btn-link" href="{{ route('instructor.payout.reports') }}" data-bs-toggle="tooltip"
-                            data-bs-placement="bottom" title="{{ get_phrase('Instructor Revenue') }}"><i
-                                class="fi-rr-arrow-alt-right"></i></a>
-                    </div>
-                </div>
-                <div class="ol-card-body">
-                    <canvas id="myChart" class="mw-100 w-100" height="320px"></canvas>
-                </div>
-            </div>
-        </div>
-    </div>
+    {{-- Removed: Instructor Revenue Chart Section --}}
 
     <div class="row my-3">
         <div class="col-md-5">
@@ -96,7 +81,7 @@
                             <h4 class="title fs-14px">{{ get_phrase('Course Status') }}</h4>
                         </div>
                         <div class="col-md-6 text-end">
-                            <a class="btn-link" href="{{ route('instructor.courses') }}" data-bs-toggle="tooltip"
+                            <a class="btn-link" href="{{ route('instructor.course.index') }}" data-bs-toggle="tooltip"
                                 data-bs-placement="bottom" title="{{ get_phrase('Explore Courses') }}"><i
                                     class="fi-rr-arrow-alt-right"></i></a>
                         </div>
@@ -138,16 +123,11 @@
             </div>
         </div>
         <div class="col-md-7">
-            <div class="ol-card" id = 'unpaid-instructor-revenue'>
+            <div class="ol-card" id="unpaid-instructor-revenue">
                 <div class="ol-card-body p-3">
                     <div class="row">
                         <div class="col-md-6">
                             <h4 class="title text-14px mb-3">{{ get_phrase('Pending Requested withdrawal') }}</h4>
-                        </div>
-                        <div class="col-md-6 text-end">
-                            <a class="btn-link" href="{{ route('instructor.payout.reports') }}" data-bs-toggle="tooltip"
-                                data-bs-placement="bottom" title="{{ get_phrase('Instructor Payout') }}"><i
-                                    class="fi-rr-arrow-alt-right"></i></a>
                         </div>
                     </div>
                     <div class="table-responsive">
@@ -190,57 +170,35 @@
     </div>
 
     @php
-        $courses = App\Models\Course::where('user_id', auth()->user()->id)
+        use App\Models\Course;
+
+        $courses = Course::where('user_id', auth()->user()->id)
             ->get()
             ->groupBy('status');
-        $active = isset($courses['active']) ? $courses['active']->count() : 0;
-        $upcoming = isset($courses['upcoming']) ? $courses['upcoming']->count() : 0;
-        $pending = isset($courses['pending']) ? $courses['pending']->count() : 0;
-        $private = isset($courses['private']) ? $courses['private']->count() : 0;
-        $draft = isset($courses['draft']) ? $courses['draft']->count() : 0;
-        $inactive = isset($courses['inactive']) ? $courses['inactive']->count() : 0;
+
+        $active = $courses->get('active', collect())->count();
+        $upcoming = $courses->get('upcoming', collect())->count();
+        $pending = $courses->get('pending', collect())->count();
+        $private = $courses->get('private', collect())->count();
+        $draft = $courses->get('draft', collect())->count();
+        $inactive = $courses->get('inactive', collect())->count();
     @endphp
 @endsection
-@push('js')
 
-    {{-- Oliv template start --}}
-    <script src="{{ asset('assets/backend/vendors/apexcharts/apexcharts.min.js') }}"></script>
+@push('js')
     <script src="{{ asset('assets/backend/vendors/chart-js/chart.js') }}"></script>
-    {{-- Oliv template end --}}
 
     <script>
         "use strict";
-        const xValues = [0, "January", "February", "March", "April", "May", "June", "July", "August", "September",
-            "October", "November", "December"
-        ];
-        new Chart("myChart", {
-            type: "line",
-            data: {
-                labels: xValues,
-                datasets: [{
-                    fill: false,
-                    lineTension: 0,
-                    backgroundColor: "rgba(0,0,255,1.0)",
-                    borderColor: "rgba(0,0,255,0.1)",
-                    data: "{{ json_encode($monthly_amount) }}"
-                }]
-            },
-            options: {
-                legend: {
-                    display: true
-                },
-            }
-        });
 
-        // Pie Chart 2
         const project_progress2 = document.getElementById('pie2');
         const progressData2 = {
-            labels: ['Active', 'Upcoming', 'Pending', 'Private', 'Draft', 'Deactive'],
+            labels: ['Active', 'Upcoming', 'Pending', 'Private', 'Draft', 'Inactive'],
             data: [{{ $active }}, {{ $upcoming }}, {{ $pending }}, {{ $private }},
                 {{ $draft }}, {{ $inactive }}
             ],
         };
-        var barColors = [
+        const barColors = [
             "#12c093",
             "#1b84ff",
             "#ff2583",
@@ -248,15 +206,16 @@
             "#878d97",
             "#dadada",
         ];
+
         new Chart(project_progress2, {
             type: 'doughnut',
             data: {
                 labels: progressData2.labels,
                 datasets: [{
                     backgroundColor: barColors,
-                    label: ' {{ get_phrase('Courses') }}',
+                    label: '{{ get_phrase('Courses') }}',
                     data: progressData2.data,
-                }, ],
+                }],
             },
             options: {
                 responsive: true,

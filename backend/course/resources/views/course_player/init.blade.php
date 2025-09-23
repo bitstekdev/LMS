@@ -15,7 +15,7 @@
             Elem.attr('disabled', true);
 
             $.ajax({
-                url: "{{ route('set.watch.history') }}", // Your route
+                url: "{{ route('set_watch_history') }}", // Your route
                 type: "post",
                 data: {
                     lesson_id: id,

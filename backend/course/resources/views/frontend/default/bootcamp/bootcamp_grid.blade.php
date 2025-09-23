@@ -3,10 +3,24 @@
 
     $total = $review->count();
     $rating = array_sum(array_column($review->toArray(), 'rating'));
+    $average_rating = $total ? $rating / $total : 0;
 
-    $average_rating = 0;
-    if ($total != 0) {
-        $average_rating = $rating / $total;
+    // Purchase check
+    $btn = [
+        'url' => route('purchase.bootcamp', $bootcamp->id),
+        'title' => get_phrase($bootcamp->is_paid ? 'Buy Now' : 'Enroll Now'),
+    ];
+
+    if (auth()->check()) {
+        $my_bootcamp = App\Models\BootcampPurchase::where('user_id', auth()->id())
+            ->where('bootcamp_id', $bootcamp->id)
+            ->where('status', 1)
+            ->first();
+
+        if ($my_bootcamp) {
+            $btn['title'] = get_phrase('In Collection');
+            $btn['url'] = route('my.bootcamp.details', $bootcamp->slug);
+        }
     }
 @endphp
 
@@ -27,7 +41,12 @@
                             {{ get_phrase('Free') }}
                         @else
                             @if ($bootcamp->discount_flag == 1)
-                                @php $discounted_price = number_format(($bootcamp->price - $bootcamp->discounted_price), 2) @endphp
+                                @php
+                                    $discounted_price = number_format(
+                                        $bootcamp->price - $bootcamp->discounted_price,
+                                        2,
+                                    );
+                                @endphp
                                 {{ currency($discounted_price) }}
                                 <del>{{ currency($bootcamp->price, 2) }}</del>
                             @else
@@ -82,36 +101,13 @@
                 </li>
             </ul>
             <div class="btns">
-                <a href="{{ route('bootcamp.details', $bootcamp->slug) }}"
-                    class="eBtn gradient">{{ get_phrase('View Details') }}</a>
-                @php
-                    $btn['url'] = route('purchase.bootcamp', $bootcamp->id);
-                    $btn['title'] = get_phrase($bootcamp->is_paid ? 'Buy Now' : 'Enroll Now');
-                    if (isset(auth()->user()->id)) {
-                        $my_bootcamp = App\Models\BootcampPurchase::where('user_id', auth()->user()->id)
-                            ->where('bootcamp_id', $bootcamp->id)
-                            ->where('status', 1)
-                            ->first();
-
-                        if ($my_bootcamp) {
-                            $btn['title'] = get_phrase('In Collection');
-                            $btn['url'] = route('my.bootcamp.details', $bootcamp->slug);
-                        }
-
-                        $pending_payment = App\Models\OfflinePayment::where('user_id', auth()->user()->id)
-                            ->where('item_type', 'bootcamp')
-                            ->where('items', $bootcamp->id)
-                            ->where('status', 0)
-                            ->first();
-
-                        if ($pending_payment) {
-                            $btn['title'] = get_phrase('Processing');
-                            $btn['url'] = 'javascript:void(0);';
-                        }
-                    }
-                @endphp
+                <a href="{{ route('bootcamp.details', $bootcamp->slug) }}" class="eBtn gradient">
+                    {{ get_phrase('View Details') }}
+                </a>
                 <a href="{{ $btn['url'] }}"
-                    class="eBtn gradient @isset($my_bootcamp) bootcamp-purchased @elseif(isset($pending_payment)) bootcamp-purchased @endisset">{{ $btn['title'] }}</a>
+                    class="eBtn gradient @isset($my_bootcamp) bootcamp-purchased @endisset">
+                    {{ $btn['title'] }}
+                </a>
             </div>
         </div>
     </div>

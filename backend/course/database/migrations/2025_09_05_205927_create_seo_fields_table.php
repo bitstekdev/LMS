@@ -14,7 +14,6 @@ return new class extends Migration
         Schema::create('seo_fields', function (Blueprint $table) {
             $table->id();
             $table->foreignId('course_id')->nullable()->constrained()->nullOnDelete();
-            $table->foreignId('blog_id')->nullable()->constrained()->nullOnDelete();
             $table->foreignId(column: 'bootcamp_id')->nullable()->constrained()->nullOnDelete();
             $table->string('route')->nullable();
             $table->string('name_route')->nullable();

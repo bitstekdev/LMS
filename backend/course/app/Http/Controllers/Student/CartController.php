@@ -44,7 +44,7 @@ class CartController extends Controller
                 ];
             });
 
-        $view = 'frontend.'.get_frontend_settings('theme').'.student.cart.index';
+        $view = 'frontend.default.student.cart.index';
 
         return view($view, [
             'cart_items' => $cart_items,

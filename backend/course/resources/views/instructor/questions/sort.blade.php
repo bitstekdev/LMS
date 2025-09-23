@@ -1,5 +1,5 @@
 @php
-    $questions = DB::table('questions')->where('quiz_id', $id)->orderBy('sort')->get();
+    $questions = App\Models\Question::where('quiz_id', $id)->orderBy('sort')->get();
 @endphp
 
 <div class="row">

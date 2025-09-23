@@ -200,8 +200,8 @@
                 <div class="col-lg-7">
                     <div class="contact-left">
                         <h4 class="g-title">{{ get_phrase('Send Message') }}</h4>
-                        <form action="{{ route('contact.store') }}" method="post" class="global-form mt-25"
-                            id="global-form">@csrf
+                        <form method="post" class="global-form mt-25" id="global-form">
+                            @csrf
                             <div class="form-group">
                                 <label for="name" class="form-label">{{ get_phrase('Name') }}</label>
                                 <input type="text" name="name"

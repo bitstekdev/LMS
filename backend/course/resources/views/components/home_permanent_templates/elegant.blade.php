@@ -79,7 +79,7 @@
             <!-- Courses -->
             <div class="row row-20 mb-30">
                 @php
-                    $featured_courses = DB::table('courses')->where('status', 'active')->latest('id')->get();
+                    $featured_courses = App\Models\Course::where('status', 'active')->latest('id')->get();
                 @endphp
                 @foreach ($featured_courses->take(4) as $key => $row)
                     <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6">
@@ -91,8 +91,7 @@
                                 <div class="course-card1-details">
                                     <div class="rating-reviews d-flex align-items-center flex-wrap">
                                         @php
-                                            $ratings = DB::table('reviews')
-                                                ->where('course_id', $row->id)
+                                            $ratings = App\Models\Review::where('course_id', $row->id)
                                                 ->pluck('rating')
                                                 ->toArray();
                                             $average_rating =
@@ -183,10 +182,10 @@
                 <div class="why-choose-area1">
                     <h2 class="title mb-30 fw-500">{{ get_phrase('Why Choose Us') }}</h2>
                     @php
-                        $total_students = DB::table('users')->where('role', 'student')->get();
-                        $total_instructors = DB::table('users')->where('role', 'instructor')->get();
-                        $free_courses = DB::table('courses')->where('is_paid', 0)->get();
-                        $premium_courses = DB::table('courses')->where('is_paid', 1)->get();
+                        $total_students = App\Models\User::where('role', 'student')->get();
+                        $total_instructors = App\Models\User::where('role', 'instructor')->get();
+                        $free_courses = App\Models\Course::where('is_paid', 0)->get();
+                        $premium_courses = App\Models\Course::where('is_paid', 1)->get();
                     @endphp
                     <div class="why-choose-wrap1">
                         <div class="why-choose1-single">
@@ -229,8 +228,12 @@
             <!-- Courses -->
             <div class="row row-20 mb-30">
                 @php
-                    $top_courses = DB::table('courses')
-                        ->leftJoin('payment_histories', 'courses.id', '=', 'payment_histories.course_id')
+                    $top_courses = App\Models\Course::leftJoin(
+                        'payment_histories',
+                        'courses.id',
+                        '=',
+                        'payment_histories.course_id',
+                    )
                         ->select(
                             'courses.id',
                             'courses.slug',
@@ -290,7 +293,7 @@
 
                                         </div>
                                         <p class="reviews">
-                                            ({{ DB::table('reviews')->where('course_id', $row->id)->count() }}
+                                            ({{ App\Models\Review::where('course_id', $row->id)->count() }}
                                             {{ get_phrase('Reviews') }})
                                         </p>
                                     </div>
@@ -369,11 +372,11 @@
             <div class="swiper elegant-testimonial-1">
                 <div class="swiper-wrapper">
                     @php
-                        $reviews = DB::table('user_reviews')->get();
+                        $reviews = App\Models\UserReview::get();
                     @endphp
                     @foreach ($reviews as $review)
                         @php
-                            $userDetails = DB::table('users')->where('id', $review->user_id)->first();
+                            $userDetails = App\Models\User::where('id', $review->user_id)->first();
                         @endphp
                         <div class="swiper-slide">
                             <div class="elegant-testimonial-slide">
@@ -454,52 +457,6 @@
         </div>
     </section>
     <!-- Question and Answer Area End -->
-
-    <!-- Top Rated Course Area Start -->
-    @if (get_frontend_settings('blog_visibility_on_the_home_page'))
-        <section>
-            <div class="container mb-60">
-                <!-- Section title -->
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="home1-section-title">
-                            <h1 class="title mb-20 fw-500">{{ get_phrase('Our Latest Blog') }}</h1>
-                            <p class="info">
-                                {{ get_phrase('The latest blog highlights the most recent articles, updates, and insights from our platform.') }}
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <!-- Courses -->
-                <div class="row row-20">
-
-                    @foreach ($blogs as $key => $blog)
-                        <div class="col-lg-4 col-md-6 col-sm-6">
-                            <a href="{{ route('blog.details', $blog->slug) }}" class="blog-post1-link">
-                                <div class="blog-post1-inner">
-                                    <div class="banner">
-                                        <img src="{{ get_image($blog->thumbnail) }}" alt="...">
-                                    </div>
-                                    <div class="blog-post1-details">
-                                        <h3 class="title fw-500 mb-3 pt-2 ellipsis-line-2">{{ ucfirst($blog->title) }}
-                                        </h3>
-                                        <p class="info ellipsis-line-2">
-                                            {{ ellipsis(strip_tags($blog->description), 160) }}</p>
-                                        <p class="read-more d-flex align-items-center">
-                                            <span>{{ get_phrase('Read More') }}</span>
-                                            <img src="{{ asset('assets/frontend/default/image/angle-right-black-18.svg') }}"
-                                                alt="">
-                                        </p>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                    @endforeach
-
-                </div>
-            </div>
-        </section>
-    @endif
 
     <!-- Top Rated Course Area End -->
     @if (get_frontend_settings('mobile_app_link'))

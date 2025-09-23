@@ -27,7 +27,6 @@ class DatabaseSeeder extends Seeder
             | System Settings
             |--------------------------------------------------------------------------
             */
-            PaymentGatewaySeeder::class,
             HomePageSettingSeeder::class,
             SettingSeeder::class,
             PlayerSettingSeeder::class,
@@ -48,7 +47,6 @@ class DatabaseSeeder extends Seeder
             |--------------------------------------------------------------------------
             */
             UserSeeder::class,
-            ContactSeeder::class,
             UserReviewSeeder::class,
 
             /*
@@ -62,28 +60,6 @@ class DatabaseSeeder extends Seeder
             BootcampResourceSeeder::class,
             BootcampLiveClassSeeder::class,
             BootcampPurchaseSeeder::class,
-
-            /*
-            |--------------------------------------------------------------------------
-            | Tutor Hierarchy
-            |--------------------------------------------------------------------------
-            */
-            TutorCategorySeeder::class,
-            TutorSubjectSeeder::class,
-            TutorScheduleSeeder::class,
-            TutorBookingSeeder::class,
-            TutorCanTeachSeeder::class,
-            TutorReviewSeeder::class,
-
-            /*
-            |--------------------------------------------------------------------------
-            | Blog Hierarchy
-            |--------------------------------------------------------------------------
-            */
-            BlogCategorySeeder::class,
-            BlogSeeder::class,
-            BlogCommentSeeder::class,
-            BlogLikeSeeder::class,
 
             /*
             |--------------------------------------------------------------------------

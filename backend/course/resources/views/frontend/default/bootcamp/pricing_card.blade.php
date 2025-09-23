@@ -1,9 +1,9 @@
 <div class="gradient-border radius-22 page-static-sidebar">
-    <div class="ps-box ps-sidebar static-menu p-30 ">
+    <div class="ps-box ps-sidebar static-menu p-30">
         <div class="ps-price d-flex">
-            @if (isset($bootcamp_details->is_paid) && $bootcamp_details->is_paid == 0)
+            @if ($bootcamp_details->is_paid == 0)
                 <h4 class="g-title">{{ get_phrase('Free') }}</h4>
-            @elseif (isset($bootcamp_details->discount_flag) && $bootcamp_details->discount_flag == 1)
+            @elseif ($bootcamp_details->discount_flag == 1)
                 <h4 class="g-title">
                     {{ currency($bootcamp_details->price - $bootcamp_details->discounted_price, 2) }}
                 </h4>
@@ -14,45 +14,40 @@
         </div>
 
         @php
-            if (isset(auth()->user()->id)) {
-                $is_purchased = App\Models\BootcampPurchase::where('user_id', auth()->user()->id)
+            $is_purchased = false;
+
+            if (auth()->check()) {
+                $is_purchased = App\Models\BootcampPurchase::where('user_id', auth()->id())
                     ->where('bootcamp_id', $bootcamp_details->id)
                     ->where('status', 1)
                     ->exists();
-
-                $pending_bootcamp_payment = App\Models\OfflinePayment::where('user_id', auth()->user()->id)
-                    ->where('item_type', 'bootcamp')
-                    ->where('items', $bootcamp_details->id)
-                    ->where('status', 0)
-                    ->first();
             }
+
+            $purchaseRoute = route('purchase.bootcamp', $bootcamp_details->id);
+            $inCollectionRoute = route('my.bootcamp.details', $bootcamp_details->slug);
         @endphp
 
-        @if (isset(auth()->user()->id))
-            @if ($pending_bootcamp_payment)
-                <a href="{{ route('purchase.bootcamp', $bootcamp_details->id) }}" class="eBtn gradient w-100 mb-3">
+        {{-- Purchase/Enroll Button --}}
+        @if (auth()->check())
+            @if ($is_purchased)
+                <a href="{{ $inCollectionRoute }}" class="eBtn gradient w-100 mb-3">
                     <img src="{{ asset('assets/frontend/default/image/enroll.png') }}" alt="...">
-                    {{ get_phrase('Processing') }}</a>
+                    {{ get_phrase('Show In Collection') }}
+                </a>
             @else
-                @if ($is_purchased)
-                    <a href="{{ route('my.bootcamp.details', $bootcamp_details->slug) }}"
-                        class="eBtn gradient w-100 mb-3">
-                        <img src="{{ asset('assets/frontend/default/image/enroll.png') }}" alt="...">
-                        {{ get_phrase('Show In Collection') }}</a>
-                @else
-                    <a href="{{ route('purchase.bootcamp', $bootcamp_details->id) }}" class="eBtn gradient w-100">
-                        <img src="{{ asset('assets/frontend/default/image/enroll.png') }}" alt="...">
-                        {{ get_phrase($bootcamp_details->is_paid ? 'Buy Bootcamp' : 'Enroll Bootcamp') }}
-                    </a>
-                @endif
+                <a href="{{ $purchaseRoute }}" class="eBtn gradient w-100">
+                    <img src="{{ asset('assets/frontend/default/image/enroll.png') }}" alt="...">
+                    {{ get_phrase($bootcamp_details->is_paid ? 'Buy Bootcamp' : 'Enroll Bootcamp') }}
+                </a>
             @endif
         @else
-            <a href="{{ route('purchase.bootcamp', $bootcamp_details->id) }}" class="eBtn gradient w-100">
+            <a href="{{ $purchaseRoute }}" class="eBtn gradient w-100">
                 <img src="{{ asset('assets/frontend/default/image/enroll.png') }}" alt="...">
-                {{ get_phrase($bootcamp_details->is_paid ? 'Buy Bootcamp' : 'Enroll Bootcamp') }}</a>
+                {{ get_phrase($bootcamp_details->is_paid ? 'Buy Bootcamp' : 'Enroll Bootcamp') }}
+            </a>
         @endif
 
-
+        {{-- Features --}}
         <ul class="ps-side-feature">
             <li class="d-flex justify-content-between align-items-center">
                 <span>
@@ -101,46 +96,44 @@
                 {{ get_phrase('Yes') }}
             </li>
         </ul>
+
+        {{-- Contact Instructor --}}
         <ul class="f-socials d-flex flex-column gap-3">
             <p class="description text-center text-14">{{ get_phrase('Contact Instructor') }}</p>
             @php $instructor = $bootcamp_details->user; @endphp
             <div class="d-flex justify-content-center gap-3">
-                @if (isset($instructor->twitter))
+                @if ($instructor->twitter)
                     <li><a href="{{ $instructor->twitter }}"><i class="fa-brands fa-twitter"></i></a></li>
                 @endif
-
-                @if (isset($instructor->facebook))
+                @if ($instructor->facebook)
                     <li><a href="{{ $instructor->facebook }}"><i class="fa-brands fa-facebook-f"></i></a></li>
                 @endif
-                @if (isset($instructor->linkedin))
+                @if ($instructor->linkedin)
                     <li><a href="{{ $instructor->linkedin }}"><i class="fa-brands fa-linkedin-in"></i></a></li>
                 @endif
                 <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
             </div>
         </ul>
 
+        {{-- Instructor phone --}}
         @if ($instructor->phone)
             <div class="dt_group mb-3">
                 <p class="description text-center mb-15">
                     {{ get_phrase('For details about the course') }}</p>
-                <a href="tel:{{ $instructor->phone }}" class="d-flex justify-content-center"><img
-                        src="{{ asset('assets/frontend/default/image/call.svg') }}"
-                        alt="...">{{ get_phrase('Call Us') }}: <p>
-                        {{ $instructor->phone }}</p> </a>
+                <a href="tel:{{ $instructor->phone }}" class="d-flex justify-content-center">
+                    <img src="{{ asset('assets/frontend/default/image/call.svg') }}" alt="...">
+                    {{ get_phrase('Call Us') }}: <p>{{ $instructor->phone }}</p>
+                </a>
             </div>
         @endif
 
+        {{-- Share --}}
         @php
-            if (isset($user_data['unique_identifier'])):
-                $ref = $user_data['unique_identifier'];
-            else:
-                $ref = '';
-            endif;
+            $ref = $user_data['unique_identifier'] ?? '';
             $share_url = route('course.details', $bootcamp_details->slug);
         @endphp
         <div class="w-100 px-4 text-center">
             <p class="description text-center text-14">{{ get_phrase('Share on social media') }}</p>
-
             <a href="https://www.facebook.com/sharer/sharer.php?u={{ $share_url }}&ref={{ $ref }}"
                 target="_blank" class="p-2" style="color: #316FF6;" data-bs-toggle="tooltip"
                 title="{{ get_phrase('Share on Facebook') }}" data-bs-placement="top">

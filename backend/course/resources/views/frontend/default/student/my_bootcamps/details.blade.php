@@ -1,29 +1,39 @@
 @extends('layouts.default')
 @push('title', get_phrase('My Bootcamps'))
 @push('css')
-<style>
-    .c-card i {
-        font-size: 16px; /* Adjust icon size */
-        color: #858C8A; /* Default icon color */
-        padding-left: 2px; /* Padding on the left of the icon */
-        margin-right: 4px; /* Space between icon and text */
-        transition: color 0.3s ease; /* Smooth color transition */
-    }
+    <style>
+        .c-card i {
+            font-size: 16px;
+            /* Adjust icon size */
+            color: #858C8A;
+            /* Default icon color */
+            padding-left: 2px;
+            /* Padding on the left of the icon */
+            margin-right: 4px;
+            /* Space between icon and text */
+            transition: color 0.3s ease;
+            /* Smooth color transition */
+        }
 
-    .c-card a {
-        color: #6b7385; /* Default text color */
-        font-size: 14px; /* Default text size */
-        font-weight: 500; /* Make text bold */
-        text-decoration: none; /* Remove underline */
-        transition: color 0.3s ease; /* Smooth color transition */
-    }
+        .c-card a {
+            color: #6b7385;
+            /* Default text color */
+            font-size: 14px;
+            /* Default text size */
+            font-weight: 500;
+            /* Make text bold */
+            text-decoration: none;
+            /* Remove underline */
+            transition: color 0.3s ease;
+            /* Smooth color transition */
+        }
 
-    .c-card a:hover i,
-    .c-card a:hover {
-        color: #2f57ef; /* Change text and icon color on hover */
-    }
-
-</style>
+        .c-card a:hover i,
+        .c-card a:hover {
+            color: #2f57ef;
+            /* Change text and icon color on hover */
+        }
+    </style>
 @endpush
 @section('content')
     <section class="my-course-content mt-50">
@@ -76,7 +86,7 @@
                                                                     stroke-linecap="round" stroke-linejoin="round"></path>
                                                             </svg>
                                                         </span>
-                                                        {{ date('d M, Y', $bootcamp->publish_date) }}
+                                                        {{ \Carbon\Carbon::parse($bootcamp->publish_date)->format('d M, Y') }}
                                                     </p>
 
                                                     <p class="module-details">
@@ -107,7 +117,9 @@
                                                     </p>
                                                 </div>
                                                 <div class="d-flex gap-3 c-card">
-                                                    <a href="{{ route('my.bootcamp.invoice', ['id' => $bootcamp->id]) }}" class="text-center"><i class="fas fa-file-invoice"></i> {{ get_phrase('Invoice') }}</a>
+                                                    <a href="{{ route('my.bootcamp.invoice', ['id' => $bootcamp->id]) }}"
+                                                        class="text-center"><i class="fas fa-file-invoice"></i>
+                                                        {{ get_phrase('Invoice') }}</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -159,11 +171,11 @@
                                                                 <small class="text-12 d-block fw-light text-color">
                                                                     @if ($module->restriction == 1)
                                                                         {{ get_phrase('Available from : ') }}
-                                                                        {{ date('d-M-Y', $module->publish_date) }}
+                                                                        {{ \Carbon\Carbon::parse($module->publish_date)->format('d-M-Y') }}
                                                                     @elseif ($module->restriction == 2)
                                                                         {{ get_phrase('Available within : ') }}
-                                                                        {{ date('d-M-Y', $module->publish_date) }} -
-                                                                        {{ date('d-M-Y', $module->expiry_date) }}
+                                                                        {{ \Carbon\Carbon::parse($module->publish_date)->format('d-M-Y') }} -
+                                                                        {{ \Carbon\Carbon::parse($module->expiry_date)->format('d-M-Y') }}
                                                                     @endif
                                                                 </small>
                                                             </div>
@@ -252,13 +264,13 @@
                                                                                     </div>
 
                                                                                     <small class="text-12 text-color">
-                                                                                        {{ date('d M, y', $class->start_time) }}
+                                                                                        {{ \Carbon\Carbon::parse($class->start_time)->format('d M, y') }}
                                                                                     </small>
 
                                                                                     <small class="text-12 text-color">
-                                                                                        ({{ date('h:i a', $class->start_time) }}
+                                                                                        ({{ \Carbon\Carbon::parse($class->start_time)->format('h:i a') }}
                                                                                         -
-                                                                                        {{ date('h:i a', $class->end_time) }})
+                                                                                        {{ \Carbon\Carbon::parse($class->end_time)->format('h:i a') }})
                                                                                     </small>
                                                                                 </div>
                                                                             </div>
@@ -297,7 +309,7 @@
                                                                                     </div>
                                                                                     <small
                                                                                         class="text-12 text-color fw-400">
-                                                                                        {{ date('d M, Y', $resource->create_at) }}
+                                                                                        {{ \Carbon\Carbon::parse($resource->create_at)->format('d M, Y') }}
                                                                                     </small>
                                                                                 </div>
                                                                             </div>

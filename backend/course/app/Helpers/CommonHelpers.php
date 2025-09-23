@@ -1,9 +1,5 @@
 <?php
 
-use App\Models\Blog;
-use App\Models\BlogCategory;
-use App\Models\BlogComment;
-use App\Models\BlogLike;
 use App\Models\Bootcamp;
 use App\Models\BootcampLiveClass;
 use App\Models\BootcampModule;
@@ -20,7 +16,6 @@ use App\Models\Language;
 use App\Models\LanguagePhrase;
 use App\Models\Lesson;
 use App\Models\MediaFile;
-use App\Models\PaymentHistory;
 use App\Models\Payout;
 use App\Models\Permission;
 use App\Models\PlayerSetting;
@@ -30,9 +25,6 @@ use App\Models\Setting;
 use App\Models\TeamPackageMember;
 use App\Models\TeamPackagePurchase;
 use App\Models\TeamTrainingPackage;
-use App\Models\TutorBooking;
-use App\Models\TutorReview;
-use App\Models\TutorSchedule;
 use App\Models\User;
 use App\Models\WatchHistory;
 use Illuminate\Support\Facades\File;
@@ -83,40 +75,6 @@ if (! function_exists('section_count')) {
         }
 
         return Section::where('course_id', $courseId)->count();
-    }
-}
-
-/**
- * Count published blogs for a category.
- *
- * @param  int|string  $categoryId
- * @return int
- */
-if (! function_exists('count_blogs_by_category')) {
-    function count_blogs_by_category($categoryId = '')
-    {
-        if ($categoryId === '') {
-            return 0;
-        }
-
-        return Blog::where('status', 1)->where('category_id', $categoryId)->count();
-    }
-}
-
-/**
- * Get blog category title.
- *
- * @param  int|string  $id
- * @return string|null
- */
-if (! function_exists('get_blog_category_name')) {
-    function get_blog_category_name($id = '')
-    {
-        if ($id === '') {
-            return null;
-        }
-
-        return BlogCategory::whereKey($id)->value('title');
     }
 }
 
@@ -560,23 +518,6 @@ if (! function_exists('user_count')) {
 }
 
 /**
- * Get a blog user by id.
- *
- * @param  int|string  $userId
- * @return \App\Models\User
- */
-if (! function_exists('blog_user')) {
-    function blog_user($userId = '')
-    {
-        if ($userId === '') {
-            return new User;
-        }
-
-        return User::whereKey($userId)->firstOrNew();
-    }
-}
-
-/**
  * Count courses under a category slug (including subcategories).
  *
  * @param  string  $slug
@@ -947,19 +888,6 @@ if (! function_exists('script_checker')) {
 }
 
 /**
- * Get user by blog comment author id.
- *
- * @param  int|string  $userId
- * @return \App\Models\User
- */
-if (! function_exists('get_user_by_blogcomment')) {
-    function get_user_by_blogcomment($userId = '')
-    {
-        return User::whereKey($userId)->firstOrNew();
-    }
-}
-
-/**
  * Date formatter with presets.
  *
  * @param  int|string  $strtotime
@@ -1270,38 +1198,6 @@ if (! function_exists('is_permission')) {
 }
 
 /**
- * Count comments for blog id as readable text (e.g., "3 comments").
- *
- * @param  int|string  $blogId
- * @return string
- */
-if (! function_exists('count_comments_by_blog_id')) {
-    function count_comments_by_blog_id($blogId)
-    {
-        $count = BlogComment::where('blog_id', $blogId)->count();
-        $text = $count > 1 ? get_phrase('comments') : get_phrase('comment');
-
-        return format_count($count).' '.$text;
-    }
-}
-
-/**
- * Count likes for blog id as readable text (e.g., "5 likes").
- *
- * @param  int|string  $blogId
- * @return string
- */
-if (! function_exists('count_likes_by_blog_id')) {
-    function count_likes_by_blog_id($blogId)
-    {
-        $count = BlogLike::where('blog_id', $blogId)->count();
-        $text = $count > 1 ? get_phrase('likes') : get_phrase('like');
-
-        return format_count($count).' '.$text;
-    }
-}
-
-/**
  * Format a number with K/M/B suffixes.
  *
  * @param  int|float  $num
@@ -1455,42 +1351,25 @@ if (! function_exists('count_user_certificate')) {
 }
 
 /**
- * Top categories from recent payments (grouped & sorted).
+ * Top categories based on the number of courses.
  *
  * @return \Illuminate\Support\Collection|Category[]
  */
 if (! function_exists('top_categories')) {
     function top_categories()
     {
-        $data = PaymentHistory::join('courses', 'payment_histories.course_id', '=', 'courses.id')
-            ->join('categories', 'courses.category_id', '=', 'categories.id')
-            ->select('courses.category_id')
-            ->take(200) // a sane cap
-            ->get();
+        $categoryIds = Course::query()
+            ->select('category_id')
+            ->whereNotNull('category_id')
+            ->groupBy('category_id')
+            ->selectRaw('category_id, COUNT(*) as course_count')
+            ->orderByDesc('course_count')
+            ->limit(200)
+            ->pluck('category_id');
 
-        $sorted = $data->groupBy('category_id')->map->count()->sortDesc()->keys();
-
-        return $sorted->isNotEmpty()
-            ? Category::whereIn('id', $sorted)->get()
+        return $categoryIds->isNotEmpty()
+            ? Category::whereIn('id', $categoryIds)->get()
             : collect();
-    }
-}
-
-/**
- * Collect up to 15 unique blog tags from JSON "keywords".
- *
- * @return \Illuminate\Support\Collection
- */
-if (! function_exists('get_blog_tags')) {
-    function get_blog_tags()
-    {
-        return Blog::whereNotNull('keywords')
-            ->get(['keywords'])
-            ->flatMap(fn ($b) => collect(json_decode($b->keywords, true) ?: []))
-            ->pluck('value')
-            ->unique()
-            ->take(15)
-            ->values();
     }
 }
 
@@ -1563,18 +1442,6 @@ if (! function_exists('count_bootcamp_classes')) {
         }
 
         return $q->count();
-    }
-}
-
-/**
- * Current theme view path prefix.
- *
- * @return string
- */
-if (! function_exists('theme_path')) {
-    function theme_path()
-    {
-        return 'frontend.'.get_frontend_settings('theme').'.';
     }
 }
 
@@ -1798,23 +1665,6 @@ if (! function_exists('is_purchased_package')) {
 }
 
 /**
- * Total instructor revenue from courses.
- *
- * @param  int|string|null  $userId
- * @return float|int
- */
-if (! function_exists('instructor_course_revenue')) {
-    function instructor_course_revenue($userId = null)
-    {
-        $id = $userId ?? auth('web')->id();
-
-        return (float) Course::join('payment_histories', 'courses.id', '=', 'payment_histories.course_id')
-            ->where('courses.user_id', $id)
-            ->sum('payment_histories.instructor_revenue');
-    }
-}
-
-/**
  * Total instructor revenue from bootcamps.
  *
  * @param  int|string|null  $userId
@@ -1849,21 +1699,6 @@ if (! function_exists('instructor_team_training_revenue')) {
 }
 
 /**
- * Total tutor revenue from tuition bookings.
- *
- * @param  int|string|null  $userId
- * @return float|int
- */
-if (! function_exists('instructor_tution_revenue')) {
-    function instructor_tution_revenue($userId = null)
-    {
-        $id = $userId ?? auth('web')->id();
-
-        return (float) TutorBooking::where('tutor_id', $id)->sum('instructor_revenue');
-    }
-}
-
-/**
  * Sum of all instructor revenue sources.
  *
  * @param  int|string|null  $userId
@@ -1874,10 +1709,8 @@ if (! function_exists('instructor_total_revenue')) {
     {
         $id = $userId ?? auth('web')->id();
 
-        return instructor_course_revenue($id)
-             + instructor_bootcamp_revenue($id)
-             + instructor_team_training_revenue($id)
-             + instructor_tution_revenue($id);
+        return instructor_bootcamp_revenue($id)
+             + instructor_team_training_revenue($id);
     }
 }
 
@@ -1912,84 +1745,6 @@ if (! function_exists('instructor_available_balance')) {
 }
 
 /**
- * Count upcoming schedules for tutor from today.
- *
- * @param  int|string|null  $tutorId
- * @return int
- */
-if (! function_exists('total_schedule_by_tutor_id')) {
-    function total_schedule_by_tutor_id($tutorId = null)
-    {
-        $today = strtotime('today');
-
-        return TutorSchedule::where('tutor_id', $tutorId)->where('start_time', '>=', $today)->count();
-    }
-}
-
-/**
- * Count booked schedules for tutor from today.
- *
- * @param  int|string|null  $tutorId
- * @return int
- */
-if (! function_exists('total_booked_schedule_by_tutor_id')) {
-    function total_booked_schedule_by_tutor_id($tutorId = null)
-    {
-        $today = strtotime('today');
-
-        return TutorBooking::where('tutor_id', $tutorId)->where('start_time', '>=', $today)->count();
-    }
-}
-
-/**
- * Count reviews for a tutor.
- *
- * @param  int|string|null  $tutorId
- * @return int
- */
-if (! function_exists('total_review_by_tutor_id')) {
-    function total_review_by_tutor_id($tutorId = null)
-    {
-        return TutorReview::where('tutor_id', $tutorId)->count();
-    }
-}
-
-/**
- * Count booked seats for a specific schedule.
- *
- * @param  int|string|null  $scheduleId
- * @return int
- */
-if (! function_exists('total_booked_schedule_by_schedule_id')) {
-    function total_booked_schedule_by_schedule_id($scheduleId = null)
-    {
-        return TutorBooking::where('schedule_id', $scheduleId)->count();
-    }
-}
-
-/**
- * Is a tuition class currently joinable?
- *
- * @param  int|string  $bookingId
- * @return bool|null
- */
-if (! function_exists('tution_started')) {
-    function tution_started($bookingId)
-    {
-        $now = time();
-        $window = $now + (60 * 15);
-
-        $row = TutorBooking::whereKey($bookingId)
-            ->whereNotNull('joining_data')
-            ->where('start_time', '<', $window)
-            ->where('end_time', '>', $now)
-            ->first();
-
-        return $row ? true : null;
-    }
-}
-
-/**
  * Enrollment status summary (valid/expired/false) for a user's course.
  *
  * @param  int|string  $courseId
@@ -2009,7 +1764,7 @@ if (! function_exists('enroll_status')) {
         }
 
         $expiry = $enrolled->expiry_date;
-        if ($expiry === null || (int) $expiry >= time()) {
+        if ($expiry === null || $expiry->timestamp >= time()) {
             return 'valid';
         }
 
@@ -2049,12 +1804,22 @@ if (! function_exists('remove_js')) {
             return nl2br(htmlspecialchars($description));
         }
 
+        // Decode script tags written as text
         $description = str_replace(['&lt;script&gt;', '&lt;/script&gt;'], '', $description);
-        $description = preg_replace('/<script\b[^>]*>(.*?)</script>/is', '', $description);
-        $description = preg_replace('/[<][^<]*script.*[>].*[<].*[/].*script*[>]/i', '', $description);
-        $description = preg_replace("/([ ]on[a-zA-Z0-9_-]{1,}=\".*\")|([ ]on[a-zA-Z0-9_-]{1,}='.*')|([ ]on[a-zA-Z0-9_-]{1,}=.*[.].*)/", '', $description);
-        $description = preg_replace('/(<.+?)(?<=\s)on[a-z]+\s*=\s*(?:([\'"])(?!\2).+?\2|(?:\S+?\(.*?\)(?=[\s>])))(.*?>)/i', '$1 $3', $description);
-        $description = preg_replace("/([ ]href.*=\".*javascript:.*\")|([ ]href.*='.*javascript:.*')|([ ]href.*=.*javascript:.*)/i", '', $description);
+
+        // Remove <script> tags and their content
+        $description = preg_replace('#<script\b[^>]*>(.*?)</script>#is', '', $description);
+
+        // Remove inline script-like patterns
+        $description = preg_replace('#<[^<]*script.*>.*</script>#i', '', $description);
+
+        // Remove inline JS event handlers (onclick, onload, etc.)
+        $description = preg_replace('/\s*on\w+="[^"]*"/i', '', $description);
+        $description = preg_replace("/\s*on\w+='[^']*'/i", '', $description);
+        $description = preg_replace("/\s*on\w+=\S+/i", '', $description);
+
+        // Remove javascript: in href
+        $description = preg_replace('/\s*href\s*=\s*[\'"]?javascript:[^\'"]+[\'"]?/i', '', $description);
 
         return $description;
     }

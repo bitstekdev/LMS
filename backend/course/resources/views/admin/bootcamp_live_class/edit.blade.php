@@ -14,19 +14,19 @@
         <div class="col-sm-4 fpb7">
             <label class="form-label ol-form-label d-block">{{ get_phrase('Date') }}</label>
             <input type="date" class="form-control ol-form-control" name="date"
-                value="{{ date('Y-m-d', $class->start_time) }}" required />
+                value="{{ \Carbon\Carbon::parse($class->start_time)->format('Y-m-d') }}" required />
         </div>
 
         <div class="col-sm-4 fpb7">
             <label class="form-label ol-form-label d-block">{{ get_phrase('Start time') }}</label>
             <input type="time" class="form-control ol-form-control" name="start_time"
-                value="{{ date('H:i', $class->start_time) }}" required />
+                value="{{ \Carbon\Carbon::parse($class->start_time)->format('H:i') }}" required />
         </div>
 
         <div class="col-sm-4 fpb7">
             <label class="form-label ol-form-label d-block">{{ get_phrase('End time') }}</label>
             <input type="time" class="form-control ol-form-control" name="end_time"
-                value="{{ date('H:i', $class->end_time) }}" required />
+                value="{{ \Carbon\Carbon::parse($class->end_time)->format('H:i') }}" required />
         </div>
     </div>
 

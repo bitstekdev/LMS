@@ -17,6 +17,11 @@ class Enrollment extends Model
         'expiry_date',
     ];
 
+    protected $casts = [
+        'entry_date' => 'datetime',
+        'expiry_date' => 'datetime',
+    ];
+
     public function user()
     {
         return $this->belongsTo(User::class);

@@ -20,7 +20,7 @@
 
     <div class="row g-2 g-sm-3 mb-3 row-cols-1 row-cols-sm-2 row-cols-md-4 row-cols-lg-4 row-cols-xl-5">
         <div class="col">
-            <a href="{{ route('instructor.courses', ['status' => 'active']) }}" class="d-block">
+            <a href="{{ route('instructor.course.index', ['status' => 'active']) }}" class="d-block">
                 <div class="ol-card card-hover h-100">
                     <div class="ol-card-body px-3 py-12px">
                         <div class="d-flex align-items-center cg-12px">
@@ -34,7 +34,7 @@
             </a>
         </div>
         <div class="col">
-            <a href="{{ route('instructor.courses', ['status' => 'pending']) }}" class="d-block">
+            <a href="{{ route('instructor.course.index', ['status' => 'pending']) }}" class="d-block">
                 <div class="ol-card card-hover h-100">
                     <div class="ol-card-body px-3 py-12px">
                         <div class="d-flex align-items-center cg-12px">
@@ -48,7 +48,7 @@
             </a>
         </div>
         <div class="col">
-            <a href="{{ route('instructor.courses', ['status' => 'upcoming']) }}" class="d-block">
+            <a href="{{ route('instructor.course.index', ['status' => 'upcoming']) }}" class="d-block">
                 <div class="ol-card card-hover h-100">
                     <div class="ol-card-body px-3 py-12px">
                         <div class="d-flex align-items-center cg-12px">
@@ -62,7 +62,7 @@
             </a>
         </div>
         <div class="col">
-            <a href="{{ route('instructor.courses', ['price' => 'free']) }}" class="d-block">
+            <a href="{{ route('instructor.course.index', ['price' => 'free']) }}" class="d-block">
                 <div class="ol-card card-hover h-100">
                     <div class="ol-card-body px-3 py-12px">
                         <div class="d-flex align-items-center cg-12px">
@@ -76,7 +76,7 @@
             </a>
         </div>
         <div class="col">
-            <a href="{{ route('instructor.courses', ['price' => 'paid']) }}" class="d-block">
+            <a href="{{ route('instructor.course.index', ['price' => 'paid']) }}" class="d-block">
                 <div class="ol-card card-hover h-100">
                     <div class="ol-card-body px-3 py-12px">
                         <div class="d-flex align-items-center cg-12px">
@@ -129,7 +129,7 @@
                                 </button>
                                 <ul class="dropdown-list w-250px">
                                     <li>
-                                        <form id="filter-dropdown" action="{{ route('instructor.courses') }}"
+                                        <form id="filter-dropdown" action="{{ route('instructor.course.index') }}"
                                             method="get">
                                             <div class="filter-option d-flex flex-column gap-3">
                                                 <div>
@@ -227,12 +227,12 @@
                             </div>
 
                             @if (isset($_GET) && count($_GET) > 0)
-                                <a href="{{ route('instructor.courses') }}" class="me-2" data-bs-toggle="tooltip"
+                                <a href="{{ route('instructor.course.index') }}" class="me-2" data-bs-toggle="tooltip"
                                     title="{{ get_phrase('Clear') }}"><i class="fi-rr-cross-circle"></i></a>
                             @endif
                         </div>
                         <div class="col-md-6 mt-3 mt-md-0">
-                            <form action="{{ route('instructor.courses') }}" method="get">
+                            <form action="{{ route('instructor.course.index') }}" method="get">
                                 <div class="row row-gap-3">
                                     <div class="col-md-9 flex-grow-1">
                                         <div class="search-input flex-grow-1">
@@ -306,7 +306,7 @@
                                                                 </h4>
 
                                                                 <a
-                                                                    href="{{ route('instructor.courses', ['instructor' => $row->user_id]) }}">
+                                                                    href="{{ route('instructor.course.index', ['instructor' => $row->user_id]) }}">
                                                                     <p class="sub-title2 text-12px">
                                                                         {{ get_phrase('Instructor') }}:
                                                                         {{ get_user_info($row->user_id)->name }}</p>
@@ -320,7 +320,7 @@
                                                     <td>
                                                         <div class="sub-title2 text-12px">
                                                             <a
-                                                                href="{{ route('instructor.courses', ['category' => $row->category->slug]) }}">{{ category_by_course($row->category_id)->title }}</a>
+                                                                href="{{ route('instructor.course.index', ['category' => $row->category->slug]) }}">{{ category_by_course($row->category_id)->title }}</a>
                                                         </div>
                                                     </td>
                                                     <td>

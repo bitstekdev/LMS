@@ -19,7 +19,7 @@ class ReviewController extends Controller
 
         $course = $review->course;
 
-        $view_path = 'frontend.'.get_frontend_settings('theme').'.student.review.edit';
+        $view_path = 'frontend.default.student.review.edit';
 
         return view($view_path, [
             'review' => $review,

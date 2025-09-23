@@ -60,7 +60,7 @@
         } else {
             $defaultBanner = asset('assets/frontend/default/image/bannerM.jpg');
         }
-        $total_students = DB::table('users')->where('role', 'student')->get();
+        $total_students = App\Models\User::where('role', 'student')->get();
     @endphp
     <section>
         <div class="container">
@@ -143,8 +143,12 @@
             </div>
             <div class="row g-28px mb-100px">
                 @php
-                    $top_courses = DB::table('courses')
-                        ->leftJoin('payment_histories', 'courses.id', '=', 'payment_histories.course_id')
+                    $top_courses = App\Models\Course::leftJoin(
+                        'payment_histories',
+                        'courses.id',
+                        '=',
+                        'payment_histories.course_id',
+                    )
                         ->select(
                             'courses.id',
                             'courses.slug',
@@ -232,10 +236,10 @@
             <div class="row mb-100px">
                 <div class="col-md-12">
                     @php
-                        $total_students = DB::table('users')->where('role', 'student')->get();
-                        $total_instructors = DB::table('users')->where('role', 'instructor')->get();
-                        $free_courses = DB::table('courses')->where('is_paid', 0)->get();
-                        $premium_courses = DB::table('courses')->where('is_paid', 1)->get();
+                        $total_students = App\Models\User::where('role', 'student')->get();
+                        $total_instructors = App\Models\User::where('role', 'instructor')->get();
+                        $free_courses = App\Models\Course::where('is_paid', 0)->get();
+                        $premium_courses = App\Models\Course::where('is_paid', 1)->get();
                     @endphp
                     <div class="counter-area-wrap2">
                         <div class="counter-single-item2">
@@ -388,7 +392,7 @@
                     <div class="swiper lms-testimonial-2">
                         <div class="swiper-wrapper">
                             @php
-                                $reviews = DB::table('user_reviews')->get();
+                                $reviews = App\Models\UserReview::get();
                             @endphp
                             @foreach ($reviews as $review)
                                 @php
@@ -437,86 +441,6 @@
         </div>
     </section>
     <!-- Testimonial Area End -->
-
-    <!-- Subscribe Area Start -->
-    <section>
-        <div class="container">
-            <div class="subscribe-area-wrap1 mb-100px">
-                <div class="row">
-                    <div class="col-lg-5">
-                        <div class="subscribe-area-banner1">
-                            <img src="{{ asset('assets/frontend/default/image/education.jpg') }}" alt="">
-                        </div>
-                    </div>
-                    <div class="col-lg-7">
-                        <div class="subscribe-area-1">
-                            <h3 class="title-4 fs-28px lh-36px fw-bold text-center text-white mb-14px">
-                                {{ get_phrase('Subscribe to our newsletter to get latest updates') }}</h3>
-
-                            <p class="text-white fw-400 text-center">
-                                {{ get_phrase("Subscribe to stay tuned for new latest updates and offer. Let's do it! ") }}
-                            </p>
-                            <form action="{{ route('newsletter.store') }}" method="post" class="mt-5">
-                                @csrf
-                                <div class="subscribe-form-inner d-flex align-items-center justify-content-center">
-                                    <input type="email" class="form-control sub1-form-control" name="email"
-                                        placeholder="Enter your email">
-                                    <button type="submit"
-                                        class="btn btn-white1 btn-white1-sm">{{ get_phrase('Subscribe') }}</button>
-                                </div>
-                            </form>
-                            <p class="text-white text-13px fw-300 text-center mt-4 pt-3"
-                                style="color: #9CA3AC !important;">{{ get_phrase('Read our privacy policy') }} <a
-                                    href="{{ route('privacy.policy') }}"><u>{{ get_phrase('Here') }}</u>.</a></p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Subscribe Area End -->
-
-    <!-- Blog Area Start -->
-    @if (get_frontend_settings('blog_visibility_on_the_home_page'))
-        <section>
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                        <h1 class="title-4 fs-34px lh-44px fw-semibold text-center mb-30px">
-                            {{ get_phrase('Our Latest Blog') }}</h1>
-                    </div>
-                </div>
-                <div class="row g-28px mb-100px">
-                    @foreach ($blogs as $key => $blog)
-                        <div class="col-lg-4 col-md-6 col-sm-6">
-                            <div class="max-sm-350px">
-                                <a href="{{ route('blog.details', $blog->slug) }}" class="mk-blog-banner">
-                                    <img class="h-230px" src="{{ get_image($blog->thumbnail) }}" alt="">
-                                </a>
-                                <a href="{{ route('blog.details', $blog->slug) }}" class="mk-blog-body">
-                                    <div class="lms-1-card rounded-3 lms-card-hover2">
-                                        <div class="lms-1-card-body">
-                                            <h3 class="title-4 fs-18px lh-26px fw-semibold mb-14px ellipsis-line-2">
-                                                {{ ucfirst($blog->title) }}</h3>
-                                            <p class="subtitle-4 fs-15px lh-24px mb-18px ellipsis-line-2">
-                                                {{ ellipsis(strip_tags($blog->description), 160) }}</p>
-                                            <div class="card-icon-text3 mk-blog-icontext d-flex align-items-center">
-                                                <span class="fi-rr-time-oclock"></span>
-                                                <p class="subtitle-4 fs-12px lh-normal">
-                                                    {{ $blog->created_at->format('d M, Y') }}</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                    @endforeach
-                </div>
-            </div>
-        </section>
-    @endif
-    <!-- Blog Area End -->
-
 @endsection
 
 @push('js')

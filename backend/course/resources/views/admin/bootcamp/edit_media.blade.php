@@ -23,7 +23,7 @@
     <div class="offset-md-2 offset-lg-3 col-md-10 col-lg-6 fpb-7 mt-3">
         <div class="image_preview">
             <img src="{{ asset($bootcamp_details->thumbnail) }}" id="preview_thumbnail" width="100%"
-                alt="blog-thumbnail">
+                alt="bootcamp-thumbnail">
         </div>
     </div>
 </div>

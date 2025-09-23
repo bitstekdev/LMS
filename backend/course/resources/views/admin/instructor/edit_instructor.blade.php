@@ -51,13 +51,6 @@
                                 <span>{{ get_phrase('Login Credentials') }}</span>
                             </button>
 
-                            <button class="nav-link text-start" id="v-pills-tab3-tab" data-bs-toggle="pill"
-                                data-bs-target="#v-pills-tab3" type="button" role="tab" aria-controls="v-pills-tab3"
-                                aria-selected="false">
-                                <span class="fi-rr-credit-card"></span>
-                                <span>{{ get_phrase('Payment Information') }}</span>
-                            </button>
-
                             <button class="nav-link text-start" id="v-pills-tab4-tab" data-bs-toggle="pill"
                                 data-bs-target="#v-pills-tab4" type="button" role="tab" aria-controls="v-pills-tab4"
                                 aria-selected="false">
@@ -77,12 +70,6 @@
                             tabindex="0">
                             <div class="dashboard-tab-conTent">
                                 @include('admin.instructor.edit_login')
-                            </div>
-                        </div>
-                        <div class="tab-pane fade" id="v-pills-tab3" role="tabpanel" aria-labelledby="v-pills-tab3-tab"
-                            tabindex="0">
-                            <div class="dashboard-tab-conTent">
-                                @include('admin.instructor.edit_payment')
                             </div>
                         </div>
                         <div class="tab-pane fade" id="v-pills-tab4" role="tabpanel" aria-labelledby="v-pills-tab4-tab"

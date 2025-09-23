@@ -46,7 +46,7 @@
 
                                         <div class="class-details pt-3">
                                             <div class="d-flex gap-3 justify-content-between">
-                                                @if ($course->expiry_date > 0 && $course->expiry_date < time())
+                                                @if ($course->expiry_date && $course->expiry_date->timestamp > 0 && $course->expiry_date->lessThan(now()))
                                                     <div class="class-status">
                                                         <span class="text-capitalize">
                                                             {{ get_phrase('Expired') }}:
@@ -58,7 +58,7 @@
                                                         </span>
                                                     </div>
                                                 @else
-                                                    @if ($course->expiry_date == 0)
+                                                    @if (is_null($course->expiry_date))
                                                         <div class="class-status">
                                                             <span class="text-capitalize">
                                                                 {{ get_phrase('Expiry period') }}:
@@ -77,7 +77,7 @@
                                                         </div>
                                                         <div class="class-status">
                                                             <span class="badge bg-success text-capitalize">
-                                                                {{ $course->expiry_date->format('d M Y, H:i A') }}
+                                                                {{ \Carbon\Carbon::parse($course->expiry_date)->format('d M Y, h:i A') }}
                                                             </span>
                                                         </div>
                                                     @endif
@@ -113,7 +113,7 @@
 
                                         @endphp
 
-                                        @if ($course->expiry_date > 0 && $course->expiry_date < time())
+                                        @if ($course->expiry_date && $course->expiry_date->timestamp > 0 && $course->expiry_date->lessThan(now()))
                                             <a href="{{ route('purchase.course', ['course_id' => $course->course_id]) }}"
                                                 class="eBtn learn-btn w-100 text-center mt-20 f-500">
                                                 {{ get_phrase('Renew') }}

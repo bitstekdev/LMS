@@ -1,5 +1,5 @@
 @php
-$sections = DB::table('sections')->where('course_id', $id)->orderBy('sort')->get(); @endphp
+$sections = App\Models\Section::where('course_id', $id)->orderBy('sort')->get(); @endphp
 <div class="row">
     <div class="col-12">
         <div id="section-list" class="list-group d-grid gap-2 border-0 mb-3">

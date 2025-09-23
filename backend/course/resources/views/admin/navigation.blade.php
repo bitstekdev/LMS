@@ -96,8 +96,14 @@
                 </li>
             @endif
 
-            {{-- @if (has_permission('admin.team.packages'))
-                <li class="sidebar-first-li first-li-have-sub @if ($current_route == 'admin.team.packages' || $current_route == 'admin.team.packages.create' || $current_route == 'admin.team.packages.edit' || $current_route == 'admin.team.packages.purchase.history' || $current_route == 'admin.team.packages.purchase.invoice') active showMenu @endif">
+            @if (has_permission('admin.team.packages'))
+                <li
+                    class="sidebar-first-li first-li-have-sub @if (
+                        $current_route == 'admin.team.packages' ||
+                            $current_route == 'admin.team.packages.create' ||
+                            $current_route == 'admin.team.packages.edit' ||
+                            $current_route == 'admin.team.packages.purchase.history' ||
+                            $current_route == 'admin.team.packages.purchase.invoice') active showMenu @endif">
                     <a href="javascript:void(0);">
                         <span class="icon fi fi-rr-document-signed"></span>
                         <div class="text">
@@ -110,31 +116,13 @@
                             <a href="{{ route('admin.team.packages') }}">{{ get_phrase('Manage Packages') }}</a>
                         </li>
                         <li class="sidebar-second-li @if ($current_route == 'admin.team.packages.create') active @endif">
-                            <a href="{{ route('admin.team.packages.create') }}">{{ get_phrase('Add New Package') }}</a>
+                            <a
+                                href="{{ route('admin.team.packages.create') }}">{{ get_phrase('Add New Package') }}</a>
                         </li>
-                        <li class="sidebar-second-li {{ $current_route == 'admin.team.packages.purchase.history' || $current_route == 'admin.team.packages.purchase.invoice' ? 'active' : '' }}">
-                            <a href="{{ route('admin.team.packages.purchase.history') }}">{{ get_phrase('Purchase History') }}</a>
-                        </li>
-                    </ul>
-                </li>
-            @endif --}}
-
-            @if (has_permission('admin.tutor_categories'))
-                <li
-                    class="sidebar-first-li first-li-have-sub @if ($current_route == 'admin.tutor_subjects' || $current_route == 'admin.tutor_categories') active showMenu @endif">
-                    <a href="javascript:void(0);">
-                        <span class="icon fi fi-rr-document-signed"></span>
-                        <div class="text">
-                            <span>{{ get_phrase('Tutor Booking') }}</span>
-                        </div>
-                    </a>
-                    <ul class="first-sub-menu">
-                        <li class="first-sub-menu-title fs-14px mb-18px">{{ get_phrase('Tutor Booking') }}</li>
-                        <li class="sidebar-second-li @if ($current_route == 'admin.tutor_subjects') active @endif">
-                            <a href="{{ route('admin.tutor_subjects') }}">{{ get_phrase('Subjects') }}</a>
-                        </li>
-                        <li class="sidebar-second-li @if ($current_route == 'admin.tutor_categories') active @endif">
-                            <a href="{{ route('admin.tutor_categories') }}">{{ get_phrase('Subject Category') }}</a>
+                        <li
+                            class="sidebar-second-li {{ $current_route == 'admin.team.packages.purchase.history' || $current_route == 'admin.team.packages.purchase.invoice' ? 'active' : '' }}">
+                            <a
+                                href="{{ route('admin.team.packages.purchase.history') }}">{{ get_phrase('Purchase History') }}</a>
                         </li>
                     </ul>
                 </li>
@@ -164,52 +152,6 @@
                             <li
                                 class="sidebar-second-li {{ $current_route == 'admin.student.enroll' ? 'active' : '' }}">
                                 <a href="{{ route('admin.student.enroll') }}">{{ get_phrase('Enroll student') }}</a>
-                            </li>
-                        @endif
-                    </ul>
-                </li>
-            @endif
-
-
-            @if (has_permission('admin.offline.payments') ||
-                    has_permission('admin.revenue') ||
-                    has_permission('admin.instructor.revenue') ||
-                    has_permission('admin.purchase.history'))
-                <li
-                    class="sidebar-first-li first-li-have-sub {{ $current_route == 'admin.offline.payments' || $current_route == 'admin.revenue' || $current_route == 'admin.instructor.revenue' || $current_route == 'admin.purchase.history' || $current_route == 'admin.purchase.history.invoice' ? 'active' : '' }}">
-                    <a href="javascript:void(0);">
-                        <span class="icon fi-rr-comment-dollar"></span>
-                        <div class="text">
-                            <span>{{ get_phrase('Payment Report') }}</span>
-                        </div>
-                    </a>
-                    <ul class="first-sub-menu">
-                        <li class="first-sub-menu-title fs-14px mb-18px">{{ get_phrase('Payment Report') }}</li>
-
-                        @if (has_permission('admin.offline.payments'))
-                            <li
-                                class="sidebar-second-li {{ $current_route == 'admin.offline.payments' ? 'active' : '' }}">
-                                <a
-                                    href="{{ route('admin.offline.payments') }}">{{ get_phrase('Offline payments') }}</a>
-                            </li>
-                        @endif
-
-                        @if (has_permission('admin.revenue'))
-                            <li class="sidebar-second-li {{ $current_route == 'admin.revenue' ? 'active' : '' }}"><a
-                                    href="{{ route('admin.revenue') }}">{{ get_phrase('Admin Revenue') }}</a></li>
-                        @endif
-                        @if (has_permission('admin.instructor.revenue'))
-                            <li
-                                class="sidebar-second-li {{ $current_route == 'admin.instructor.revenue' ? 'active' : '' }}">
-                                <a
-                                    href="{{ route('admin.instructor.revenue') }}">{{ get_phrase('Instructor Revenue') }}</a>
-                            </li>
-                        @endif
-                        @if (has_permission('admin.purchase.history'))
-                            <li
-                                class="sidebar-second-li {{ $current_route == 'admin.purchase.history' || $current_route == 'admin.purchase.history.invoice' ? 'active' : '' }}">
-                                <a
-                                    href="{{ route('admin.purchase.history') }}">{{ get_phrase('Payment History') }}</a>
                             </li>
                         @endif
                     </ul>
@@ -340,80 +282,6 @@
                 </li>
             @endif
 
-            @if (has_permission('admin.newsletter'))
-                <li
-                    class="sidebar-first-li first-li-have-sub {{ $current_route == 'admin.newsletter' || $current_route == 'admin.subscribed_user' ? 'active' : '' }}">
-                    <a href="javascript:void(0);">
-                        <span class="icon fi fi-rr-envelope-open-text"></span>
-                        <div class="text">
-                            <span>{{ get_phrase('Newsletter') }}</span>
-                        </div>
-                    </a>
-                    <ul class="first-sub-menu">
-                        <li class="first-sub-menu-title fs-14px mb-18px">{{ get_phrase('Newsletter') }}</li>
-
-                        <li class="sidebar-second-li {{ $current_route == 'admin.newsletter' ? 'active' : '' }}"><a
-                                href="{{ route('admin.newsletter') }}">{{ get_phrase('Manage Newsletters') }}</a>
-                        </li>
-                        <li class="sidebar-second-li {{ $current_route == 'admin.subscribed_user' ? 'active' : '' }}">
-                            <a href="{{ route('admin.subscribed_user') }}">{{ get_phrase('Subscribed User') }}</a>
-                        </li>
-                    </ul>
-                </li>
-            @endif
-
-            @if (has_permission('admin.contacts'))
-                <li class="sidebar-first-li {{ $current_route == 'admin.contacts' ? 'active' : '' }}">
-                    <a href="{{ route('admin.contacts') }}">
-                        <span class="icon fi fi-br-portrait"></span>
-                        <div class="text">
-                            <span>{{ get_phrase('Contacts') }}</span>
-                        </div>
-                    </a>
-                </li>
-            @endif
-
-            @if (has_permission('admin.blogs') ||
-                    has_permission('admin.blog.pending') ||
-                    has_permission('admin.blog.category') ||
-                    has_permission('admin.blog.category'))
-                <li
-                    class="sidebar-first-li first-li-have-sub {{ $current_route == 'admin.blogs' || $current_route == 'admin.blog.create' || $current_route == 'admin.blog.edit' || $current_route == 'admin.blog.pending' || $current_route == 'admin.blog.category' || $current_route == 'admin.blog.settings' ? 'active' : '' }}">
-                    <a href="javascript:void(0);">
-                        <span class="icon fi fi-rr-blog-text"></span>
-                        <div class="text">
-                            <span>{{ get_phrase('Blogs') }}</span>
-                        </div>
-                    </a>
-                    <ul class="first-sub-menu">
-                        <li class="first-sub-menu-title fs-14px mb-18px">{{ get_phrase('Blogs') }}</li>
-                        @if (has_permission('admin.blogs'))
-                            <li class="sidebar-second-li {{ $current_route == 'admin.blogs' ? 'active' : '' }}"><a
-                                    href="{{ route('admin.blogs') }}">{{ get_phrase('Manage Blogs') }}</a>
-                            </li>
-                        @endif
-                        @if (has_permission('admin.blog.pending'))
-                            <li
-                                class="sidebar-second-li {{ $current_route == 'admin.blog.pending' ? 'active' : '' }}">
-                                <a href="{{ route('admin.blog.pending') }}">{{ get_phrase('Pending Blogs') }}</a>
-                            </li>
-                        @endif
-                        @if (has_permission('admin.blog.category'))
-                            <li
-                                class="sidebar-second-li {{ $current_route == 'admin.blog.category' ? 'active' : '' }}">
-                                <a href="{{ route('admin.blog.category') }}">{{ get_phrase('Category') }}</a>
-                            </li>
-                        @endif
-                        @if (has_permission('admin.blog.settings'))
-                            <li
-                                class="sidebar-second-li {{ $current_route == 'admin.blog.settings' ? 'active' : '' }}">
-                                <a href="{{ route('admin.blog.settings') }}">{{ get_phrase('Settings') }}</a>
-                            </li>
-                        @endif
-                    </ul>
-                </li>
-            @endif
-
         </ul>
     </nav>
 
@@ -421,7 +289,6 @@
 
     @if (has_permission('admin.system.settings') ||
             has_permission('admin.website.settings') ||
-            has_permission('admin.payment.settings') ||
             has_permission('admin.manage.language') ||
             has_permission('admin.notification.settings') ||
             has_permission('admin.live.class.settings') ||
@@ -433,7 +300,7 @@
             <h3 class="sidebar-title fs-12px px-30px text-uppercase pb-3">{{ get_phrase('Settings') }}</h3>
             <ul class="px-14px pb-24px mb-5 pb-5">
                 <li
-                    class="sidebar-first-li first-li-have-sub {{ $current_route == 'admin.system.settings' || $current_route == 'admin.website.settings' || $current_route == 'admin.language.phrase.edit' || $current_route == 'admin.payment.settings' || $current_route == 'admin.manage.language' || $current_route == 'admin.notification.settings' || $current_route == 'admin.live.class.settings' || $current_route == 'admin.live.class.settings' || $current_route == 'admin.certificate.settings' || $current_route == 'admin.player.settings' || $current_route == 'admin.seo.settings' || $current_route == 'admin.about' ? 'active' : '' }}">
+                    class="sidebar-first-li first-li-have-sub {{ $current_route == 'admin.system.settings' || $current_route == 'admin.website.settings' || $current_route == 'admin.language.phrase.edit' || $current_route == 'admin.manage.language' || $current_route == 'admin.notification.settings' || $current_route == 'admin.live.class.settings' || $current_route == 'admin.live.class.settings' || $current_route == 'admin.certificate.settings' || $current_route == 'admin.player.settings' || $current_route == 'admin.seo.settings' || $current_route == 'admin.about' ? 'active' : '' }}">
                     <a href="javascript:void(0);">
                         <span class="icon fi fi-rr-settings"></span>
                         <div class="text">
@@ -454,13 +321,6 @@
                                 class="sidebar-second-li {{ $current_route == 'admin.website.settings' ? 'active' : '' }}">
                                 <a
                                     href="{{ route('admin.website.settings') }}">{{ get_phrase('Website Settings') }}</a>
-                            </li>
-                        @endif
-                        @if (has_permission('admin.payment.settings'))
-                            <li
-                                class="sidebar-second-li {{ $current_route == 'admin.payment.settings' ? 'active' : '' }}">
-                                <a
-                                    href="{{ route('admin.payment.settings') }}">{{ get_phrase('Payment Settings') }}</a>
                             </li>
                         @endif
                         @if (has_permission('admin.manage.language'))

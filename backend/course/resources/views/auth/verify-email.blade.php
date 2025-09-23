@@ -1,4 +1,4 @@
-@extends('layouts' . '.' . get_frontend_settings('theme'))
+@extends('layouts.default')
 @push('title', get_phrase('Email Verification'))
 @push('meta')@endpush
 @push('css')

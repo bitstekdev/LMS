@@ -121,7 +121,7 @@
                                                                 </h4>
                                                                 <div class="sub-title2 text-12px">
                                                                     <a
-                                                                        href="{{ route('course.details', $package->course_slug) }}">{{ $package->course_title }}</a>
+                                                                        href="{{ route('course.details', $package->course->slug) }}">{{ $package->course_title }}</a>
                                                                 </div>
                                                             </div>
                                                         </div>

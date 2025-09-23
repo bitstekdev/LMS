@@ -42,7 +42,7 @@
                                                                     @if ($package->expiry == 'lifetime')
                                                                         {{ get_phrase('Lifetime') }}
                                                                     @else
-                                                                        {{ date('d-M-Y', $package->expiry_date) }}
+                                                                        {{ \Carbon\Carbon::parse($package->expiry_date)->format('d-M-Y') }}
                                                                     @endif
                                                                 </p>
 

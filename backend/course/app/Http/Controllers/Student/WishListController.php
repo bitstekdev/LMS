@@ -23,7 +23,7 @@ class WishListController extends Controller
             ->where('wishlists.user_id', auth('web')->id())
             ->paginate(6);
 
-        $view_path = 'frontend.'.get_frontend_settings('theme').'.student.wishlist.index';
+        $view_path = 'frontend.default.student.wishlist.index';
 
         return view($view_path, compact('wishlist'));
     }

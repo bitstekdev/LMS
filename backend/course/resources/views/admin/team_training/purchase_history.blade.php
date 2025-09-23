@@ -87,7 +87,7 @@
                                             <td>
                                                 <div class="sub-title2 text-12px min-w-150px">
                                                     <a
-                                                        href="{{ route('team.package.details', $report->slug) }}">{{ $report->title }}</a>
+                                                        href="{{ route('team.package.details', $report->package->slug) }}">{{ $report->title }}</a>
                                                 </div>
                                             </td>
 

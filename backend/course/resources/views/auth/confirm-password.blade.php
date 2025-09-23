@@ -26,7 +26,7 @@
 
 
 
-@extends('layouts' . '.' . get_frontend_settings('theme'))
+@extends('layouts.default')
 @push('title', get_phrase('Confirm Password'))
 @push('meta')@endpush
 @push('css')

@@ -1,5 +1,5 @@
 @php
-    $modules = DB::table('bootcamp_modules')->where('bootcamp_id', $id)->orderBy('sort')->get();
+    $modules = App\Models\BootcampModule::where('bootcamp_id', $id)->orderBy('sort')->get();
 @endphp
 <div class="row">
     <div class="col-12">

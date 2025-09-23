@@ -81,7 +81,7 @@ class MessageController extends Controller
             'conversations' => $conversations,
         ];
 
-        $view_path = 'frontend.'.get_frontend_settings('theme').'.student.message.index';
+        $view_path = 'frontend.default.student.message.index';
 
         return view($view_path, $page_data);
     }
@@ -140,7 +140,7 @@ class MessageController extends Controller
     public function search_student(Request $request)
     {
         $user = User::where('email', $request->search_mail)->first();
-        $view_path = 'frontend.'.get_frontend_settings('theme').'.student.message.search_result';
+        $view_path = 'frontend.default.student.message.search_result';
 
         return view($view_path, ['user_details' => $user]);
     }

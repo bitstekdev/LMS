@@ -1,6 +1,6 @@
 @php
-    $lessons = DB::table('lessons')->where('section_id', $id)->orderBy('sort')->get();
-    $quizzes = DB::table('quizzes')->where('section_id', $id)->orderBy('sort')->get();
+    $lessons = App\Models\Lesson::where('section_id', $id)->orderBy('sort')->get();
+    $quizzes = App\Models\Quiz::where('section_id', $id)->orderBy('sort')->get();
 @endphp
 <div class="row">
     <div class="col-12">

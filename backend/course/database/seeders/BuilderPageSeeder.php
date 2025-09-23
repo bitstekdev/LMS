@@ -76,7 +76,7 @@ class BuilderPageSeeder extends Seeder
             ],
             [
                 'name' => 'Default',
-                'html' => '["top_bar","header","hero_banner","features","category","featured_courses","about_us","testimonial","blog","footer"]',
+                'html' => '["top_bar","header","hero_banner","features","category","featured_courses","about_us","testimonial","footer"]',
                 'identifier' => null,
                 'is_permanent' => null,
                 'status' => 1,

@@ -112,11 +112,6 @@
         },
         {
             "language_id": 1,
-            "phrase": "Blog",
-            "translated": "Blog"
-        },
-        {
-            "language_id": 1,
             "phrase": "Company",
             "translated": "Company"
         },
@@ -602,16 +597,6 @@
         },
         {
             "language_id": 1,
-            "phrase": "Newsletter",
-            "translated": "Newsletter"
-        },
-        {
-            "language_id": 1,
-            "phrase": "Manage Newsletters",
-            "translated": "Manage Newsletters"
-        },
-        {
-            "language_id": 1,
             "phrase": "Subscribed User",
             "translated": "Subscribed User"
         },
@@ -619,21 +604,6 @@
             "language_id": 1,
             "phrase": "Contacts",
             "translated": "Contacts"
-        },
-        {
-            "language_id": 1,
-            "phrase": "Blogs",
-            "translated": "Blogs"
-        },
-        {
-            "language_id": 1,
-            "phrase": "Manage Blogs",
-            "translated": "Manage Blogs"
-        },
-        {
-            "language_id": 1,
-            "phrase": "Pending Blogs",
-            "translated": "Pending Blogs"
         },
         {
             "language_id": 1,
@@ -959,16 +929,6 @@
             "language_id": 1,
             "phrase": "Course quiz text",
             "translated": "Course quiz text"
-        },
-        {
-            "language_id": 1,
-            "phrase": "Course blog title",
-            "translated": "Course blog title"
-        },
-        {
-            "language_id": 1,
-            "phrase": "Course blog post",
-            "translated": "Course blog post"
         },
         {
             "language_id": 1,
@@ -1369,16 +1329,6 @@
             "language_id": 1,
             "phrase": "Frequently Asked Questions",
             "translated": "Frequently Asked Questions"
-        },
-        {
-            "language_id": 1,
-            "phrase": "Our Latest Blog",
-            "translated": "Our Latest Blog"
-        },
-        {
-            "language_id": 1,
-            "phrase": "The latest blog highlights the most recent articles, updates, and insights from our platform.",
-            "translated": "The latest blog highlights the most recent articles, updates, and insights from our platform."
         },
         {
             "language_id": 1,
@@ -2127,11 +2077,6 @@
         },
         {
             "language_id": 1,
-            "phrase": "Follow The Latest News",
-            "translated": "Follow The Latest News"
-        },
-        {
-            "language_id": 1,
             "phrase": "Top Courses",
             "translated": "Top Courses"
         },
@@ -2139,11 +2084,6 @@
             "language_id": 1,
             "phrase": "lessons",
             "translated": "lessons"
-        },
-        {
-            "language_id": 1,
-            "phrase": "Subscribe to our newsletter to get latest updates",
-            "translated": "Subscribe to our newsletter to get latest updates"
         },
         {
             "language_id": 1,
@@ -2167,11 +2107,6 @@
         },
         {
             "language_id": 1,
-            "phrase": "Blog category",
-            "translated": "Blog category"
-        },
-        {
-            "language_id": 1,
             "phrase": "Subtitle",
             "translated": "Subtitle"
         },
@@ -2187,28 +2122,8 @@
         },
         {
             "language_id": 1,
-            "phrase": "Total number of blog",
-            "translated": "Total number of blog"
-        },
-        {
-            "language_id": 1,
-            "phrase": "Add new blog",
-            "translated": "Add new blog"
-        },
-        {
-            "language_id": 1,
             "phrase": "Search Title",
             "translated": "Search Title"
-        },
-        {
-            "language_id": 1,
-            "phrase": "Add Blog",
-            "translated": "Add Blog"
-        },
-        {
-            "language_id": 1,
-            "phrase": "Enter blog title",
-            "translated": "Enter blog title"
         },
         {
             "language_id": 1,
@@ -2217,23 +2132,8 @@
         },
         {
             "language_id": 1,
-            "phrase": "Blog banner",
-            "translated": "Blog banner"
-        },
-        {
-            "language_id": 1,
-            "phrase": "Blog thumbnail",
-            "translated": "Blog thumbnail"
-        },
-        {
-            "language_id": 1,
             "phrase": "Would you like to designate it as popular?",
             "translated": "Would you like to designate it as popular?"
-        },
-        {
-            "language_id": 1,
-            "phrase": "Blog add successfully",
-            "translated": "Blog add successfully"
         },
         {
             "language_id": 1,
@@ -2284,11 +2184,6 @@
             "language_id": 1,
             "phrase": "See More",
             "translated": "See More"
-        },
-        {
-            "language_id": 1,
-            "phrase": "Our Blog",
-            "translated": "Our Blog"
         },
         {
             "language_id": 1,
@@ -2649,11 +2544,6 @@
             "language_id": 1,
             "phrase": "Have To Say",
             "translated": "Have To Say"
-        },
-        {
-            "language_id": 1,
-            "phrase": "Get News with",
-            "translated": "Get News with"
         },
         {
             "language_id": 1,
@@ -3987,16 +3877,6 @@
         },
         {
             "language_id": 1,
-            "phrase": "Find A Tutor",
-            "translated": "Find A Tutor"
-        },
-        {
-            "language_id": 1,
-            "phrase": "Tutor Booking",
-            "translated": "Tutor Booking"
-        },
-        {
-            "language_id": 1,
             "phrase": "Subjects",
             "translated": "Subjects"
         },
@@ -4307,16 +4187,6 @@
         },
         {
             "language_id": 1,
-            "phrase": "Have a look on our news",
-            "translated": "Have a look on our news"
-        },
-        {
-            "language_id": 1,
-            "phrase": "View All Blogs",
-            "translated": "View All Blogs"
-        },
-        {
-            "language_id": 1,
             "phrase": "Manage SEO Settings",
             "translated": "Manage SEO Settings"
         },
@@ -4477,11 +4347,6 @@
         },
         {
             "language_id": 1,
-            "phrase": "Edit Newsletter",
-            "translated": "Edit Newsletter"
-        },
-        {
-            "language_id": 1,
             "phrase": "Add Article",
             "translated": "Add Article"
         },
@@ -4509,21 +4374,6 @@
             "language_id": 1,
             "phrase": " Share On :",
             "translated": " Share On :"
-        },
-        {
-            "language_id": 1,
-            "phrase": "Pending Blog",
-            "translated": "Pending Blog"
-        },
-        {
-            "language_id": 1,
-            "phrase": "Blog Setting",
-            "translated": "Blog Setting"
-        },
-        {
-            "language_id": 1,
-            "phrase": "Blog settings",
-            "translated": "Blog settings"
         },
         {
             "language_id": 1,
@@ -4604,11 +4454,6 @@
             "language_id": 1,
             "phrase": "Send Message",
             "translated": "Send Message"
-        },
-        {
-            "language_id": 1,
-            "phrase": "Add Newsletter",
-            "translated": "Add Newsletter"
         },
         {
             "language_id": 1,
@@ -4737,18 +4582,8 @@
         },
         {
             "language_id": 1,
-            "phrase": "Tutor subjects",
-            "translated": "Tutor subjects"
-        },
-        {
-            "language_id": 1,
             "phrase": "Add new subject",
             "translated": "Add new subject"
-        },
-        {
-            "language_id": 1,
-            "phrase": "Tutor categories",
-            "translated": "Tutor categories"
         },
         {
             "language_id": 1,

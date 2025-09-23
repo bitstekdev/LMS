@@ -147,7 +147,7 @@
         // Check if quizId is in the completed_lesson_arr array using JavaScript's `includes()` method
         if (!completed_lesson_arr.includes(quizId)) {
             $.ajax({
-                url: "{{ route('set.watch.history') }}", // Your route
+                url: "{{ route('set_watch_history') }}", // Your route
                 type: "post",
                 data: {
                     lesson_id: "{{ $quiz->id }}",

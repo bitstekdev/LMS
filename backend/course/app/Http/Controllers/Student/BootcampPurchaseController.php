@@ -5,14 +5,13 @@ namespace App\Http\Controllers\Student;
 use App\Http\Controllers\Controller;
 use App\Models\Bootcamp;
 use App\Models\BootcampPurchase;
-use App\Models\OfflinePayment;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Str;
 
 class BootcampPurchaseController extends Controller
 {
     /**
-     * Show bootcamp purchase page or process free bootcamp instantly.
+     * Enroll student in bootcamp (free or allowed enrollment).
      */
     public function purchase($id)
     {
@@ -38,73 +37,22 @@ class BootcampPurchaseController extends Controller
             return redirect()->back();
         }
 
-        // If bootcamp is free, enroll instantly
-        if ($bootcamp->is_paid == 0) {
-            $payment = [
-                'invoice' => '#'.Str::random(20),
-                'user_id' => auth('web')->id(),
-                'bootcamp_id' => $bootcamp->id,
-                'price' => 0,
-                'tax' => 0,
-                'payment_method' => 'free',
-                'status' => 1,
-                'instructor_revenue' => 0,
-                'admin_revenue' => 0,
-            ];
-
-            BootcampPurchase::insert($payment);
-
-            Session::flash('success', get_phrase('Enrolled in the bootcamp successfully'));
-
-            return redirect()->route('my.bootcamps');
-        }
-
-        // Check if offline payment is already in process
-        $processing = OfflinePayment::where([
+        // Create bootcamp enrollment (purchase) regardless of paid/free
+        BootcampPurchase::create([
+            'invoice' => '#'.Str::random(20),
             'user_id' => auth('web')->id(),
-            'items' => $bootcamp->id,
-            'item_type' => 'bootcamp',
-            'status' => 0,
-        ])->first();
-
-        if ($processing) {
-            Session::flash('warning', get_phrase('Your request is in process.'));
-
-            return redirect()->back();
-        }
-
-        // Prepare payment details
-        $discount = $bootcamp->discount_flag ? $bootcamp->discounted_price : 0;
-        $price = $bootcamp->price - $discount;
-
-        $payment_details = [
-            'items' => [
-                [
-                    'id' => $bootcamp->id,
-                    'title' => $bootcamp->title,
-                    'subtitle' => '',
-                    'price' => $bootcamp->price,
-                    'discount_price' => $discount,
-                ],
-            ],
-            'custom_field' => [
-                'item_type' => 'bootcamp',
-                'pay_for' => get_phrase('Bootcamp payment'),
-            ],
-            'success_method' => [
-                'model_name' => 'BootcampPurchase',
-                'function_name' => 'purchase_bootcamp',
-            ],
-            'payable_amount' => round($price, 2),
+            'bootcamp_id' => $bootcamp->id,
+            'price' => $bootcamp->is_paid ? $bootcamp->price : 0,
             'tax' => 0,
-            'coupon' => null,
-            'cancel_url' => route('bootcamp.details', $bootcamp->slug),
-            'success_url' => route('payment.success', ''),
-        ];
+            'payment_method' => $bootcamp->is_paid ? 'manual' : 'free',
+            'status' => 1,
+            'instructor_revenue' => 0,
+            'admin_revenue' => 0,
+        ]);
 
-        Session::put(['payment_details' => $payment_details]);
+        Session::flash('success', get_phrase('Enrolled in the bootcamp successfully'));
 
-        return redirect()->route('payment');
+        return redirect()->route('my.bootcamps');
     }
 
     /**
@@ -118,7 +66,7 @@ class BootcampPurchaseController extends Controller
             ->latest('bootcamp_purchases.id')
             ->paginate(10);
 
-        return view(theme_path().'student.purchase_history.bootcamp', $page_data);
+        return view('frontend.default.student.purchase_history.bootcamp', $page_data);
     }
 
     /**
@@ -142,6 +90,6 @@ class BootcampPurchaseController extends Controller
             return redirect()->back();
         }
 
-        return view(theme_path().'student.purchase_history.bootcamp_invoice', ['invoice' => $invoice]);
+        return view('frontend.default.student.purchase_history.bootcamp_invoice', ['invoice' => $invoice]);
     }
 }

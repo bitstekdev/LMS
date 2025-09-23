@@ -14,7 +14,7 @@ class BecomeInstructorController extends Controller
 {
     public function index()
     {
-        $view_path = 'frontend.'.get_frontend_settings('theme').'.student.become_instructor.index';
+        $view_path = 'frontend.default.student.become_instructor.index';
 
         return view($view_path);
     }

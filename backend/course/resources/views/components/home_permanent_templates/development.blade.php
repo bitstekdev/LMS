@@ -109,7 +109,7 @@
         } else {
             $defaultBanner = asset('assets/frontend/default/image/development-banner1.webp');
         }
-        $total_students = DB::table('users')->where('role', 'student')->get();
+        $total_students = App\Models\User::where('role', 'student')->get();
     @endphp
     <section class="dev-banner-section" style="background-image: url({{ isset($banner) ? $banner : $defaultBanner }});">
         <div class="container">
@@ -149,11 +149,7 @@
                             <ul class="profiles d-flex align-items-center">
 
                                 @php
-                                    $students = DB::table('users')
-                                        ->where('role', 'student')
-                                        ->take(2)
-                                        ->latest('id')
-                                        ->get();
+                                    $students = App\Models\User::where('role', 'student')->take(2)->latest('id')->get();
                                 @endphp
                                 @foreach ($students as $student)
                                     <li>
@@ -301,7 +297,7 @@
             </div>
             <div class="row row-20 mb-110">
                 @php
-                    $featured_courses = DB::table('courses')->where('status', 'active')->latest('id')->get();
+                    $featured_courses = App\Models\Course::where('status', 'active')->latest('id')->get();
                 @endphp
                 @foreach ($featured_courses->take(4) as $key => $row)
                     <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6">
@@ -311,8 +307,7 @@
                                     <img src="{{ get_image($row->thumbnail) }}" alt="banner">
                                 </div>
                                 @php
-                                    $ratings = DB::table('reviews')
-                                        ->where('course_id', $row->id)
+                                    $ratings = App\Models\Review::where('course_id', $row->id)
                                         ->pluck('rating')
                                         ->toArray();
                                     $average_rating = count($ratings) > 0 ? array_sum($ratings) / count($ratings) : 0;
@@ -485,7 +480,7 @@
                     <div class="swiper dev-student-swiper">
                         <div class="swiper-wrapper">
                             @php
-                                $reviews = DB::table('user_reviews')->get();
+                                $reviews = App\Models\UserReview::get();
                             @endphp
                             @foreach ($reviews as $review)
                                 @php
@@ -532,61 +527,6 @@
         </div>
     </section>
     <!-- Student Testimonials Area End -->
-
-    <!-- News Blog Area Start -->
-    @if (get_frontend_settings('blog_visibility_on_the_home_page'))
-        <section>
-            <div class="container">
-                <!-- Section Title -->
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="dev-section-title">
-                            <h1 class="title mb-20">{{ get_phrase('Get News with') }} <span
-                                    class="highlight">{{ get_phrase('Academy') }}</span></h1>
-                            <p class="info">
-                                {{ get_phrase("The industry's standard dummy text ever since the  unknown printer took a galley of type and scrambled") }}
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="row row-20 mb-100">
-                    @foreach ($blogs as $key => $blog)
-                        <div class="col-lg-4 col-md-6 col-sm-6">
-                            <a href="{{ route('blog.details', $blog->slug) }}" class="dev-news-link">
-                                <div class="dev-news-card">
-                                    <div class="banner">
-                                        <img src="{{ get_image($blog->thumbnail) }}" alt="">
-                                    </div>
-                                    <div class="dev-news-card-body">
-                                        <h5 class="ellipsis-line-2 title mb-12">{{ ucfirst($blog->title) }}</h5>
-                                        <div class="date-comments flex-wrap mb-3 d-flex align-items-center">
-                                            <div class="date-wrap d-flex align-items-center">
-                                                <img src="{{ asset('assets/frontend/default/image/calendar-black-16.svg') }}"
-                                                    alt="">
-                                                <p class="value">{{ $blog->created_at->format('d M, Y') }}</p>
-                                            </div>
-                                            <div class="comment-wrap mt-0 d-flex align-items-center">
-                                                <img src="{{ asset('assets/frontend/default/image/messages-black-16.svg') }}"
-                                                    alt="">
-                                                <p class="value">{{ count_comments_by_blog_id($blog->id) }}</p>
-                                            </div>
-                                        </div>
-                                        <p class="info ellipsis-line-2">
-                                            {{ ellipsis(strip_tags($blog->description), 160) }}</p>
-
-                                        <p class="text-dark mt-3 text-dev-warning">{{ get_phrase('Read More') }} <i
-                                                class="fi-br-angle-small-right"></i></p>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                    @endforeach
-                </div>
-            </div>
-        </section>
-    @endif
-    <!-- News Blog Area End -->
-
 
     <!-- Vertically centered modal -->
     <div class="modal fade-in-effect" id="promoVideo" tabindex="-1" aria-labelledby="promoVideoLabel"

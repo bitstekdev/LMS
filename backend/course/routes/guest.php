@@ -1,6 +1,5 @@
 <?php
 
-use App\Http\Controllers\Frontend\BlogController;
 use App\Http\Controllers\Frontend\BootcampController;
 use App\Http\Controllers\Frontend\CourseController;
 use App\Http\Controllers\Frontend\HomeController;
@@ -9,8 +8,6 @@ use App\Http\Controllers\Frontend\LanguageController;
 use App\Http\Controllers\Frontend\PublicFormController;
 use App\Http\Controllers\Frontend\StaticPageController;
 use App\Http\Controllers\Frontend\TeamTrainingController;
-use App\Http\Controllers\Frontend\TutorBookingController;
-use App\Http\Middleware\BlogVisibilityMiddleware;
 use Illuminate\Support\Facades\Route;
 
 // 🏠 Home Routes
@@ -27,18 +24,9 @@ Route::controller(CourseController::class)->group(function () {
     Route::get('course/{slug}', 'course_details')->name('course.details');
 });
 
-// 📰 Blog Routes
-Route::controller(BlogController::class)->middleware(BlogVisibilityMiddleware::class)->group(function () {
-    Route::get('blogs/{category?}', 'index')->name('blogs');
-    Route::get('blog/{slug?}', 'blog_details')->name('blog.details');
-    Route::get('blogs-list/{id}', 'blog_by_category')->name('blog.by.category');
-});
-
 // 📩 Public Form Routes (Contact + Newsletter)
 Route::controller(PublicFormController::class)->group(function () {
     Route::get('contact-us/', 'contactForm')->name('contact.us');
-    Route::post('contact/', 'submitContact')->name('contact.store');
-    Route::post('newsletter/store', 'submitNewsletter')->name('newsletter.store');
 });
 
 // 🧑‍🏫 Instructor Routes
@@ -57,14 +45,6 @@ Route::controller(BootcampController::class)->group(function () {
 Route::controller(TeamTrainingController::class)->group(function () {
     Route::get('team-packages/{course_category?}', 'index')->name('team.packages');
     Route::get('team-package/{slug}', 'show')->name('team.package.details');
-});
-
-// 🎓 Tutor Booking Routes
-Route::controller(TutorBookingController::class)->group(function () {
-    Route::get('tutors', 'index')->name('tutor_list');
-    Route::get('tutor-schedule/{id}/{user}', 'tutor_schedule')->name('tutor_schedule');
-    Route::get('tutor-schedule-by-date/{date}/{tutorId}', 'getSchedulesForDate')->name('tutor.getSchedulesForDate');
-    Route::get('tutor-schedule-by-calender-date/{date}/{tutorId}', 'getSchedulesByCalenderDate')->name('tutor.getSchedulesByCalenderDate');
 });
 
 // 🌐 Language Selector

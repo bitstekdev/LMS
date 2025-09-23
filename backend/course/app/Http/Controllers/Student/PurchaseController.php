@@ -20,7 +20,7 @@ class PurchaseController extends Controller
             ->latest('id')
             ->paginate(10);
 
-        $view = 'frontend.'.get_frontend_settings('theme').'.student.purchase_history.index';
+        $view = 'frontend.default.student.purchase_history.index';
 
         return view($view, ['payments' => $payments]);
     }
@@ -35,7 +35,7 @@ class PurchaseController extends Controller
             return back()->with('error', get_phrase('Data not found.'));
         }
 
-        $view = 'frontend.'.get_frontend_settings('theme').'.student.purchase_history.invoice';
+        $view = 'frontend.default.student.purchase_history.invoice';
 
         return view($view, ['invoice' => $payment]);
     }

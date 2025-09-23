@@ -27,8 +27,7 @@
 
         @forelse ($sections as $key => $section)
             @php
-                $lessons = DB::table('lessons')
-                    ->join('sections', 'lessons.section_id', 'sections.id')
+                $lessons = App\Models\Lesson::join('sections', 'lessons.section_id', 'sections.id')
                     ->select('lessons.*', 'sections.title as section_title')
                     ->where('lessons.section_id', $section->id)
                     ->orderBy('sort')

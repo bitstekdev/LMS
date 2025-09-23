@@ -4,7 +4,6 @@ use App\Http\Controllers\Api\AuthController;
 use App\Http\Controllers\Api\CartController;
 use App\Http\Controllers\Api\CategoryController;
 use App\Http\Controllers\Api\CourseController;
-use App\Http\Controllers\Api\PaymentController;
 use App\Http\Controllers\Api\UserController;
 use App\Http\Controllers\Api\ZoomController;
 use Illuminate\Http\Request;
@@ -71,12 +70,6 @@ Route::middleware('auth:sanctum')->group(function () {
         Route::get('list', 'cart_list');
         Route::get('toggle', 'toggle_cart_items');
         Route::get('tools', 'cart_tools');
-    });
-
-    // 💳 Payment Routes
-    Route::prefix('payment')->controller(PaymentController::class)->group(function () {
-        Route::get('{token}', 'payment');
-        Route::get('token', 'token');
     });
 
     // 📅 Zoom/Live Class Routes

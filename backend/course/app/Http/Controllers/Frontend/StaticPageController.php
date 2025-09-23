@@ -63,8 +63,7 @@ class StaticPageController extends Controller
      */
     private function renderStaticPage(string $page): ViewResponse
     {
-        $theme = get_frontend_settings('theme');
-        $viewPath = "frontend.{$theme}.static.{$page}";
+        $viewPath = "frontend.default.static.{$page}";
 
         try {
             if (! View::exists($viewPath)) {

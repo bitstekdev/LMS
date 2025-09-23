@@ -15,7 +15,7 @@ class InstructorController extends Controller
             ->latest('id')
             ->paginate(8);
 
-        $view_path = 'frontend.'.get_frontend_settings('theme').'.instructor.index';
+        $view_path = 'frontend.default.instructor.index';
 
         return view($view_path, $page_data);
     }
@@ -37,7 +37,7 @@ class InstructorController extends Controller
             ->latest('id')
             ->paginate(6);
 
-        $view_path = 'frontend.'.get_frontend_settings('theme').'.instructor.details';
+        $view_path = 'frontend.default.instructor.details';
 
         return view($view_path, $page_data);
     }

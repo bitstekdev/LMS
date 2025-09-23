@@ -1,6 +1,5 @@
 @php
-    $participants = DB::table('quiz_submissions')
-        ->join('users', 'quiz_submissions.user_id', 'users.id')
+    $participants = App\Models\QuizSubmission::join('users', 'quiz_submissions.user_id', 'users.id')
         ->where('quiz_submissions.quiz_id', $id)
         ->select('users.name', 'users.id')
         ->distinct('quiz_submissions.user_id')

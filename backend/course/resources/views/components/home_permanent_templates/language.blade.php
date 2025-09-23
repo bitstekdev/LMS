@@ -11,10 +11,10 @@
 @endpush
 @section('content')
     @php
-        $total_students = DB::table('users')->where('role', 'student')->get();
-        $total_instructors = DB::table('users')->where('role', 'instructor')->get();
-        $free_courses = DB::table('courses')->where('is_paid', 0)->get();
-        $premium_courses = DB::table('courses')->where('is_paid', 1)->get();
+        $total_students = App\Models\User::where('role', 'student')->get();
+        $total_instructors = App\Models\User::where('role', 'instructor')->get();
+        $free_courses = App\Models\Course::where('is_paid', 0)->get();
+        $premium_courses = App\Models\Course::where('is_paid', 1)->get();
     @endphp
     <!-- Banner Area Start -->
     <section>
@@ -141,7 +141,7 @@
             </div>
             <div class="row row-20 mb-100px">
                 @php
-                    $featured_courses = DB::table('courses')->where('status', 'active')->latest('id')->get();
+                    $featured_courses = App\Models\Course::where('status', 'active')->latest('id')->get();
                 @endphp
 
                 @foreach ($featured_courses->take(4) as $key => $row)
@@ -159,8 +159,7 @@
                                                 {{ ucfirst($row->title) }}</h5>
                                             <div class="card-rating-reviews1 mb-20 d-flex align-items-center flex-wrap">
                                                 @php
-                                                    $ratings = DB::table('reviews')
-                                                        ->where('course_id', $row->id)
+                                                    $ratings = App\Models\Review::where('course_id', $row->id)
                                                         ->pluck('rating')
                                                         ->toArray();
                                                     $average_rating =
@@ -313,8 +312,10 @@
             <div class="row g-20px mb-100px">
                 @php
 
-                    $popular_instaructors = DB::table('courses')
-                        ->select('enrollments.user_id', DB::raw('count(*) as enrol_number'))
+                    $popular_instaructors = App\Models\Course::select(
+                        'enrollments.user_id',
+                        DB::raw('count(*) as enrol_number'),
+                    )
                         ->join('enrollments', 'courses.id', '=', 'enrollments.course_id')
                         ->groupBy('enrollments.user_id')
                         ->orderBy('enrollments.user_id', 'DESC')
@@ -382,13 +383,13 @@
                 <div class="col-xl-10 offset-xl-1">
                     <div class="testimonial-wrap1">
                         @php
-                            $reviews = DB::table('user_reviews')->get();
+                            $reviews = App\Models\UserReview::get();
                         @endphp
                         <div class="testimonial-profile-wrap1 mb-12px">
                             <div class="testimonial-profile-area1 slider-nav">
                                 @foreach ($reviews as $review)
                                     @php
-                                        $userDetails = DB::table('users')->where('id', $review->user_id)->first();
+                                        $userDetails = App\Models\User::where('id', $review->user_id)->first();
                                     @endphp
                                     <div class="testimonial-profile1">
                                         <div class="testimonial-profile-img1">
@@ -401,7 +402,7 @@
                         <div class="testimonial-details-wrap1 slide-show">
                             @foreach ($reviews as $review)
                                 @php
-                                    $userDetails = DB::table('users')->where('id', $review->user_id)->first();
+                                    $userDetails = App\Models\User::where('id', $review->user_id)->first();
                                 @endphp
                                 <div class="single-testimonial-details1">
                                     <h2 class="title-1 fs-20px lh-28px fw-semibold mb-12px text-center">
@@ -431,41 +432,4 @@
         </div>
     </section>
     <!-- Testimonials Area End -->
-
-    <!-- News Area Start -->
-    <section>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <h1 class="title-1 fs-32px lh-36px text-center mb-30">{{ get_phrase('Our Latest Blog') }}</h1>
-                </div>
-            </div>
-            <div class="row g-20px mb-100px">
-                @foreach ($blogs as $key => $blog)
-                    <div class="col-lg-4 col-md-6 col-sm-6">
-                        <a href="{{ route('blog.details', $blog->slug) }}" class="d-block h-100 w-100 max-sm-350px">
-                            <div class="lms-1-card">
-                                <div class="lms-1-card-body">
-                                    <div class="grid-view-banner1 mb-14px">
-                                        <img class="h-230px" src="{{ get_image($blog->thumbnail) }}" alt="">
-                                    </div>
-                                    <div>
-                                        <h5 class="title-1 fs-20px lh-28px mb-2 ellipsis-line-2">
-                                            {{ ucfirst($blog->title) }}</h5>
-                                        <p class="subtitle-1 fs-16px lh-24px mb-3 ellipsis-line-2">
-                                            {{ ellipsis(strip_tags($blog->description), 160) }}</p>
-                                        <p class="link-icon-btn1">
-                                            <span>{{ get_phrase('Learn More') }}</span>
-                                            <span class="fi-rr-angle-small-right"></span>
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                @endforeach
-            </div>
-        </div>
-    </section>
-    <!-- News Area End -->
 @endsection

@@ -20,7 +20,7 @@ class MyCoursesController extends Controller
             ->latest()
             ->paginate();
 
-        $view_path = 'frontend.'.get_frontend_settings('theme').'.student.my_courses.index';
+        $view_path = 'frontend.default.student.my_courses.index';
 
         return view($view_path, compact('my_courses'));
     }

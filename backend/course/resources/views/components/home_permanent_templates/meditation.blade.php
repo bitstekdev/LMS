@@ -15,7 +15,6 @@
     <link rel="stylesheet" href="{{ asset('assets/frontend/default/fonts/mica-valo/stylesheet.css') }}">
 @endpush
 @section('content')
-
     <!-- Banner Area Start -->
     <section>
         <div class="container">
@@ -58,9 +57,9 @@
                         <div class="maditation-banner-right">
                             <ul class="maditation-video-profiles d-flex align-items-center">
                                 @php
-                                    $students = DB::table('users')->where('role', 'student')->take(4)->get();
-                                    $total_student = DB::table('users')->where('role', 'student')->get();
-                                    $free_courses = DB::table('courses')->where('is_paid', 0)->get();
+                                    $students = App\Models\User::where('role', 'student')->take(4)->get();
+                                    $total_student = App\Models\User::where('role', 'student')->get();
+                                    $free_courses = App\Models\Course::where('is_paid', 0)->get();
                                 @endphp
                                 @foreach ($students as $student)
                                     <li>
@@ -109,7 +108,7 @@
             </div>
             <div class="row row-30">
                 @php
-                    $feature_courses = DB::table('courses')->where('status', 'active')->limit(4)->latest('id')->get();
+                    $feature_courses = App\Models\Course::where('status', 'active')->limit(4)->latest('id')->get();
                     $hover_colors = [
                         'linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(0, 255, 143, 0.91) 100%);',
                         'linear-gradient(180deg, rgba(255, 197, 211, 0) 10%, #FF90AA 100%);',
@@ -153,8 +152,12 @@
             </div>
             <div class="row row-30">
                 @php
-                    $top_courses = DB::table('courses')
-                        ->leftJoin('payment_histories', 'courses.id', '=', 'payment_histories.course_id')
+                    $top_courses = App\Models\Course::leftJoin(
+                        'payment_histories',
+                        'courses.id',
+                        '=',
+                        'payment_histories.course_id',
+                    )
                         ->select(
                             'courses.id',
                             'courses.slug',
@@ -309,11 +312,11 @@
             <div class="swiper meditation-testimonial-1">
                 <div class="swiper-wrapper">
                     @php
-                        $reviews = DB::table('user_reviews')->get();
+                        $reviews = App\Models\UserReview::get();
                     @endphp
                     @foreach ($reviews as $review)
                         @php
-                            $userDetails = DB::table('users')->where('id', $review->user_id)->first();
+                            $userDetails = App\Models\User::where('id', $review->user_id)->first();
                         @endphp
                         <div class="swiper-slide">
                             <div class="elegant-testimonial-slide">
@@ -357,53 +360,4 @@
         </div>
     </section>
     <!-- Testimonials Area End -->
-
-    <!-- Blog Area Start -->
-    @if (get_frontend_settings('blog_visibility_on_the_home_page'))
-        <section>
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                        <div
-                            class="meditation-blog-title-area d-flex align-items-center justify-content-between flex-wrap">
-                            <h2 class="title">{{ get_phrase('Blogs') }}</h2>
-                            <a href="{{ route('blogs') }}" class="explore-btn1">
-                                <span class="text">{{ get_phrase('See All Blogs') }}</span>
-                                <span class="icon">
-                                    <img src="{{ asset('assets/frontend/default/image/arrow-send-white.svg') }}"
-                                        alt="">
-                                </span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="row row-30 mb-80">
-                    @foreach ($blogs as $key => $blog)
-                        <div class="col-lg-4 col-md-6 col-sm-6">
-                            <a href="{{ route('blog.details', $blog->slug) }}" class="meditation-blog-link">
-                                <div class="meditation-blog-inner">
-                                    <div class="banner">
-                                        <img src="{{ get_image($blog->thumbnail) }}" alt="">
-                                    </div>
-                                    <div class="meditation-blog-details">
-                                        <h3 class="title info ellipsis-line-2">{{ ucfirst($blog->title) }}</h3>
-                                        <p class="info ellipsis-line-2">
-                                            {{ ellipsis(strip_tags($blog->description), 160) }}</p>
-                                        <p class="read-more d-flex align-items-center">
-                                            <span>{{ get_phrase('Read More') }}</span>
-                                            <img src="{{ asset('assets/frontend/default/image/arrow-right-black-20.svg') }}"
-                                                alt="">
-                                        </p>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                    @endforeach
-                </div>
-            </div>
-        </section>
-    @endif
-    <!-- Blog Area End -->
-
-
 @endsection

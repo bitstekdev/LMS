@@ -12,7 +12,6 @@ class SeoFieldSeeder extends Seeder
         $records = [
             [
                 'course_id' => null,
-                'blog_id' => null,
                 'bootcamp_id' => null,
                 'route' => 'Home',
                 'name_route' => 'home',
@@ -29,7 +28,6 @@ class SeoFieldSeeder extends Seeder
             ],
             [
                 'course_id' => null,
-                'blog_id' => null,
                 'bootcamp_id' => null,
                 'route' => 'Compare',
                 'name_route' => 'compare',
@@ -46,7 +44,6 @@ class SeoFieldSeeder extends Seeder
             ],
             [
                 'course_id' => null,
-                'blog_id' => null,
                 'bootcamp_id' => null,
                 'route' => 'Privacy',
                 'name_route' => 'privacy.policy',
@@ -63,7 +60,6 @@ class SeoFieldSeeder extends Seeder
             ],
             [
                 'course_id' => null,
-                'blog_id' => null,
                 'bootcamp_id' => null,
                 'route' => 'Refund',
                 'name_route' => 'refund.policy',
@@ -80,7 +76,6 @@ class SeoFieldSeeder extends Seeder
             ],
             [
                 'course_id' => null,
-                'blog_id' => null,
                 'bootcamp_id' => null,
                 'route' => 'Terms- condition',
                 'name_route' => 'terms.condition',
@@ -97,7 +92,6 @@ class SeoFieldSeeder extends Seeder
             ],
             [
                 'course_id' => null,
-                'blog_id' => null,
                 'bootcamp_id' => null,
                 'route' => 'Faq',
                 'name_route' => 'faq',
@@ -114,7 +108,6 @@ class SeoFieldSeeder extends Seeder
             ],
             [
                 'course_id' => null,
-                'blog_id' => null,
                 'bootcamp_id' => null,
                 'route' => 'Cookie policy',
                 'name_route' => 'cookie.policy',

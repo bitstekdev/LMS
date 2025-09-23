@@ -20,7 +20,7 @@ class MyBootcampsController extends Controller
             ->paginate(10)
             ->appends(request()->query());
 
-        return view(theme_path().'student.my_bootcamps.index', $page_data);
+        return view('frontend.default.student.my_bootcamps.index', $page_data);
     }
 
     public function show($slug)
@@ -38,7 +38,7 @@ class MyBootcampsController extends Controller
             return redirect()->back();
         }
 
-        return view(theme_path().'student.my_bootcamps.details', $page_data);
+        return view('frontend.default.student.my_bootcamps.details', $page_data);
     }
 
     public function invoice($id)
@@ -54,7 +54,7 @@ class MyBootcampsController extends Controller
             return redirect()->back();
         }
 
-        return view(theme_path().'student.my_bootcamps.invoice', ['invoice' => $invoice]);
+        return view('frontend.default.student.my_bootcamps.invoice', ['invoice' => $invoice]);
     }
 
     public function join_class($slug)

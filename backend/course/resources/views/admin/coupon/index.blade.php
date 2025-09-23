@@ -108,7 +108,7 @@
 
                                             <td>
                                                 <div class="dAdmin_info_name min-w-150px">
-                                                    <p>{{ date('d-M-Y', $coupon->expiry) }}</p>
+                                                    <p>{{ \Carbon\Carbon::parse($coupon->expiry)->format('d-M-Y') }}</p>
                                                 </div>
                                             </td>
 

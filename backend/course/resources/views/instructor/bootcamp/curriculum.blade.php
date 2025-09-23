@@ -26,8 +26,11 @@
     <ul class="ol-my-accordion">
         @forelse ($modules as $key => $module)
             @php
-                $live_classes = DB::table('bootcamp_live_classes')
-                    ->join('bootcamp_modules', 'bootcamp_live_classes.module_id', 'bootcamp_modules.id')
+                $live_classes = App\Models\BootcampLiveClass::join(
+                    'bootcamp_modules',
+                    'bootcamp_live_classes.module_id',
+                    'bootcamp_modules.id',
+                )
                     ->select('bootcamp_live_classes.*', 'bootcamp_modules.title as module_title')
                     ->where('bootcamp_live_classes.module_id', $module->id)
                     ->orderBy('sort')
@@ -41,13 +44,13 @@
                         @if ($module->restriction == 1)
                             <small>
                                 {{ get_phrase('Available from : ') }}
-                                {{ date('d-M-Y', $module->publish_date) }}
+                                {{ \Carbon\Carbon::parse($module->publish_date)->format('d-M-Y') }}
                             </small>
                         @elseif ($module->restriction == 2)
                             <small>
                                 {{ get_phrase('Available within : ') }}
-                                {{ date('d-M-Y', $module->publish_date) }} -
-                                {{ date('d-M-Y', $module->expiry_date) }}
+                                {{ \Carbon\Carbon::parse($module->publish_date)->format('d-M-Y') }} -
+                                {{ \Carbon\Carbon::parse($module->expiry_date)->format('d-M-Y') }}
                             </small>
                         @endif
                     </div>
@@ -105,12 +108,12 @@
                                             @endif
 
                                             <small class="ms-3">
-                                                {{ date('d-M-y', $class->start_time) }}
+                                                {{ \Carbon\Carbon::parse($class->start_time)->format('d-M-y') }}
                                             </small>
 
                                             <small>
-                                                ({{ date('h:i a', $class->start_time) }} -
-                                                {{ date('h:i a', $class->end_time) }})
+                                                ({{ \Carbon\Carbon::parse($class->start_time)->format('h:i a') }} -
+                                                {{ \Carbon\Carbon::parse($class->end_time)->format('h:i a') }})
                                             </small>
                                         </div>
                                     </div>

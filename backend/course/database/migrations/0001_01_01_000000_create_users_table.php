@@ -31,7 +31,6 @@ return new class extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();
-            $table->json('paymentkeys')->nullable();
             $table->string('video_url')->nullable();
             $table->timestamps();
         });

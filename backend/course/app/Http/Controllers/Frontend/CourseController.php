@@ -77,7 +77,7 @@ class CourseController extends Controller
         $page_data['courses'] = $query->latest()->paginate($layout === 'grid' ? 9 : 5)->appends($request->query());
         $page_data['wishlist'] = $wishlist;
 
-        $view = 'frontend.'.get_frontend_settings('theme').'.course.index';
+        $view = 'frontend.default.course.index';
 
         return view($view, $page_data);
     }
@@ -99,7 +99,7 @@ class CourseController extends Controller
         $page_data['total_lesson'] = Lesson::where('course_id', $course->id)->count();
         $page_data['enroll'] = Enrollment::where('course_id', $course->id)->count('user_id');
 
-        $view = 'frontend.'.get_frontend_settings('theme').'.course.course_details';
+        $view = 'frontend.default.course.course_details';
 
         return view($view, $page_data);
     }

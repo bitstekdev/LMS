@@ -346,11 +346,11 @@
             </div>
             <div class="row g-28px mb-50px">
                 @php
-                    $featured_courses = DB::table('courses')->where('status', 'active')->latest('id')->take(4)->get();
+                    $featured_courses = App\Models\Course::where('status', 'active')->latest('id')->take(4)->get();
                 @endphp
                 @foreach ($featured_courses->take(4) as $key => $row)
                     @php
-                        $ratings = DB::table('reviews')->where('course_id', $row->id)->pluck('rating')->toArray();
+                        $ratings = App\Models\Review::where('course_id', $row->id)->pluck('rating')->toArray();
                         $average_rating = count($ratings) > 0 ? array_sum($ratings) / count($ratings) : null;
                     @endphp
                     <div class="col-lg-6">
@@ -449,7 +449,7 @@
                         @foreach ($motivational_speeches as $key => $motivational_speech)
                             <div class="lms-event-single1 d-flex gap-2">
                                 @php
-                                    $admininfo = DB::table('users')->where('role', 'admin')->first();
+                                    $admininfo = App\Models\User::where('role', 'admin')->first();
                                 @endphp
                                 <div class="lms-event-number">
                                     <h1 class="title-5 fs-44px lh-29px fw-500">{{ $increment++ }}</h1>
@@ -565,11 +565,11 @@
                     <div class="swiper lms-testimonial-2">
                         <div class="swiper-wrapper">
                             @php
-                                $reviews = DB::table('user_reviews')->get();
+                                $reviews = App\Models\UserReview::get();
                             @endphp
                             @foreach ($reviews as $review)
                                 @php
-                                    $userDetails = DB::table('users')->where('id', $review->user_id)->first();
+                                    $userDetails = App\Models\User::where('id', $review->user_id)->first();
                                 @endphp
                                 <div class="swiper-slide">
                                     <div class="lms-1-card rounded-4">
@@ -617,50 +617,6 @@
         </div>
     </section>
     <!-- Testimonial Area End -->
-
-
-    <!-- Blog Area Start -->
-    @if (get_frontend_settings('blog_visibility_on_the_home_page'))
-        <section>
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="section-title-1 mb-50px">
-                            <h1 class="title-3 mb-26px fs-40px lh-52px fw-medium text-center">{{ get_phrase('Our Blog') }}
-                            </h1>
-                            <p class="subtitle-2 fs-15px lh-24px text-center">
-                                {{ get_phrase('Awesome  site. on the top advertising a business online includes assembling Having the most keep.') }}
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="row g-20px mb-100px">
-                    @foreach ($blogs as $key => $blog)
-                        <div class="col-lg-4 col-md-6 col-sm-6">
-                            <a href="{{ route('blog.details', $blog->slug) }}" class="blog-post1-link">
-                                <div class="blog-post1-inner">
-                                    <div class="banner">
-                                        <img src="{{ get_image($blog->thumbnail) }}" alt="...">
-                                    </div>
-                                    <div class="blog-post1-details">
-                                        <h3 class="title-5 mb-3 pt-2">{{ ucfirst($blog->title) }}</h3>
-                                        <p class="info ellipsis-line-2">
-                                            {{ ellipsis(strip_tags($blog->description), 160) }}</p>
-                                        <p class="read-more d-flex align-items-center">
-                                            <span>{{ get_phrase('Read More') }}</span>
-                                            <img src="{{ asset('assets/frontend/default/image/angle-right-black-18.svg') }}"
-                                                alt="">
-                                        </p>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                    @endforeach
-                </div>
-            </div>
-        </section>
-    @endif
-    <!-- Blog Area End -->
 
 @endsection
 

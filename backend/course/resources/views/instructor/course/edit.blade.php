@@ -13,7 +13,7 @@
                         {{ $course_details->title }}
                     </span>
                 </h4>
-                <a href="{{ route('instructor.courses') }}"
+                <a href="{{ route('instructor.course.index') }}"
                     class="btn ol-btn-outline-secondary d-flex align-items-center cg-10px ms-auto">
                     <span class="fi-rr-arrow-left"></span>
                     <span>{{ get_phrase('Back') }}</span>

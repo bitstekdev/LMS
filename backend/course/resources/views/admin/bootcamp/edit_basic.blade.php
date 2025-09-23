@@ -46,7 +46,7 @@
         class="form-label ol-form-label col-sm-2 col-form-label">{{ get_phrase('Publish Date') }}<span
             class="text-danger ms-1">*</span></label>
     <div class="col-sm-10">
-        <input type="date" name="publish_date" value="{{ date('Y-m-d', $bootcamp_details->publish_date) }}"
+        <input type="date" name="publish_date" value="{{ \Carbon\Carbon::parse($bootcamp_details->publish_date)->format('Y-m-d') }}"
             class="form-control ol-form-control" id="title" required>
     </div>
 </div>

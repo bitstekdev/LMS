@@ -8,7 +8,6 @@ class SeoField extends Model
 {
     protected $fillable = [
         'course_id',
-        'blog_id',
         'bootcamp_id',
         'route',
         'name_route',
@@ -27,11 +26,6 @@ class SeoField extends Model
     public function course()
     {
         return $this->belongsTo(Course::class);
-    }
-
-    public function blog()
-    {
-        return $this->belongsTo(Blog::class);
     }
 
     public function bootcamp()

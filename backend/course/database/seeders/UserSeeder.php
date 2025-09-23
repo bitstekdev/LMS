@@ -34,7 +34,6 @@ class UserSeeder extends Seeder
                 'email_verified_at' => $now,
                 'password' => Hash::make('password'),
                 'remember_token' => Str::random(10),
-                'paymentkeys' => json_encode(['stripe' => 'sk_test_...', 'paypal' => 'abc123']),
                 'video_url' => 'https://youtube.com/adminintro',
             ],
             [
@@ -56,7 +55,6 @@ class UserSeeder extends Seeder
                 'email_verified_at' => $now,
                 'password' => Hash::make('password'),
                 'remember_token' => Str::random(10),
-                'paymentkeys' => json_encode(['stripe' => 'sk_test_abc']),
                 'video_url' => 'https://youtube.com/instructorintro',
             ],
             [
@@ -78,7 +76,6 @@ class UserSeeder extends Seeder
                 'email_verified_at' => $now,
                 'password' => Hash::make('password'),
                 'remember_token' => Str::random(10),
-                'paymentkeys' => json_encode(['paypal' => 'xyz987']),
                 'video_url' => null,
             ],
         ]);

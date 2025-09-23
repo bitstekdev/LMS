@@ -1,5 +1,5 @@
 @php
-    $lessons = DB::table('lessons')->where('section_id', $id)->orderBy('sort')->get();
+    $lessons = App\Models\Lesson::where('section_id', $id)->orderBy('sort')->get();
 @endphp
 <div class="row">
     <div class="col-12">

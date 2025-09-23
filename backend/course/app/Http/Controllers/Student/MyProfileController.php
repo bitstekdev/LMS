@@ -17,9 +17,8 @@ class MyProfileController extends Controller
     public function index()
     {
         $user = User::findOrFail(Auth::id());
-        $theme = get_frontend_settings('theme');
 
-        return view("frontend.{$theme}.student.my_profile.index", [
+        return view('frontend.default.student.my_profile.index', [
             'user_details' => $user,
         ]);
     }

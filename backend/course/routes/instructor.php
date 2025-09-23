@@ -1,6 +1,5 @@
 <?php
 
-use App\Http\Controllers\Instructor\BlogController;
 use App\Http\Controllers\Instructor\BootcampController;
 use App\Http\Controllers\Instructor\BootcampLiveClassController;
 use App\Http\Controllers\Instructor\BootcampModuleController;
@@ -11,16 +10,12 @@ use App\Http\Controllers\Instructor\LanguageController;
 use App\Http\Controllers\Instructor\LessonController;
 use App\Http\Controllers\Instructor\LiveClassController;
 use App\Http\Controllers\Instructor\MyProfileController;
-use App\Http\Controllers\Instructor\PayoutController;
-use App\Http\Controllers\Instructor\PayoutSettingsController;
 use App\Http\Controllers\Instructor\QuestionController;
 use App\Http\Controllers\Instructor\QuizController;
-use App\Http\Controllers\Instructor\SalesReportController;
 use App\Http\Controllers\Instructor\SectionController;
 use App\Http\Controllers\Instructor\TeamTrainingController;
-use App\Http\Controllers\Instructor\TutorBookingController;
-use App\Http\Middleware\InstructorBlogPermissionMiddleware;
 use App\Http\Middleware\InstructorMiddleware;
+use App\Http\Middleware\RecordVerification;
 use Illuminate\Support\Facades\Route;
 
 Route::prefix('instructor')->name('instructor.')->middleware(InstructorMiddleware::class)->group(function () {
@@ -29,8 +24,8 @@ Route::prefix('instructor')->name('instructor.')->middleware(InstructorMiddlewar
     Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
     /** ------------------- Courses ------------------- **/
-    Route::prefix('course')->controller(CourseController::class)->group(function () {
-        Route::get('courses', 'index')->name('courses');
+    Route::prefix('course')->name('course.')->controller(CourseController::class)->group(function () {
+        Route::get('courses', 'index')->name('index');
         Route::get('create', 'create')->name('create');
         Route::post('store', 'store')->name('store');
         Route::get('edit/{id}', 'edit')->name('edit');
@@ -73,32 +68,6 @@ Route::prefix('instructor')->name('instructor.')->middleware(InstructorMiddlewar
         Route::post('update/{id}', 'update')->name('course.question.update');
         Route::get('sort', 'sort')->name('course.question.sort');
         Route::get('load-type', 'load_type')->name('load.question.type');
-    });
-
-    /** ------------------- Blogs ------------------- **/
-    Route::middleware(InstructorBlogPermissionMiddleware::class)->controller(BlogController::class)->group(function () {
-        Route::get('blogs', 'index')->name('blogs');
-        Route::get('blog/create', 'create')->name('blog.create');
-        Route::post('blog/store', 'store')->name('blog.store');
-        Route::get('blog/edit/{id}', 'edit')->name('blog.edit');
-        Route::post('blog/update/{id}', 'update')->name('blog.update');
-        Route::get('blog/delete/{id}', 'delete')->name('blog.delete');
-        Route::get('blog/pending', 'pending')->name('blog.pending');
-    });
-
-    /** ------------------- Sales Report ------------------- **/
-    Route::get('sales-report', [SalesReportController::class, 'index'])->name('sales.report');
-
-    /** ------------------- Payouts ------------------- **/
-    Route::prefix('payout')->controller(PayoutController::class)->group(function () {
-        Route::get('reports', 'index')->name('payout.reports');
-        Route::post('request', 'store')->name('payout.request');
-        Route::get('request/delete/{id}', 'delete')->name('payout.delete');
-    });
-
-    Route::prefix('payout_setting')->controller(PayoutSettingsController::class)->group(function () {
-        Route::get('/', 'payout_setting')->name('payout.setting');
-        Route::post('store', 'payout_setting_store')->name('payout.setting.store');
     });
 
     /** ------------------- My Profile ------------------- **/
@@ -157,7 +126,7 @@ Route::prefix('instructor')->name('instructor.')->middleware(InstructorMiddlewar
         Route::view('create', 'instructor.team_training.create')->name('team.packages.create');
         Route::post('store', 'store')->name('team.packages.store');
         Route::get('purchase/history', 'purchase_history')->name('team.packages.purchase.history');
-        Route::get('edit/{id}', 'edit')->middleware('record.exists:team_training_packages,id,user_id')->name('team.packages.edit');
+        Route::get('edit/{id}', 'edit')->middleware([RecordVerification::class.':TeamTrainingPackage,id,user_id'])->name('team.packages.edit');
         Route::post('update/{id}', 'update')->name('team.packages.update');
         Route::get('delete/{id}', 'delete')->name('team.packages.delete');
         Route::get('duplicate/{id}', 'duplicate')->name('team.packages.duplicate');
@@ -167,31 +136,6 @@ Route::prefix('instructor')->name('instructor.')->middleware(InstructorMiddlewar
 
     Route::get('get-courses-by-privacy', [TeamTrainingController::class, 'get_courses'])->name('get.courses.by.privacy');
     Route::get('get-courses-price', [TeamTrainingController::class, 'get_course_price'])->name('get.course.price');
-
-    /** ------------------- Tutor Booking ------------------- **/
-    Route::controller(TutorBookingController::class)->group(function () {
-        Route::prefix('tutor-booking')->group(function () {
-            Route::get('my-subjects', 'my_subjects')->name('my_subjects');
-            Route::get('my-subject/create', 'my_subject_add')->name('my_subject_add');
-            Route::post('my-subject/store', 'my_subject_store')->name('my_subject_store');
-            Route::get('my-subject/edit', 'my_subject_edit')->name('my_subject_edit');
-            Route::post('my-subject/update/{id}', 'my_subject_update')->name('my_subject_update');
-            Route::get('my-subject/delete/{id}', 'my_subject_delete')->name('my_subject_delete');
-            Route::get('my-subject/delete-category/{id}', 'my_subject_category_delete')->name('my_subject_category_delete');
-
-            Route::get('manage-schedules', 'manage_schedules')->name('manage_schedules');
-            Route::get('manage-schedules-by-date/{date}', 'manage_schedules_by_date')->name('manage_schedules_by_date');
-            Route::get('schedule/edit/{id}', 'schedule_edit')->name('schedule_edit');
-            Route::post('schedule/update/{id}', 'schedule_update')->name('schedule_update');
-            Route::get('schedule/delete/{id}', 'schedule_delete')->name('schedule_delete');
-            Route::get('schedule-add', 'add_schedule')->name('add_schedule');
-            Route::post('schedule/store', 'schedule_store')->name('schedule_store');
-        });
-
-        Route::get('tutor_booking/tutor-booking-list', 'tutor_booking_list')->name('tutor_booking_list');
-        Route::get('tutor_booking/tution-class/join/{booking_id}', 'join_class')->name('tution_class.join');
-        Route::get('get-subject-by-category-id', 'subject_by_category_id')->name('get.subject_by_category_id');
-    });
 
     /** ------------------- Live Class ------------------- **/
     Route::controller(LiveClassController::class)->group(function () {

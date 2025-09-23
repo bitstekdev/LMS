@@ -11,46 +11,35 @@
             @endif
         </div>
 
-
-
         @php
-            if (isset(auth()->user()->id)) {
-                $is_purchased = App\Models\TeamPackagePurchase::where('user_id', auth()->user()->id)
+            $is_purchased = false;
+
+            if (auth()->check()) {
+                $is_purchased = App\Models\TeamPackagePurchase::where('user_id', auth()->id())
                     ->where('package_id', $package->id)
                     ->where('status', 1)
                     ->exists();
-
-                $pending_package_payment = App\Models\OfflinePayment::where('user_id', auth()->user()->id)
-                    ->where('item_type', 'package')
-                    ->where('items', $package->id)
-                    ->where('status', 0)
-                    ->first();
             }
         @endphp
 
-        @if (isset(auth()->user()->id))
-            @if ($pending_package_payment)
-                <a href="{{ route('purchase.team.package', $package->id) }}" class="eBtn gradient w-100 mb-3">
+        @if (auth()->check())
+            @if ($is_purchased)
+                <a href="{{ route('my.team.packages.details', $package->slug) }}" class="eBtn gradient w-100 mb-3">
                     <img src="{{ asset('assets/frontend/default/image/enroll.png') }}" alt="...">
-                    {{ get_phrase('Processing') }}</a>
+                    {{ get_phrase('Show In Collection') }}
+                </a>
             @else
-                @if ($is_purchased)
-                    <a href="{{ route('my.team.packages.details', $package->slug) }}" class="eBtn gradient w-100 mb-3">
-                        <img src="{{ asset('assets/frontend/default/image/enroll.png') }}" alt="...">
-                        {{ get_phrase('Show In Collection') }}</a>
-                @else
-                    <a href="{{ route('purchase.team.package', $package->id) }}" class="eBtn gradient w-100">
-                        <img src="{{ asset('assets/frontend/default/image/enroll.png') }}" alt="...">
-                        {{ get_phrase($package->pricing_type ? 'Buy Package' : 'Enroll Package') }}
-                    </a>
-                @endif
+                <a href="{{ route('purchase.team.package', $package->id) }}" class="eBtn gradient w-100">
+                    <img src="{{ asset('assets/frontend/default/image/enroll.png') }}" alt="...">
+                    {{ get_phrase($package->pricing_type ? 'Buy Package' : 'Enroll Package') }}
+                </a>
             @endif
         @else
             <a href="{{ route('purchase.team.package', $package->id) }}" class="eBtn gradient w-100">
                 <img src="{{ asset('assets/frontend/default/image/enroll.png') }}" alt="...">
-                {{ get_phrase($package->pricing_type ? 'Buy Package' : 'Enroll Package') }}</a>
+                {{ get_phrase($package->pricing_type ? 'Buy Package' : 'Enroll Package') }}
+            </a>
         @endif
-
 
         <ul class="ps-side-feature">
             <li class="d-flex justify-content-between align-items-center">
@@ -58,8 +47,7 @@
                     <img src="{{ asset('assets/frontend/default/image/m1.png') }}" alt="...">
                     <p>{{ get_phrase('Members') }}</p>
                 </span>
-                {{ reserved_team_members($package->id) }} /
-                {{ $package->allocation }}
+                {{ reserved_team_members($package->id) }} / {{ $package->allocation }}
             </li>
             <li class="d-flex justify-content-between align-items-center">
                 <span class="align-items-center">
@@ -98,30 +86,23 @@
             </li>
         </ul>
 
-
         @php
             $instructor = get_user_info($package->user_id);
         @endphp
 
-        @if (isset($instructor->twitter) ||
-                isset($instructor->facebook) ||
-                isset($instructor->linkedin) ||
-                isset($instructor->instagram))
+        @if ($instructor->twitter || $instructor->facebook || $instructor->linkedin || $instructor->instagram)
             <ul class="f-socials d-flex flex-column gap-3">
                 <p class="description text-14 text-center">{{ get_phrase('Contact Instructor') }}</p>
                 <div class="d-flex justify-content-center gap-3">
                     @isset($instructor->twitter)
                         <li><a href="{{ $instructor->twitter }}"><i class="fa-brands fa-twitter"></i></a></li>
                     @endisset
-
                     @isset($instructor->facebook)
                         <li><a href="{{ $instructor->facebook }}"><i class="fa-brands fa-facebook-f"></i></a></li>
                     @endisset
-
                     @isset($instructor->linkedin)
                         <li><a href="{{ $instructor->linkedin }}"><i class="fa-brands fa-linkedin-in"></i></a></li>
                     @endisset
-
                     @isset($instructor->instagram)
                         <li><a href="{{ $instructor->instagram }}"><i class="fa-brands fa-instagram"></i></a></li>
                     @endisset
@@ -131,23 +112,19 @@
 
         @if ($instructor->phone)
             <div class="dt_group mt-3">
-                <p class="description mb-15 text-center">
-                    {{ get_phrase('For details about the course') }}</p>
-                <a href="tel:{{ $instructor->phone }}" class="d-flex justify-content-center"><img
-                        src="{{ asset('assets/frontend/default/image/call.svg') }}"
-                        alt="...">{{ get_phrase('Call Us') }}: <p>
-                        {{ $instructor->phone }}</p> </a>
+                <p class="description mb-15 text-center">{{ get_phrase('For details about the course') }}</p>
+                <a href="tel:{{ $instructor->phone }}" class="d-flex justify-content-center">
+                    <img src="{{ asset('assets/frontend/default/image/call.svg') }}" alt="...">
+                    {{ get_phrase('Call Us') }}: <p>{{ $instructor->phone }}</p>
+                </a>
             </div>
         @endif
 
         @php
-            if (isset($user_data['unique_identifier'])):
-                $ref = $user_data['unique_identifier'];
-            else:
-                $ref = '';
-            endif;
+            $ref = $user_data['unique_identifier'] ?? '';
             $share_url = route('team.package.details', $package->slug);
         @endphp
+
         <div class="w-100 mt-3 px-4 text-center">
             <p class="description text-14 text-center">{{ get_phrase('Share on social media') }}</p>
 

@@ -3,7 +3,7 @@
 {{-- builder identity value have to be unique under a single file --}}
 
 @php
-    $parent_categories = DB::table('categories')->where('parent_id', 0)->latest('id')->get();
+    $parent_categories = App\Models\Category::where('parent_id', 0)->latest('id')->get();
     $current_route = Route::currentRouteName();
 @endphp
 
@@ -95,9 +95,8 @@
                             <li class="pe-2 ps-5"><a href="{{ route('bootcamps') }}"
                                     class="@if ($current_route == 'bootcamps' || $current_route == 'bootcamp.details') active @endif">{{ get_phrase('Bootcamp') }}</a>
                             </li>
-                            {{-- <li><a href="{{ route('team.packages') }}" class="@if ($current_route == 'team.packages' || $current_route == 'team.package.details') active @endif">{{ get_phrase('Team Training') }}</a></li> --}}
-                            <li><a href="{{ route('tutor_list') }}"
-                                    class="@if ($current_route == 'tutor_list') active @endif">{{ get_phrase('Find A Tutor') }}</a>
+                            <li><a href="{{ route('team.packages') }}"
+                                    class="@if ($current_route == 'team.packages' || $current_route == 'team.package.details') active @endif">{{ get_phrase('Team Training') }}</a>
                             </li>
                         </ul>
                     </div>
@@ -311,18 +310,6 @@
                                             {{ get_phrase('Message') }}
                                         </a>
                                     </li>
-                                    <li>
-                                        <a class="dropdown-item" href="{{ route('purchase.history') }}">
-                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                                xmlns="http://www.w3.org/2000/svg">
-                                                <path
-                                                    d="M11.9786 19.9C9.86839 19.9 8.06744 19.1949 6.57577 17.7846C5.0841 16.3744 4.25559 14.6378 4.09022 12.575C4.0697 12.393 4.1229 12.2436 4.24982 12.127C4.37674 12.0103 4.53167 11.9552 4.71462 11.9616C4.88679 11.968 5.0373 12.025 5.16615 12.1327C5.29498 12.2404 5.36645 12.3821 5.38055 12.5577C5.54466 14.2526 6.25236 15.6834 7.50364 16.8501C8.75491 18.0167 10.2466 18.6001 11.9786 18.6001C13.7953 18.6001 15.3495 17.9542 16.6411 16.6626C17.9328 15.3709 18.5786 13.8167 18.5786 12.0001C18.5786 10.1834 17.9328 8.62922 16.6411 7.33756C15.3495 6.04589 13.7953 5.40006 11.9786 5.40006C11.003 5.40006 10.0997 5.58935 9.26882 5.96793C8.43792 6.34652 7.72004 6.86747 7.1152 7.53081H9.0056C9.18974 7.53081 9.34411 7.59262 9.4687 7.71626C9.59328 7.83989 9.65557 7.99309 9.65557 8.17586C9.65557 8.35862 9.59328 8.51346 9.4687 8.64038C9.34411 8.76731 9.18974 8.83078 9.0056 8.83078H5.38254C5.15479 8.83078 4.96389 8.75374 4.80982 8.59966C4.65575 8.44559 4.57872 8.25468 4.57872 8.02693V4.40391C4.57872 4.21974 4.64054 4.06537 4.76417 3.94078C4.8878 3.8162 5.041 3.75391 5.22377 3.75391C5.40654 3.75391 5.56138 3.8162 5.6883 3.94078C5.81521 4.06537 5.87867 4.21974 5.87867 4.40391V7.02316C6.60687 6.13214 7.49533 5.42221 8.54404 4.89336C9.59276 4.36451 10.7376 4.10008 11.9786 4.10008C13.0753 4.10008 14.1025 4.30733 15.0602 4.72183C16.018 5.13631 16.8532 5.69994 17.566 6.41271C18.2788 7.12549 18.8424 7.96069 19.2569 8.91831C19.6714 9.87592 19.8786 10.903 19.8786 11.9995C19.8786 13.096 19.6714 14.1233 19.2569 15.0813C18.8424 16.0392 18.2788 16.8746 17.566 17.5874C16.8532 18.3002 16.018 18.8638 15.0602 19.2783C14.1025 19.6928 13.0753 19.9 11.9786 19.9ZM12.6575 11.3462L15.1575 13.8462C15.2959 13.9847 15.3626 14.1337 15.3575 14.2933C15.3524 14.4529 15.2774 14.6052 15.1325 14.7501C14.9876 14.8949 14.8328 14.9674 14.6681 14.9674C14.5033 14.9674 14.3485 14.8949 14.2037 14.7501L11.6109 12.1573C11.5291 12.0755 11.4665 11.9862 11.4229 11.8894C11.3793 11.7925 11.3575 11.6924 11.3575 11.5891V7.84193C11.3575 7.66006 11.4211 7.50762 11.5482 7.38461C11.6754 7.26157 11.8286 7.20006 12.0078 7.20006C12.1871 7.20006 12.3402 7.26235 12.4671 7.38693C12.594 7.51151 12.6575 7.66588 12.6575 7.85003V11.3462Z"
-                                                    fill="#6B7385" />
-                                            </svg>
-
-                                            {{ get_phrase('Purchase History') }}
-                                        </a>
-                                    </li>
                                 @endif
 
                                 <li>
@@ -423,8 +410,7 @@
                                 <div class="collapse" id="category-collapse">
                                     <ul class="btn-toggle-nav list-unstyled fw-normal small bg-white pb-1 pb-3 pt-0">
                                         @php
-                                            $parent_categories = DB::table('categories')
-                                                ->where('parent_id', 0)
+                                            $parent_categories = App\Models\Category::where('parent_id', 0)
                                                 ->latest('id')
                                                 ->get();
                                         @endphp

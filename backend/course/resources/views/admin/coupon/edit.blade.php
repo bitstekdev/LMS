@@ -24,7 +24,7 @@
                 <div class="fpb-7 mb-3">
                     <label class="form-label ol-form-label" for="expiry">{{ get_phrase('Expiry') }}</label>
                     <input type="date" class="form-control ol-form-control" name="expiry" id="expiry"
-                        value="{{ date('Y-m-d', $coupon_details->expiry) }}"
+                        value="{{ \Carbon\Carbon::parse($coupon_details->expiry)->format('Y-m-d') }}"
                         placeholder="{{ get_phrase('Enter coupon expiry') }}" required>
                 </div>
 

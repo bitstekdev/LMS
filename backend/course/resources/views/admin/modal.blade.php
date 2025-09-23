@@ -140,50 +140,6 @@
         <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
     </div>
     <div class="offcanvas-body">
-        {{-- <form class="aiAjaxFormSubmission" action="{{ route('admin.open.ai.generate') }}" method="post">
-            @csrf
-
-            <div class="mb-3">
-                <label class="form-label ol-form-label"
-                    for="ai_service_selector">{{ get_phrase('Select your service') }}</label>
-                <select class="ol-select2" id="ai_service_selector" name="service_type"
-                    onchange="if(this.value == 'Course thumbnail'){$('#aiLanguageField').hide()}else{$('#aiLanguageField').show()}">
-                    <option value="Course title" data-select2-id="2">{{ get_phrase('Course title') }}</option>
-                    <option value="Course short description">{{ get_phrase('Course short description') }}</option>
-                    <option value="Course short description">{{ get_phrase('Course long description') }}</option>
-                    <option value="Course requirements">{{ get_phrase('Course requirements') }}</option>
-                    <option value="Course outcomes">{{ get_phrase('Course outcomes') }}</option>
-                    <option value="Course FAQ">{{ get_phrase('Course faq') }}</option>
-                    <option value="Course SEO Tags">{{ get_phrase('Course seo tags') }}</option>
-                    <option value="Course lesson text">{{ get_phrase('Course lesson text') }}</option>
-                    <option value="Course certificate text">{{ get_phrase('Course certificate text') }}</option>
-                    <option value="Course quiz text">{{ get_phrase('Course quiz text') }}</option>
-                    <option value="Course blog title">{{ get_phrase('Course blog title') }}</option>
-                    <option value="Course blog post">{{ get_phrase('Course blog post') }}</option>
-                    <option value="Course thumbnail">{{ get_phrase('Course thumbnail') }}</option>
-                </select>
-            </div>
-
-            <div class="mb-3">
-                <label class="form-label ol-form-label"
-                    for="ai_keywords">{{ get_phrase('Enter your keyword') }}</label>
-                <input type="text" class="form-control ol-form-control" id="ai_keywords" name="ai_keywords">
-            </div>
-
-            <div class="mb-3" id="aiLanguageField">
-                <label class="form-label ol-form-label" for="language">{{ get_phrase('Language') }}</label>
-                <select class="ol-select2" name="language">
-                    @foreach (App\Models\Language::get() as $language)
-                        <option value="{{ strtolower($language->name) }}" class="text-capitalize">
-                            {{ $language->name }}</option>
-                    @endforeach
-                </select>
-            </div>
-
-            <button type="submit" id="aiSubmissionBtn"
-                class="btn ol-btn-primary w-100">{{ get_phrase('Generate') }}</button>
-        </form> --}}
-
         <div class="mt-3 row">
             <div class="col-md-12">
                 <h5 id="aiResultHeader"></h5>

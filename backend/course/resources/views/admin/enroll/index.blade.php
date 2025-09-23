@@ -117,7 +117,7 @@
                                             </td>
                                             <td>
                                                 <div class="dAdmin_info_name min-w-250px">
-                                                    <p>{{ date('F d Y', $row->entry_date) }}</p>
+                                                    <p>{{ \Carbon\Carbon::parse($row->entry_date)->format('F d Y') }}</p>
 
                                                 </div>
                                             </td>

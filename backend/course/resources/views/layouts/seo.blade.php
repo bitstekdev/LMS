@@ -13,9 +13,6 @@
     if ($current_route == 'course.details' && isset($course_details)) {
         $seo_field->where('course_id', $course_details->id ?? '');
     }
-    if ($current_route == 'blog.details' && isset($blog_details)) {
-        $seo_field->where('blog_id', $blog_details->id ?? '');
-    }
 
     $seo_field = $seo_field->firstOrNew();
 @endphp

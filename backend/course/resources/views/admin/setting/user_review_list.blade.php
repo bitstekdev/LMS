@@ -22,7 +22,7 @@
     </div>
 </div>
 @php
-    $user_reviews = DB::table('user_reviews')->get();
+    $user_reviews = App\Models\UserReview::get();
 @endphp
 <!-- Start Admin area -->
 <div class="row">

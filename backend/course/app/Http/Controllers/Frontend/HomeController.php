@@ -3,7 +3,6 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
-use App\Models\Blog;
 use App\Models\BuilderPage;
 use App\Models\Category;
 use App\Models\Course;
@@ -24,7 +23,6 @@ class HomeController extends Controller
 
         if ($pageBuilder && $pageBuilder->is_permanent) {
             return view('components.home_permanent_templates.'.$pageBuilder->identifier, [
-                'blogs' => Blog::published()->latestPopular()->take(3)->get(),
                 'reviews' => Review::all(),
             ]);
         }
@@ -34,9 +32,8 @@ class HomeController extends Controller
             ->take(4)
             ->get();
 
-        return view('frontend.'.get_frontend_settings('theme').'.home.index', [
+        return view('frontend.default.home.index', [
             'instructor' => $instructors,
-            'blogs' => Blog::published()->latestPopular()->take(3)->get(),
             'category' => Category::take(8)->get(),
         ]);
     }

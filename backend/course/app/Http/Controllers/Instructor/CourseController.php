@@ -343,7 +343,7 @@ class CourseController extends Controller
         $course->delete();
 
         return redirect()
-            ->route('instructor.courses')
+            ->route('instructor.course.index')
             ->with('success', get_phrase('Course deleted successfully'));
     }
 

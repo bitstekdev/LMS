@@ -30,30 +30,20 @@
             'admin.enroll.history' => get_phrase('Enroll History'),
             'admin.revenue' => get_phrase('Admin Revenue'),
             'admin.instructor.revenue' => get_phrase('Instructor Revenue'),
-            'admin.purchase.history' => get_phrase('Purchase history'),
             'admin.instructor.index' => get_phrase('Instructor'),
             'admin.admins.index' => get_phrase('Admin'),
             'admin.student.index' => get_phrase('Student'),
             'admin.message' => get_phrase('Message'),
-            'admin.newsletter' => get_phrase('Newsletter'),
-            'admin.subscribed_user' => get_phrase('Newsletter Subscriber'),
             'admin.contacts' => get_phrase('Contact User'),
-            'admin.offline.payments' => get_phrase('Offline Payment'),
             'admin.coupons' => get_phrase('Coupon'),
-            'admin.blogs' => get_phrase('Blog'),
-            'admin.pending.blog' => get_phrase('Pending Blog List'),
-            'admin.blog.category' => get_phrase('Blog Category'),
-            'admin.blog.settings' => get_phrase('Blog Settings'),
-
             'admin.system.settings' => get_phrase('System Settings'),
             'admin.website.settings' => get_phrase('Website Settings'),
-            'admin.payment.settings' => get_phrase('Payment Settings'),
             'admin.manage.language' => get_phrase('Language Settings'),
             'admin.live.class.settings' => get_phrase('Live Class Settings'),
             'admin.certificate.settings' => get_phrase('Certificate'),
             'admin.seo.settings' => get_phrase('SEO Settings'),
         ];
-        $permission_row = DB::table('permissions')->where('admin_id', $admin->id)->first();
+        $permission_row = App\Models\Permission::where('admin_id', $admin->id)->first();
         $permissions = json_decode($permission_row->permissions ?? '{}', true);
     @endphp
 

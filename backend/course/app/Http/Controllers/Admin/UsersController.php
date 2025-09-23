@@ -168,7 +168,7 @@ class UsersController extends Controller
         ]);
 
         $data = $request->only(['name', 'about', 'phone', 'address', 'email', 'facebook', 'twitter', 'website', 'linkedin']);
-        $data['paymentkeys'] = json_encode($request->paymentkeys);
+
         $data['role'] = 'instructor';
         $data['status'] = 1;
         $data['password'] = Hash::make($request->password);
@@ -206,7 +206,6 @@ class UsersController extends Controller
         ]);
 
         $data = $request->only(['name', 'about', 'phone', 'address', 'email', 'facebook', 'twitter', 'website', 'linkedin']);
-        $data['paymentkeys'] = json_encode($request->paymentkeys);
 
         if ($request->hasFile('photo')) {
             $user = User::findOrFail($id);
@@ -300,44 +299,6 @@ class UsersController extends Controller
         }
 
         return redirect()->route('admin.instructor.payout')->with('error', 'Invalid invoice ID.');
-    }
-
-    public function instructor_payment(Request $request)
-    {
-        $id = $request->user_id;
-        $payable_amount = $request->amount;
-
-        $payment_details = [
-            'items' => [
-                [
-                    'id' => $id,
-                    'title' => get_phrase('Pay for instructor payout'),
-                    'subtitle' => '',
-                    'price' => $payable_amount,
-                    'discount_price' => $payable_amount,
-                    'discount_percentage' => 0,
-                ],
-            ],
-            'custom_field' => [
-                'start_date' => now()->format('Y-m-d H:i:s'),
-                'end_date' => now()->format('Y-m-d H:i:s'),
-                'user_id' => auth('web')->id(),
-                'payout_id' => $request->payout_id,
-            ],
-            'success_method' => [
-                'model_name' => 'InstructorPayment',
-                'function_name' => 'instructor_payment',
-            ],
-            'tax' => 0,
-            'coupon' => null,
-            'payable_amount' => $payable_amount,
-            'cancel_url' => route('admin.instructor.payout'),
-            'success_url' => route('payment.success'),
-        ];
-
-        session(['payment_details' => $payment_details]);
-
-        return redirect()->route('payment');
     }
 
     public function instructor_setting()
@@ -456,7 +417,6 @@ class UsersController extends Controller
         ]);
 
         $data = $request->only(['name', 'about', 'phone', 'address', 'email', 'facebook', 'twitter', 'website', 'linkedin']);
-        $data['paymentkeys'] = json_encode($request->paymentkeys);
         $data['role'] = 'student';
         $data['status'] = 1;
         $data['password'] = Hash::make($request->password);
@@ -494,7 +454,6 @@ class UsersController extends Controller
         ]);
 
         $data = $request->only(['name', 'about', 'phone', 'address', 'email', 'facebook', 'twitter', 'website', 'linkedin']);
-        $data['paymentkeys'] = json_encode($request->paymentkeys);
 
         if ($request->hasFile('photo')) {
             $user = User::findOrFail($id);

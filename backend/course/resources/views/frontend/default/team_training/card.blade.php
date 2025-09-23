@@ -36,7 +36,7 @@
                     </div>
 
                     <div class="description mb-0">
-                        <a href="{{ route('course.details', $package->course_slug) }}" class="ellipsis-2"
+                        <a href="{{ route('course.details', $package->course->slug) }}" class="ellipsis-2"
                             data-bs-toggle="tooltip" data-bs-placement="bottom"
                             data-bs-title="{{ $package->course_title }}">
                             {{ get_phrase('Course : ') }}

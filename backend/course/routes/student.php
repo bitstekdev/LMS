@@ -1,8 +1,6 @@
 <?php
 
 use App\Http\Controllers\Student\BecomeInstructorController;
-use App\Http\Controllers\Student\BlogCommentController;
-use App\Http\Controllers\Student\BlogController;
 use App\Http\Controllers\Student\BootcampPurchaseController;
 use App\Http\Controllers\Student\CartController;
 use App\Http\Controllers\Student\HomeController;
@@ -11,14 +9,12 @@ use App\Http\Controllers\Student\MessageController;
 use App\Http\Controllers\Student\MyBootcampsController;
 use App\Http\Controllers\Student\MyCoursesController;
 use App\Http\Controllers\Student\MyProfileController;
-use App\Http\Controllers\Student\MyTeamPackageController;
-use App\Http\Controllers\Student\OfflinePaymentController;
 use App\Http\Controllers\Student\PurchaseController;
 use App\Http\Controllers\Student\QuizController;
 use App\Http\Controllers\Student\ReviewController;
-use App\Http\Controllers\Student\TutorBookingController;
+use App\Http\Controllers\Student\TeamPackageController;
 use App\Http\Controllers\Student\WishListController;
-use App\Http\Middleware\BlogVisibilityMiddleware;
+use App\Http\Middleware\RecordVerification;
 use Illuminate\Support\Facades\Route;
 
 // 🧑‍🎓 Student Routes (Protected)
@@ -75,18 +71,6 @@ Route::middleware(['auth'])->group(function () {
         Route::get('review/dislike/{id}', 'dislike')->name('review.dislike');
     });
 
-    // 📝 Blog
-    Route::controller(BlogController::class)->middleware(BlogVisibilityMiddleware::class)->group(function () {
-        Route::get('blog-like', 'blog_like')->name('blog.like');
-    });
-
-    // 💬 Blog Comments
-    Route::controller(BlogCommentController::class)->middleware(BlogVisibilityMiddleware::class)->group(function () {
-        Route::post('blog/comment/store', 'store')->name('blog.comment.store');
-        Route::get('blog/comment/delete/{id}', 'delete')->name('blog.comment.delete');
-        Route::post('blog/comment/update/{id}', 'update')->name('blog.comment.update');
-    });
-
     // 📩 Messages
     Route::controller(MessageController::class)->group(function () {
         Route::get('message', 'index')->name('message');
@@ -125,30 +109,18 @@ Route::middleware(['auth'])->group(function () {
     });
 
     // 🧑‍🤝‍🧑 Team Packages
-    Route::controller(MyTeamPackageController::class)->group(function () {
+    Route::controller(TeamPackageController::class)->group(function () {
         Route::get('my-team-packages', 'index')->name('my.team.packages');
         Route::get('my-team-packages/details/{slug}', 'show')->name('my.team.packages.details')
-            ->middleware('record.exists:team_training_packages,slug');
+            ->middleware([RecordVerification::class.':TeamTrainingPackage,slug']);
         Route::get('my-team-packages/search/members/{package_id?}', 'search_members')->name('search.package.members');
         Route::get('my-team-packages/{action}/members', 'member_action')->name('my.team.packages.members.action');
         Route::get('purchase/team-package/{id}', 'purchase')->name('purchase.team.package');
         Route::get('my-team-packages/invoice/{id}', 'invoice')->name('team.package.invoice')
-            ->middleware('record.exists:team_package_purchases,id');
-    });
-
-    // 📚 Tutor Bookings
-    Route::controller(TutorBookingController::class)->group(function () {
-        Route::get('my-bookings', 'my_bookings')->name('my_bookings');
-        Route::get('booking-invoice/{id}', 'booking_invoice')->name('booking_invoice');
-        Route::get('purchase/schedule/{id}', 'purchase')->name('purchase_schedule');
-        Route::get('my-bookings/tution-class/join/{booking_id}', 'join_class')->name('tution_class.join');
-        Route::post('tutor-review', 'tutor_review')->name('tutor_review');
+            ->middleware([RecordVerification::class.':TeamPackagePurchase,id']);
     });
 
 });
 
 // 🎓 Certificate Download (Public)
 Route::get('certificate/{identifier}', [HomeController::class, 'download_certificate'])->name('certificate');
-
-// 💵 Offline Payment (Public)
-Route::post('payment/offline/store', [OfflinePaymentController::class, 'store'])->name('payment.offline.store');
