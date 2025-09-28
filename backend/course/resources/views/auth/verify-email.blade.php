@@ -1,42 +1,47 @@
 @extends('layouts.default')
+
 @push('title', get_phrase('Email Verification'))
-@push('meta')@endpush
-@push('css')
-@endpush
+
 @section('content')
-    <!------------------- Login Area Start  ------>
-    <section class="login-area">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-7 col-md-6">
-                    <div class="login-img text-center">
-                        <img class="w-75 h-auto ms-auto me-auto" src="{{ asset('assets/frontend/default/image/login.gif') }}"
-                            alt="...">
-                    </div>
-                </div>
-                <div class="col-lg-5 col-md-6">
-                    <form action="{{ route('verification.send') }}" class="global-form login-form mt-25" method="POST">
+    <section class="auth-wrapper">
+        <div class="d-flex flex-lg-row flex-column align-items-center justify-content-center gap-5">
+
+            <!-- Illustration -->
+            <div class="d-flex justify-content-center">
+                <img src="{{ asset('assets/frontend/default/image/login.gif') }}" alt="Email Verification Illustration"
+                    class="img-fluid auth-illustration">
+            </div>
+
+            <!-- Verification Form -->
+            <div>
+                <div class="auth-card">
+                    <form action="{{ route('verification.send') }}" method="POST">
                         @csrf
-                        <h4 class="g-title">{{ get_phrase('Email Verification') }}</h4>
-                        <p class="description">
-                            {{ get_phrase('Thanks for signing up! Before getting started, could you verify your email address by clicking on the link we just emailed to you? If you didn\'t receive the email, we will gladly send you another.') }}
+
+                        <h3 class="mb-3 text-center">{{ get_phrase('Email Verification 📧') }}</h3>
+                        <p class="text-muted mb-4 text-center">
+                            {{ get_phrase('Thanks for signing up! Before getting started, please verify your email address by clicking on the link we sent you. If you didn’t receive the email, we can send another.') }}
                         </p>
 
+                        <!-- Success Message -->
                         @if (session('status') == 'verification-link-sent')
-                            <p class="description mt-4 text-success">
+                            <div class="alert alert-success text-center" role="alert">
                                 {{ get_phrase('A new verification link has been sent to the email address you provided during registration.') }}
-                            </p>
+                            </div>
                         @endif
 
-                        <button type="submit"
-                            class="eBtn gradient w-100 mt-5">{{ get_phrase('Resend Verification Email') }}</button>
+                        <!-- Resend Button -->
+                        <button type="submit" class="btn btn-primary w-100 btn-auth">
+                            {{ get_phrase('Resend Verification Email') }}
+                        </button>
+
+                        <!-- Back to Login -->
+                        <p class="text-center mt-4 mb-0">
+                            <a href="{{ route('login') }}">{{ get_phrase('Back to login page') }}</a>
+                        </p>
                     </form>
                 </div>
             </div>
         </div>
     </section>
-    <!------------------- Login Area End  ------>
 @endsection
-@push('js')
-
-@endpush

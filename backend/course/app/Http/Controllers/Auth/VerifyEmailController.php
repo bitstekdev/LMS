@@ -41,6 +41,6 @@ class VerifyEmailController extends Controller
         Auth::login($user);
 
         // Redirect to intended location (if any) or home, preserving the "verified" flag
-        return redirect()->intended(route('home').'?verified=1');
+        return redirect()->intended(route('dashboard').'?verified=1');
     }
 }

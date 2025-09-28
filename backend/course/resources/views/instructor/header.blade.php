@@ -19,7 +19,7 @@
                 </p>
             </h1>
         </div>
-        <a href="{{ route('home') }}" target="_blank" class="btn btn-sm p-0 ms-4 ms-md-2 text-14px text-muted">
+        <a href="{{ route('dashboard') }}" target="_blank" class="btn btn-sm p-0 ms-4 ms-md-2 text-14px text-muted">
             <span>{{ get_phrase('View site') }}</span>
             <i class="fi-rr-arrow-up-right-from-square text-12px text-muted"></i>
         </a>

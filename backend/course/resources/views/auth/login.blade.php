@@ -1,109 +1,100 @@
 @extends('layouts.default')
+
 @push('title', get_phrase('Log In'))
-@push('meta')@endpush
-@push('css')
-    <style>
-        .form-icons .right {
-            right: 20px;
-            cursor: pointer !important;
-        }
-    </style>
-@endpush
+
 @section('content')
-    <!------------------- Login Area Start  ------>
-    <section class="login-area">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-7 col-md-6">
-                    <div class="login-img">
-                        <img src="{{ asset('assets/frontend/default/image/login.gif') }}" alt="...">
-                    </div>
-                </div>
-                <div class="col-lg-5 col-md-6">
-                    <form action="{{ route('login') }}" class="global-form login-form mt-25" id="login-form" method="POST">
+    <section class="auth-wrapper">
+        <div class="d-flex flex-lg-row flex-column align-items-center justify-content-center gap-5">
+
+            <!-- Illustration -->
+            <div class="col-lg-6 d-none d-lg-flex justify-content-center">
+                <img src="{{ asset('assets/frontend/default/image/login.gif') }}" alt="Login Illustration"
+                    class="img-fluid auth-illustration">
+            </div>
+
+            <!-- Login Form -->
+            <div class="col-lg-5 col-md-8 col-sm-10">
+                <div class="auth-card">
+                    <form action="{{ route('login') }}" method="POST" id="login-form">
                         @csrf
-                        <h4 class="g-title">{{ get_phrase('Login') }}</h4>
-                        <p class="description">{{ get_phrase('See your growth and get consulting support!') }} </p>
-                        <div class="form-group">
-                            <label for="email" class="form-label">{{ get_phrase('Email') }}</label>
-                            <input type="email" id="email" name="email" class="form-control"
-                                placeholder="{{ get_phrase('Your Email') }}">
-                        </div>
-                        <div class="form-group">
-                            <label for="" class="form-label">{{ get_phrase('Password') }}</label>
-                            <input type="password" id="password" name="password" class="form-control"
-                                placeholder="*********">
-                        </div>
-                        <div class="form-group mb-25 d-flex justify-content-between align-items-center remember-me">
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked"
-                                    checked>
-                                <label class="form-check-label"
-                                    for="flexCheckChecked">{{ get_phrase('Remember Me') }}</label>
-                            </div>
-                            <a href="{{ route('password.request') }}">{{ get_phrase('Forget Password?') }}</a>
-                        </div>
 
-                        @if (get_frontend_settings('recaptcha_status'))
-                            <button class="eBtn gradient w-100 g-recaptcha"
-                                data-sitekey="{{ get_frontend_settings('recaptcha_sitekey') }}"
-                                data-callback='onLoginSubmit' data-action='submit'>{{ get_phrase('Login') }}</button>
-                        @else
-                            <button type="submit" class="eBtn gradient w-100">{{ get_phrase('Login') }}</button>
-                        @endif
-
-                        <p class="mt-20">{{ get_phrase('Not have an account yet?') }}
-                            <a href="{{ route('register.form') }}">{{ get_phrase('Create Account') }}</a>
+                        <h3 class="mb-3 text-center">{{ get_phrase('Welcome Back 👋') }}</h3>
+                        <p class="text-muted mb-4 text-center">
+                            {{ get_phrase('Log in to continue your journey with us') }}
                         </p>
 
-                        {{-- <p class="my-3">Login As -</p>
-                            <button type="button" class="eBtn gradient w-100 mb-3 py-3 custom-btn" id="admin">Admin</button>
-                            <button type="button" class="eBtn gradient w-100 mb-3 py-3 custom-btn" id="student">Student</button>
-                            <button type="button" class="eBtn gradient w-100 mb-3 py-3 custom-btn" id="instructor">Instructor</button> --}}
+                        <!-- Email -->
+                        <div class="mb-3">
+                            <label for="email" class="form-label">{{ get_phrase('Email') }}</label>
+                            <input type="email" name="email" id="email" class="form-control"
+                                placeholder="{{ get_phrase('Your Email') }}" required>
+                        </div>
+
+                        <!-- Password -->
+                        <div class="mb-3 position-relative">
+                            <label for="password" class="form-label">{{ get_phrase('Password') }}</label>
+                            <input type="password" name="password" id="password" class="form-control"
+                                placeholder="********" required>
+                            <span id="togglePassword" class="password-toggle">
+                                <i class="bi bi-eye-slash"></i>
+                            </span>
+                        </div>
+
+                        <!-- Remember + Forgot -->
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <div class="form-check">
+                                <input type="checkbox" class="form-check-input" id="remember" name="remember">
+                                <label for="remember" class="form-check-label">{{ get_phrase('Remember Me') }}</label>
+                            </div>
+                            <a href="{{ route('password.request') }}" class="small">
+                                {{ get_phrase('Forgot Password?') }}
+                            </a>
+                        </div>
+
+                        <!-- Submit -->
+                        @if (get_frontend_settings('recaptcha_status'))
+                            <button class="btn btn-primary w-100 btn-auth g-recaptcha"
+                                data-sitekey="{{ get_frontend_settings('recaptcha_sitekey') }}"
+                                data-callback='onLoginSubmit' data-action='submit'>
+                                {{ get_phrase('Login') }}
+                            </button>
+                        @else
+                            <button type="submit" class="btn btn-primary w-100 btn-auth">
+                                {{ get_phrase('Login') }}
+                            </button>
+                        @endif
+
+                        <!-- Register -->
+                        <p class="text-center mt-4 mb-0">
+                            {{ get_phrase("Don't have an account?") }}
+                            <a href="{{ route('register.form') }}">{{ get_phrase('Create Account') }}</a>
+                        </p>
                     </form>
                 </div>
             </div>
+
         </div>
     </section>
-    <!------------------- Login Area End  ------>
 @endsection
-@push('js')
 
+@push('js')
     <script>
         "use strict";
 
-        $(document).ready(function() {
-            $('.custom-btn').on('click', function(e) {
-                e.preventDefault();
-
-                var role = $(this).attr('id');
-                if (role == 'admin') {
-                    $('#email').val('admin@example.com');
-                    $('#password').val('12345678');
-                } else if (role == 'student') {
-                    $('#email').val('student@example.com');
-                    $('#password').val('12345678');
-                } else {
-                    $('#email').val('instructor@example.com');
-                    $('#password').val('12345678');
-                }
-                $('#login').trigger('click');
-            });
+        // Toggle password visibility
+        document.getElementById('togglePassword').addEventListener('click', function() {
+            let password = document.getElementById('password');
+            let icon = this.querySelector('i');
+            if (password.type === 'password') {
+                password.type = 'text';
+                icon.classList.replace('bi-eye-slash', 'bi-eye');
+            } else {
+                password.type = 'password';
+                icon.classList.replace('bi-eye', 'bi-eye-slash');
+            }
         });
 
-        $(document).ready(function() {
-            $('#showpassword').on('click', function(e) {
-                e.preventDefault();
-                const type = $('#password').attr('type');
-
-                if (type == 'password') {
-                    $('#password').attr('type', 'text');
-                } else {
-                    $('#password').attr('type', 'password');
-                }
-            });
-        });
-
+        // Recaptcha callback
         function onLoginSubmit(token) {
             document.getElementById("login-form").submit();
         }

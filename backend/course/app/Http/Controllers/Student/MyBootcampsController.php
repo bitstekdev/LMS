@@ -4,59 +4,11 @@ namespace App\Http\Controllers\Student;
 
 use App\Http\Controllers\Controller;
 use App\Models\BootcampLiveClass;
-use App\Models\BootcampPurchase;
 use App\Models\BootcampResource;
 use Illuminate\Support\Facades\Session;
 
 class MyBootcampsController extends Controller
 {
-    public function index()
-    {
-        $page_data['my_bootcamps'] = BootcampPurchase::join('bootcamps', 'bootcamp_purchases.bootcamp_id', 'bootcamps.id')
-            ->where('bootcamp_purchases.user_id', auth('web')->id())
-            ->where('bootcamp_purchases.status', 1)
-            ->select('bootcamps.*')
-            ->latest('bootcamp_purchases.id')
-            ->paginate(10)
-            ->appends(request()->query());
-
-        return view('frontend.default.student.my_bootcamps.index', $page_data);
-    }
-
-    public function show($slug)
-    {
-        $page_data['bootcamp'] = BootcampPurchase::join('bootcamps', 'bootcamp_purchases.bootcamp_id', 'bootcamps.id')
-            ->where('bootcamp_purchases.user_id', auth('web')->id())
-            ->where('bootcamp_purchases.status', 1)
-            ->where('bootcamps.slug', $slug)
-            ->select('bootcamps.*')
-            ->first();
-
-        if (! $page_data['bootcamp']) {
-            Session::flash('error', get_phrase('Data not found.'));
-
-            return redirect()->back();
-        }
-
-        return view('frontend.default.student.my_bootcamps.details', $page_data);
-    }
-
-    public function invoice($id)
-    {
-        $invoice = BootcampPurchase::join('bootcamps', 'bootcamp_purchases.bootcamp_id', 'bootcamps.id')
-            ->where('bootcamp_purchases.id', $id)
-            ->select('bootcamp_purchases.*', 'bootcamps.title', 'bootcamps.slug')
-            ->first();
-
-        if (! $invoice) {
-            Session::flash('error', get_phrase('Data not found.'));
-
-            return redirect()->back();
-        }
-
-        return view('frontend.default.student.my_bootcamps.invoice', ['invoice' => $invoice]);
-    }
-
     public function join_class($slug)
     {
         $current_time = time();

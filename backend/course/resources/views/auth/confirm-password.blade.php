@@ -1,67 +1,67 @@
-<x-guest-layout>
-    <div class="mb-4 text-sm text-gray-600">
-        {{ __('This is a secure area of the application. Please confirm your password before continuing.') }}
-    </div>
-
-    <form method="POST" action="{{ route('password.confirm') }}">
-        @csrf
-
-        <!-- Password -->
-        <div>
-            <x-input-label for="password" :value="__('Password')" />
-
-            <x-text-input id="password" class="block mt-1 w-full" type="password" name="password" required
-                autocomplete="current-password" />
-
-            <x-input-error :messages="$errors->get('password')" class="mt-2" />
-        </div>
-
-        <div class="flex justify-end mt-4">
-            <x-primary-button>
-                {{ __('Confirm') }}
-            </x-primary-button>
-        </div>
-    </form>
-</x-guest-layout>
-
-
-
 @extends('layouts.default')
+
 @push('title', get_phrase('Confirm Password'))
-@push('meta')@endpush
-@push('css')
-@endpush
+
 @section('content')
-    <!------------------- Login Area Start  ------>
-    <section class="login-area">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-7 col-md-6">
-                    <div class="login-img text-center">
-                        <img class="w-75 h-auto ms-auto me-auto"
-                            src="{{ asset('assets/frontend/default/image/login.gif') }}" alt="...">
-                    </div>
-                </div>
-                <div class="col-lg-5 col-md-6">
-                    <form action="{{ route('password.confirm') }}" class="global-form login-form mt-25" method="POST">
+    <section class="auth-wrapper">
+        <div class="d-flex flex-lg-row flex-column align-items-center justify-content-center gap-5">
+
+            <!-- Illustration -->
+            <div class="d-flex justify-content-center">
+                <img src="{{ asset('assets/frontend/default/image/login.gif') }}" alt="Confirm Password Illustration"
+                    class="img-fluid auth-illustration">
+            </div>
+
+            <!-- Confirm Password Form -->
+            <div>
+                <div class="auth-card">
+                    <form action="{{ route('password.confirm') }}" method="POST">
                         @csrf
-                        <h4 class="g-title">{{ get_phrase('Confirm Password') }}</h4>
-                        <p class="description">
+
+                        <h3 class="mb-3 text-center">{{ get_phrase('Confirm Password 🔒') }}</h3>
+                        <p class="text-muted mb-4 text-center">
                             {{ get_phrase('This is a secure area of the application. Please confirm your password before continuing.') }}
                         </p>
-                        <div class="form-group">
+
+                        <!-- Password -->
+                        <div class="mb-3 position-relative">
                             <label for="password" class="form-label">{{ get_phrase('Password') }}</label>
                             <input type="password" id="password" name="password" class="form-control"
-                                placeholder="{{ get_phrase('Enter Your Password') }}">
+                                placeholder="{{ get_phrase('Enter Your Password') }}" required>
+                            <span id="togglePassword" class="password-toggle">
+                                <i class="bi bi-eye-slash"></i>
+                            </span>
+                            @error('password')
+                                <small class="text-danger">{{ $message }}</small>
+                            @enderror
                         </div>
-                        <button type="submit" class="eBtn gradient w-100 mt-5">{{ get_phrase('Confirm') }}</button>
+
+                        <!-- Submit -->
+                        <button type="submit" class="btn btn-primary w-100 btn-auth">
+                            {{ get_phrase('Confirm') }}
+                        </button>
                     </form>
                 </div>
             </div>
         </div>
     </section>
-    <!------------------- Login Area End  ------>
 @endsection
-@push('js')
 
+@push('js')
+    <script>
+        "use strict";
+
+        // Toggle password visibility
+        document.getElementById('togglePassword').addEventListener('click', function() {
+            let password = document.getElementById('password');
+            let icon = this.querySelector('i');
+            if (password.type === 'password') {
+                password.type = 'text';
+                icon.classList.replace('bi-eye-slash', 'bi-eye');
+            } else {
+                password.type = 'password';
+                icon.classList.replace('bi-eye', 'bi-eye-slash');
+            }
+        });
+    </script>
 @endpush

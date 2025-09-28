@@ -3,7 +3,7 @@
         <div class="col-md-12">
             <div class="course-playing-header d-flex align-items-center justify-content-between py-1">
                 <div class="course-play-logo">
-                    <a href="{{ route('home') }}">
+                    <a href="{{ route('dashboard') }}">
                         <img class="d-none d-lg-block" src="{{ asset(get_frontend_settings('light_logo')) }}"
                             alt="" height="40px">
                     </a>

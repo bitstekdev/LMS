@@ -1,20 +1,8 @@
 <?php
 
-use App\Http\Controllers\Student\BecomeInstructorController;
-use App\Http\Controllers\Student\BootcampPurchaseController;
-use App\Http\Controllers\Student\CartController;
-use App\Http\Controllers\Student\HomeController;
-use App\Http\Controllers\Student\LiveClassController;
-use App\Http\Controllers\Student\MessageController;
 use App\Http\Controllers\Student\MyBootcampsController;
-use App\Http\Controllers\Student\MyCoursesController;
 use App\Http\Controllers\Student\MyProfileController;
-use App\Http\Controllers\Student\PurchaseController;
 use App\Http\Controllers\Student\QuizController;
-use App\Http\Controllers\Student\ReviewController;
-use App\Http\Controllers\Student\TeamPackageController;
-use App\Http\Controllers\Student\WishListController;
-use App\Http\Middleware\RecordVerification;
 use Illuminate\Support\Facades\Route;
 
 // 🧑‍🎓 Student Routes (Protected)
@@ -28,17 +16,6 @@ Route::middleware(['auth'])->group(function () {
         Route::post('change-password', 'changePassword')->name('password.change');
     });
 
-    // 💖 Wishlist
-    Route::controller(WishListController::class)->group(function () {
-        Route::get('wishlist', 'index')->name('wishlist');
-        Route::get('toggleWishItem/{course_id?}', 'toggleWishItem')->name('toggleWishItem');
-    });
-
-    // 🎓 My Courses
-    Route::controller(MyCoursesController::class)->group(function () {
-        Route::get('my-courses', 'index')->name('my.courses');
-    });
-
     // 📝 Quizzes
     Route::controller(QuizController::class)->group(function () {
         Route::post('quiz/submit/{id}', 'quiz_submit')->name('quiz.submit');
@@ -46,81 +23,10 @@ Route::middleware(['auth'])->group(function () {
         Route::get('load/quiz/questions', 'load_questions')->name('load.quiz.questions');
     });
 
-    // 💳 Course Purchases
-    Route::controller(PurchaseController::class)->group(function () {
-        Route::get('purchase/course/{course_id}', 'purchase_course')->name('purchase.course');
-        Route::post('payout', 'payout')->name('payout');
-        Route::get('purchase-history', 'purchase_history')->name('purchase.history');
-        Route::get('invoice/{id}', 'invoice')->name('invoice');
-    });
-
-    // 🛒 Cart
-    Route::controller(CartController::class)->group(function () {
-        Route::any('cart', 'index')->name('cart');
-        Route::get('cart/store/{id}', 'store')->name('cart.store');
-        Route::get('cart/delete/{id}', 'delete')->name('cart.delete');
-    });
-
-    // ⭐ Reviews
-    Route::controller(ReviewController::class)->group(function () {
-        Route::post('review/store', 'store')->name('review.store');
-        Route::get('review/edit', 'edit')->name('review.edit');
-        Route::get('review/delete/{id}', 'delete')->name('review.delete');
-        Route::post('review/update/{id}', 'update')->name('review.update');
-        Route::get('review/like/{id}', 'like')->name('review.like');
-        Route::get('review/dislike/{id}', 'dislike')->name('review.dislike');
-    });
-
-    // 📩 Messages
-    Route::controller(MessageController::class)->group(function () {
-        Route::get('message', 'index')->name('message');
-        Route::post('message/store', 'store')->name('message.store');
-        Route::get('message/fetch', 'fetch_message')->name('message.fetch');
-        Route::post('message/search/student', 'search_student')->name('search.student');
-        Route::get('message/inbox/{user_id}', 'inbox')->name('message.inbox');
-    });
-
-    // 🎓 Become Instructor
-    Route::controller(BecomeInstructorController::class)->group(function () {
-        Route::get('become-an-instructor', 'index')->name('become.instructor');
-        Route::post('become-an-instructor/store', 'store')->name('become.instructor.store');
-    });
-
-    // 🧑‍🏫 Live Classes
-    Route::controller(LiveClassController::class)->group(function () {
-        Route::get('live-class/join/{id}', 'live_class_join')->name('live.class.join');
-    });
-
     // 🏕️ Bootcamps
     Route::controller(MyBootcampsController::class)->group(function () {
-        Route::get('my-bootcamps', 'index')->name('my.bootcamps');
-        Route::get('my-bootcamps/details/{slug?}', 'show')->name('my.bootcamp.details');
-        Route::get('my-bootcamps/invoice/{id}', 'invoice')->name('my.bootcamp.invoice');
         Route::get('bootcamp/live/class/join/{topic}', 'join_class')->name('bootcamp.live.class.join');
         Route::get('bootcamp/resource/download/{id}', 'download')->name('bootcamp.resource.download');
         Route::get('bootcamp/resource/play/{file}', 'play')->name('bootcamp.resource.play');
     });
-
-    // 💰 Purchase Bootcamps
-    Route::controller(BootcampPurchaseController::class)->group(function () {
-        Route::get('purchase/bootcamp/{id}', 'purchase')->name('purchase.bootcamp');
-        Route::get('bootcamp/purchase/history', 'purchase_history')->name('bootcamp.purchase.history');
-        Route::get('bootcamp/invoice/{id}', 'invoice')->name('bootcamp.invoice');
-    });
-
-    // 🧑‍🤝‍🧑 Team Packages
-    Route::controller(TeamPackageController::class)->group(function () {
-        Route::get('my-team-packages', 'index')->name('my.team.packages');
-        Route::get('my-team-packages/details/{slug}', 'show')->name('my.team.packages.details')
-            ->middleware([RecordVerification::class.':TeamTrainingPackage,slug']);
-        Route::get('my-team-packages/search/members/{package_id?}', 'search_members')->name('search.package.members');
-        Route::get('my-team-packages/{action}/members', 'member_action')->name('my.team.packages.members.action');
-        Route::get('purchase/team-package/{id}', 'purchase')->name('purchase.team.package');
-        Route::get('my-team-packages/invoice/{id}', 'invoice')->name('team.package.invoice')
-            ->middleware([RecordVerification::class.':TeamPackagePurchase,id']);
-    });
-
 });
-
-// 🎓 Certificate Download (Public)
-Route::get('certificate/{identifier}', [HomeController::class, 'download_certificate'])->name('certificate');
