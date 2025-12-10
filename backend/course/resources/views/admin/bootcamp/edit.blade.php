@@ -31,13 +31,7 @@
                 <div class="ol-card-body p-20px mb-3">
 
                     <div class="row mb-3">
-                        <div class="col-sm-8">
-                            <a href="{{ route('bootcamp.details', $bootcamp_details->slug) }}"
-                                class="btn ol-btn-outline-secondary me-3">
-                                {{ get_phrase('Frontent View') }}
-                            </a>
-                        </div>
-                        <div class="col-sm-4 mt-3 mt-sm-0 d-flex justify-content-start justify-content-sm-end">
+                        <div class="col-sm-12 mt-3 mt-sm-0 d-flex justify-content-start justify-content-sm-end">
                             <button type="submit"
                                 class="btn ol-btn-outline-secondary @if (request('tab') == 'curriculum') opacity-0 @endif">
                                 {{ get_phrase('Save Changes') }}

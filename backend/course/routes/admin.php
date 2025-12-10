@@ -168,6 +168,7 @@ Route::name('admin.')->prefix('admin')->middleware(AdminMiddleware::class)->grou
         Route::view('team-packages/create', 'admin.team_training.create')->name('team.packages.create');
         Route::post('team-packages/store', 'store')->name('team.packages.store');
         Route::get('team-packages/purchase/history', 'purchase_history')->name('team.packages.purchase.history');
+        Route::get('team-packages/purchase/invoice/{id}', 'invoice')->name('team.packages.purchase.invoice');
 
         Route::middleware([RecordVerification::class.':TeamTrainingPackage,id,user_id'])->group(function () {
             Route::get('team-packages/edit/{id}', 'edit')->name('team.packages.edit');
@@ -175,7 +176,6 @@ Route::name('admin.')->prefix('admin')->middleware(AdminMiddleware::class)->grou
             Route::get('team-packages/delete/{id}', 'delete')->name('team.packages.delete');
             Route::get('team-packages/duplicate/{id}', 'duplicate')->name('team.packages.duplicate');
             Route::get('team-packages/toggle-status/{id}', 'toggle_status')->name('team.toggle.status');
-            Route::get('team-packages/purchase/invoice/{id}', 'invoice')->name('team.packages.purchase.invoice');
         });
 
         Route::get('get-courses-by-privacy/', 'get_courses')->name('get.courses.by.privacy');

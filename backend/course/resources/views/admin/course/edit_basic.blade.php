@@ -33,11 +33,11 @@
     <div class="col-sm-10">
         <select class="ol-select2" name="category_id" data-minimum-results-for-search="Infinity" required>
             <option value="">{{ get_phrase('Select a category') }}</option>
-            @foreach (App\Models\Category::where('parent_id', 0)->orderBy('title', 'desc')->get() as $category)
+            @foreach (App\Models\Category::where('parent_id', null)->orderBy('title', 'desc')->get() as $category)
                 <option value="{{ $category->id }}" @if ($course_details->category_id == $category->id) selected @endif>
                     {{ $category->title }}</option>
 
-                @foreach ($category->childs as $sub_category)
+                @foreach ($category->children as $sub_category)
                     <option value="{{ $sub_category->id }}" @if ($course_details->category_id == $sub_category->id) selected @endif> --
                         {{ $sub_category->title }}</option>
                 @endforeach

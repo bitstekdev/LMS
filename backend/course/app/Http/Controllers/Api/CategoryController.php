@@ -10,11 +10,11 @@ class CategoryController extends Controller
 {
     public function categories()
     {
-        $categories = Category::where('parent_id', 0)->get();
+        $categories = Category::where('parent_id', null)->get();
         foreach ($categories as $key => $category) {
             $category['thumbnail'] = get_photo('category_thumbnail', $category['thumbnail']);
             $category['number_of_courses'] = get_category_wise_courses($category['id'])->count();
-            $category['number_of_sub_categories'] = $category->childs->count();
+            $category['number_of_sub_categories'] = $category->children->count();
         }
 
         return $categories;
@@ -22,11 +22,11 @@ class CategoryController extends Controller
 
     public function all_categories()
     {
-        $categories = Category::where('parent_id', 0)->get();
+        $categories = Category::where('parent_id', null)->get();
         foreach ($categories as $key => $category) {
             $category['thumbnail'] = get_photo('category_thumbnail', $category['thumbnail']);
             $category['number_of_courses'] = get_category_wise_courses($category['id'])->count();
-            $category['number_of_sub_categories'] = $category->childs->count();
+            $category['number_of_sub_categories'] = $category->children->count();
         }
 
         return $categories;

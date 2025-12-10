@@ -54,10 +54,10 @@
                                                 class="text-danger ms-1">*</span></label>
                                         <select class="ol-select2" name="category_id" id="category_id" required>
                                             <option value="">{{ get_phrase('Select a category') }}</option>
-                                            @foreach (App\Models\Category::where('parent_id', 0)->orderBy('title', 'desc')->get() as $category)
+                                            @foreach (App\Models\Category::where('parent_id', null)->orderBy('title', 'desc')->get() as $category)
                                                 <option value="{{ $category->id }}"> {{ $category->title }}</option>
 
-                                                @foreach ($category->childs as $sub_category)
+                                                @foreach ($category->children as $sub_category)
                                                     <option value="{{ $sub_category->id }}"> --
                                                         {{ $sub_category->title }}
                                                     </option>

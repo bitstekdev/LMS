@@ -12,7 +12,7 @@ class ForumController extends Controller
     public function index(Request $request)
     {
         $questions = Forum::with('user')
-            ->where('parent_id', 0)
+            ->where('parent_id', null)
             ->where('course_id', $request->course_id)
             ->latest()
             ->get();

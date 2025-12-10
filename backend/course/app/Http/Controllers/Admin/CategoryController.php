@@ -16,8 +16,8 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        $page_data['categories'] = Category::with('childs')
-            ->where('parent_id', 0)
+        $page_data['categories'] = Category::with('children')
+            ->where('parent_id', null)
             ->orderBy('sort', 'asc')
             ->get();
 
@@ -164,11 +164,11 @@ class CategoryController extends Controller
      */
     public function delete($id)
     {
-        $category = Category::with('childs')->findOrFail((int) $id);
+        $category = Category::with('children')->findOrFail((int) $id);
 
-        // If top-level, remove all direct childs first
+        // If top-level, remove all direct children first
         if ((int) $category->parent_id === 0) {
-            foreach ($category->childs as $child) {
+            foreach ($category->children as $child) {
                 if (! empty($child->thumbnail)) {
                     remove_file($child->thumbnail);
                 }

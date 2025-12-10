@@ -139,12 +139,12 @@
                                                         data-placeholder="Type to search...">
                                                         <option value="all">{{ get_phrase('All') }}</option>
 
-                                                        @foreach (App\Models\Category::where('parent_id', 0)->orderBy('title', 'desc')->get() as $category)
+                                                        @foreach (App\Models\Category::where('parent_id', null)->orderBy('title', 'desc')->get() as $category)
                                                             <option
                                                                 value="{{ $category->slug }}"@if (isset($parent_cat) && $parent_cat == $category->slug) selected @endif>
                                                                 {{ $category->title }}</option>
 
-                                                            @foreach ($category->childs as $sub_category)
+                                                            @foreach ($category->children as $sub_category)
                                                                 <option
                                                                     value="{{ $sub_category->slug }}"@if (isset($child_cat) && $child_cat == $sub_category->slug) selected @endif>
                                                                     --{{ $sub_category->title }}</option>

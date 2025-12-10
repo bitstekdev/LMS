@@ -85,8 +85,7 @@
 
                                             <td>
                                                 <div class="sub-title2 text-12px min-w-150px">
-                                                    <a
-                                                        href="{{ route('bootcamp.details', $report->slug) }}">{{ $report->title }}</a>
+                                                    <p>{{ $report->title }}</p>
                                                 </div>
                                             </td>
 

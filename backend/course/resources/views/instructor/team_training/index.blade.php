@@ -120,8 +120,7 @@
                                                                     </a>
                                                                 </h4>
                                                                 <div class="sub-title2 text-12px">
-                                                                    <a
-                                                                        href="{{ route('course.details', $package->course->slug) }}">{{ $package->course_title }}</a>
+                                                                    <p>{{ $package->course_title }}</p>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -167,10 +166,6 @@
                                                             </button>
 
                                                             <ul class="dropdown-menu">
-                                                                <li>
-                                                                    <a class="dropdown-item" target="_blank"
-                                                                        href="{{ route('team.package.details', $package->slug) }}">{{ get_phrase('Frontend View') }}</a>
-                                                                </li>
                                                                 <li>
                                                                     <a class="dropdown-item"
                                                                         href="{{ route('admin.team.packages.edit', $package->id) }}">{{ get_phrase('Edit') }}</a>

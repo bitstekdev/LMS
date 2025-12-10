@@ -68,7 +68,7 @@ class PlayerController extends Controller
         // 🧾 Forum Questions with User Details
         $forumQuery = Forum::with(['user:id,name,photo'])
             ->where([
-                ['parent_id', 0],
+                ['parent_id', null],
                 ['course_id', $course->id],
             ])
             ->latest();

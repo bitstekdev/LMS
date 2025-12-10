@@ -1,6 +1,6 @@
 @php
     $category = App\Models\Category::where('id', $id)->first();
-    $parent_categories = App\Models\Category::where('parent_id', 0)
+    $parent_categories = App\Models\Category::where('parent_id', null)
         ->where('id', '!=', $id)
         ->orderBy('title', 'asc')
         ->get();

@@ -273,10 +273,6 @@
 
                                                             <ul class="dropdown-menu">
                                                                 <li>
-                                                                    <a class="dropdown-item" target="_blank"
-                                                                        href="{{ route('bootcamp.details', $bootcamp->slug) }}">{{ get_phrase('Frontend View') }}</a>
-                                                                </li>
-                                                                <li>
                                                                     <a class="dropdown-item"
                                                                         href="{{ route('admin.bootcamp.edit', [$bootcamp->id, 'tab' => 'basic']) }}">{{ get_phrase('Edit') }}</a>
                                                                 </li>

@@ -29,12 +29,6 @@
                 <div class="ol-card-body p-20px mb-3">
                     <div class="row mb-3">
                         <div class="col-sm-8">
-                            <a href="{{ route('course.details', $course_details->slug) }}" target="_blank"
-                                class="btn ol-btn-outline-secondary me-3">
-                                {{ get_phrase('Frontend View') }}
-                                <i class="fi-rr-arrow-up-right-from-square"></i>
-                            </a>
-
                             @php
                                 $watch_history = App\Models\WatchHistory::where('course_id', $course_details->course_id)
                                     ->where('student_id', auth()->user()->id)

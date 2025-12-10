@@ -81,13 +81,6 @@
 
                                             <td>
                                                 <div class="sub-title2 text-12px min-w-150px">
-                                                    <a
-                                                        href="{{ route('bootcamp.details', $report->slug) }}">{{ $report->title }}</a>
-                                                </div>
-                                            </td>
-
-                                            <td>
-                                                <div class="sub-title2 text-12px min-w-150px">
                                                     <p>{{ currency($report->price) }}</p>
                                                 </div>
                                             </td>

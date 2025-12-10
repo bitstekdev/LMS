@@ -37,11 +37,11 @@
                     <h6 class="title fs-14px mb-12px px-3 pt-3 d-flex align-baseline">
                         <i class="me-1 {{ $category->icon }}"></i>
                         {{ $category->title }} <span
-                            class="text-muted d-inline-block ms-auto">({{ $category->childs->count() }})</span>
+                            class="text-muted d-inline-block ms-auto">({{ $category->children->count() }})</span>
                     </h6>
                     <div class="ol-card-body">
                         <ul class="list-group list-group-flush">
-                            @foreach ($category->childs as $child_category)
+                            @foreach ($category->children as $child_category)
                                 <li class="list-group-item text-muted">
                                     <div class="row">
                                         <div class="col-auto">
