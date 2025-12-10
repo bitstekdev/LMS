@@ -56,8 +56,13 @@ class CategoryController extends Controller
                 ->with('error', get_phrase('There cannot be more than one category with the same name. Please change your category name'));
         }
 
+        $parentId = (int) $request->parent_id;
+        if ($parentId == 0) {
+            $parentId = null;
+        }
+
         $data = [
-            'parent_id' => (int) $request->parent_id ?? null,
+            'parent_id' => $parentId ?? null,
             'title' => $request->title,
             'slug' => $slug,
             'icon' => $request->icon,

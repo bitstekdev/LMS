@@ -76,9 +76,8 @@ class CourseController extends Controller
         return course_data($courses);
     }
 
-    public function course_details_by_id(Request $request)
+    public function course_details_by_id(Request $request, $course_id)
     {
-        $course_id = $request->course_id;
         $user_id = auth('sanctum')->check() ? auth('sanctum')->user()->id : 0;
 
         return course_details_by_id($user_id, $course_id);

@@ -32,12 +32,12 @@ class CategoryController extends Controller
         return $categories;
     }
 
-    public function category_details(Request $request)
+    public function category_details(Request $request, $id)
     {
         $response = [];
 
-        $response[0]['sub_categories'] = sub_categories($request->category_id);
-        $response[0]['courses'] = course_data(get_category_wise_courses($request->category_id));
+        $response[0]['sub_categories'] = sub_categories($id);
+        $response[0]['courses'] = course_data(get_category_wise_courses($id));
 
         return $response;
     }

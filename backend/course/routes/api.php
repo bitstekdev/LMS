@@ -51,7 +51,7 @@ Route::middleware('auth:sanctum')->group(function () {
         Route::get('filter', 'filter_course');
         Route::get('by-category', 'category_wise_course');
         Route::get('by-category-subcategory', 'category_subcategory_wise_course');
-        Route::get('details', 'course_details_by_id');
+        Route::get('details/{course_id}', 'course_details_by_id');
         Route::get('sections', 'sections');
         Route::get('languages', 'languages');
         Route::get('enroll/free/{course_id}', 'free_course_enroll');
@@ -61,7 +61,7 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::prefix('categories')->controller(CategoryController::class)->group(function () {
         Route::get('/', 'categories');
         Route::get('all', 'all_categories');
-        Route::get('details', 'category_details');
+        Route::get('details/{id}', 'category_details');
         Route::get('sub/{id}', 'sub_categories');
     });
 

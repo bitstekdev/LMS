@@ -22,12 +22,6 @@
                                     {{ $live_class->class_topic }}
                                 </td>
                                 <td>{{ date('d M Y - h:i A', strtotime($live_class->class_date_and_time)) }}</td>
-                                <td>
-                                    <a href="{{ route('live.class.join', ['id' => $live_class->id]) }}"
-                                        class="btn py-0 ps-1 pe-1 text-dark" data-bs-toggle="tooltip"
-                                        data-bs-title="{{ get_phrase('Join Now') }}"><i
-                                            class="fi-rr-video-camera"></i></a>
-                                </td>
                             </tr>
                         @endforeach
                     </tbody>

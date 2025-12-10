@@ -372,11 +372,6 @@
                                                             <ul class="dropdown-menu">
                                                                 <li>
                                                                     <a class="dropdown-item" target="_blank"
-                                                                        href="{{ route('course.details', $row->slug) }}">{{ get_phrase('View Course On Frontend') }}</a>
-                                                                </li>
-
-                                                                <li>
-                                                                    <a class="dropdown-item" target="_blank"
                                                                         href="{{ route('course.player', ['slug' => $row->slug]) }}">{{ get_phrase('Go To Course Playing Page') }}</a>
                                                                 </li>
                                                                 <li>
